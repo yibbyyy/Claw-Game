@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class SimonSays : MonoBehaviour
 {
     //public GameObject up, down, left, right;
     public float startDelay = 1f;
+    public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
     public bool playSequence = true;
     public bool autoSequenceStarted = false;
-    
+    public bool canTakeInput = false;
     public List<GameObject> gameObjectList= new List<GameObject>();
+    public List<GameObject> userList = new List<GameObject>();
     private List<GameObject> sequence = new List<GameObject>();
     public Sprite pressedSprite;
+    public int buttonPressNum = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
         // Randomize sequence length of 4 - 10
-        int sequenceLen = Random.Range(4, 10);
+        int sequenceLen = Random.Range(4, 5);
         //Debug.Log("Sequence Length: " +  sequenceLen);
         // Pick random buttons 0 - 3
         int buttonIndex;
@@ -56,6 +60,14 @@ public class SimonSays : MonoBehaviour
         }
         // Accept input from mouseclick on buttons and add click to input list
 
+        if (canTakeInput)
+        {
+            
+            for (int i = 0; i < gameObjectList.Count; i++)
+            {
+                gameObjectList[i].GetComponent<Button>().interactable = true;
+            }
+        }
         // After adding click to input list check with sequence index if wrong blow up
         // If right, move index and accept input
     }
@@ -77,5 +89,41 @@ public class SimonSays : MonoBehaviour
         }
         playSequence = false;
         autoSequenceStarted = false;
+        canTakeInput = true;
+        StartCoroutine(Timer(timerDuration));
+    }
+
+    public void ClickedButton()
+    {
+        GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
+        if (clickedButton != null )
+        {
+            userList.Add(clickedButton);
+            if (userList[buttonPressNum]  != sequence[buttonPressNum] )
+            {
+                Debug.Log("Bomb blows up");
+            }
+
+            buttonPressNum++;
+            if (buttonPressNum >= sequence.Count)
+            {
+                Debug.Log("End of sequence");
+                // Make all buttons not interactible
+            }
+        }
+    }
+
+    IEnumerator Timer(float duration)
+    {
+        float timeremaining =  duration;
+        while (timeremaining > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            timeremaining--;
+        }
+        Debug.Log("ran out of time");
+        
+
+        
     }
 }
