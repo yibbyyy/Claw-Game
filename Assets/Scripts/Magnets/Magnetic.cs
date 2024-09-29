@@ -47,5 +47,4 @@ public class Magnetic : MonoBehaviour
             Debug.Log("stuck = ");
         }
     }
-    // goddamn
 }

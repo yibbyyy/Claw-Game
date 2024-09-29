@@ -5,10 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Magnet : MonoBehaviour
+public class Magnet1 : MonoBehaviour
 {
-    public GameObject magnet;
-
     public int polarity = 1;
     public float pullStrength = 1.5f;
     public float sphereCastRadius = 0.25f;
@@ -20,7 +18,6 @@ public class Magnet : MonoBehaviour
     public float maxStrength = 5f;
 
     RaycastHit hitData;
-
     HashSet<GameObject> gameObjects = new();
     HashSet<Rigidbody> stuckObjects = new();  // List to store stuck objects
 
@@ -77,7 +74,7 @@ public class Magnet : MonoBehaviour
         }
     }
 
-    public void Magnetize(GameObject magnetObject, Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
+    void Magnetize(Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
         float distance = Vector3.Distance(transform.position, objectPos);
 
@@ -139,34 +136,7 @@ public class Magnet : MonoBehaviour
     // Get Vector direction of any other transform pointed towards this game object
     Vector3 TargetMe(Vector3 objectPos)
     {
-        return magnet.transform.position - objectPos;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == 7)
-        {
-            Debug.Log("collided wit mag");
-            collision.rigidbody.useGravity = false;
-            collision.rigidbody.velocity = Vector3.zero;
-
-            collision.rigidbody.angularVelocity = Vector3.zero;
-            //Vector3 scale = collision.transform.localScale;
-            collision.rigidbody.freezeRotation = true;
-            collision.rigidbody.isKinematic = false;
-
-            Vector3 position = collision.transform.position;
-            Quaternion rotation = collision.transform.rotation;
-            Vector3 scale = collision.transform.lossyScale;
-
-            collision.transform.SetParent(transform.parent, false);
-            collision.transform.position = position;
-            collision.transform.rotation = rotation;
-            collision.transform.localScale = scale;
-            //collision.transform.localScale = scale; 
-            collision.gameObject.GetComponent<Magnetic>().stuck = true;
-
-        }
+        return this.transform.position - objectPos;
     }
 }
 
