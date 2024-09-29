@@ -17,7 +17,7 @@ public class RoundTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) && controllable == false)
         {
             StartCoroutine(StartTimer(roundLength));
             //Debug.Log("started Coroutine");
@@ -32,17 +32,21 @@ public class RoundTimer : MonoBehaviour
     IEnumerator StartTimer(int roundLength)
     {
         controllable = true;
-        yield return new WaitForSeconds(roundDeltaTime);
-        roundLength -= roundDeltaTime;
-        //Debug.Log("roundLength = " + roundLength);
+        yield return new WaitForSeconds(roundLength);
 
-        if (roundLength > 0) { StartCoroutine(StartTimer(roundLength)); }
-        else
+        // Player hasn't turned magnet on
+        if (controllable == true) 
         {
             controllable = false;
-            roundLength = 5;
-
+            // turn magnet on
+            // reset arm
         }
+        
+        // Can't move arm, can't turn on/off magnet, magnet turns on,
+        // if already on this timer does nothing
+        //Debug.Log("roundLength = " + roundLength);
+
+        
     }
 
 }
