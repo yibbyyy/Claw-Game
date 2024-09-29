@@ -64,7 +64,7 @@ public class Magnet : MonoBehaviour
                     if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
                     {
                         // Magnetize the object
-                        Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        //Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
                     }
                 }
             }
