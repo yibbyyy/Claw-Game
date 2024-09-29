@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    public float barResetDelay = .5f;
+    public float moveBackDelay = .5f;
     public float moveSpeed = 1;
     public float dropOffSpeed = 7;
 
@@ -21,10 +22,11 @@ public class Movement : MonoBehaviour
     private Vector3 topMove = Vector3.zero;
     private Vector3 bottomMove = Vector3.zero;
 
-    
+    public Magnet magnet;
     public RoundTimer roundTimer;
-    private bool controllable;
-
+    public bool controllable;
+    public bool isMagnetized = false;
+    
     private void Awake()
     {
         controllable = false;
@@ -33,8 +35,16 @@ public class Movement : MonoBehaviour
     void Update()
     {
         controllable = roundTimer.controllable;
+        isMagnetized = magnet.magnetizing;
+        if (isMagnetized)
+        {
+            controllable = false;
+            isResetting = true;
+        }
+        // if magnetized stop control and start resetting
         if (controllable)
         {
+            
             moveSpeed = 7;
             topMove.z = Input.GetAxisRaw("Vertical");
             bottomMove.x = Input.GetAxisRaw("Horizontal");
@@ -45,17 +55,21 @@ public class Movement : MonoBehaviour
             Bar.transform.Translate(topMove * moveSpeed * Time.deltaTime);
             Cable.transform.Translate(bottomMove * moveSpeed * Time.deltaTime);
         }
+        
         if (Input.GetMouseButtonDown(1) )
         {
            isResetting = true;   
         }
+        
 
         if (isResetting)
         {
+            //StartCoroutine(BarDelay(barResetDelay));
             MoveTo(dropOff);
         }
         if (droppedOff)
         {
+            //StartCoroutine(MoveBackDelay(moveBackDelay));
             MoveTo(center);
         }
 
@@ -97,6 +111,18 @@ public class Movement : MonoBehaviour
             isResetting = false;
             droppedOff = true;
         }
+        
+    }
+
+    IEnumerator BarDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+    }
+
+    IEnumerator MoveBackDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         
     }
 
