@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 213073586}
   - component: {fileID: 213073585}
   - component: {fileID: 213073584}
+  - component: {fileID: 213073588}
   - component: {fileID: 213073587}
   m_Layer: 5
   m_Name: MainMenu
@@ -409,6 +410,19 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pressedColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &213073588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213073582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSelector: {fileID: 2090542638}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +764,7 @@ GameObject:
   - component: {fileID: 698179067}
   - component: {fileID: 698179066}
   - component: {fileID: 698179065}
+  - component: {fileID: 698179069}
   - component: {fileID: 698179068}
   m_Layer: 5
   m_Name: ResumeGame
@@ -889,6 +904,19 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pressedColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &698179069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698179063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSelector: {fileID: 2090542638}
 --- !u!1 &715749462
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +929,7 @@ GameObject:
   - component: {fileID: 715749466}
   - component: {fileID: 715749465}
   - component: {fileID: 715749464}
+  - component: {fileID: 715749468}
   - component: {fileID: 715749467}
   m_Layer: 5
   m_Name: RestartGame
@@ -1040,6 +1069,19 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pressedColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &715749468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715749462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSelector: {fileID: 2090542638}
 --- !u!1 &787229630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1094,7 @@ GameObject:
   - component: {fileID: 787229634}
   - component: {fileID: 787229633}
   - component: {fileID: 787229632}
+  - component: {fileID: 787229636}
   - component: {fileID: 787229635}
   m_Layer: 5
   m_Name: QuitGame
@@ -1191,6 +1234,19 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pressedColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &787229636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787229630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSelector: {fileID: 2090542638}
 --- !u!1 &893807989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2053,7 @@ GameObject:
   - component: {fileID: 2008706380}
   - component: {fileID: 2008706379}
   - component: {fileID: 2008706378}
+  - component: {fileID: 2008706382}
   - component: {fileID: 2008706381}
   m_Layer: 5
   m_Name: Options
@@ -2136,6 +2193,19 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pressedColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &2008706382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008706376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSelector: {fileID: 2090542638}
 --- !u!1 &2090542636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,7 +2258,7 @@ MonoBehaviour:
   - {fileID: 715749464}
   - {fileID: 698179065}
   moveSpeed: 10
-  offset: {x: -285.6, y: 0}
+  offset: {x: -400, y: 0}
 --- !u!1 &2119091632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,7 +2270,6 @@ GameObject:
   - component: {fileID: 2119091633}
   - component: {fileID: 2119091635}
   - component: {fileID: 2119091634}
-  - component: {fileID: 2119091636}
   m_Layer: 5
   m_Name: StarIcon
   m_TagString: Untagged
@@ -2266,16 +2335,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119091632}
   m_CullTransparentMesh: 1
---- !u!114 &2119091636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119091632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb0b183b13568e4aa4669695fbe3485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuSelector: {fileID: 2090542638}
