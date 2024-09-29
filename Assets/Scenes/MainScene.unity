@@ -452,6 +452,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
+--- !u!114 &178510038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5305278081820514164, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+  m_PrefabInstance: {fileID: 8307368968711470243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474ba48fda2e8a9468ab9ce3b9b63d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &178510043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+  m_PrefabInstance: {fileID: 8307368968711470243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &196079687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
@@ -1149,6 +1165,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 178510043}
   - {fileID: 774183681}
   m_Father: {fileID: 1389241159}
   m_RootOrder: -1
@@ -4209,7 +4226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2126338753969213489, guid: 4aa2f664f5a944f4987a3bb98072eeb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5499997
+      value: 0.509
       objectReference: {fileID: 0}
     - target: {fileID: 2126338753969213489, guid: 4aa2f664f5a944f4987a3bb98072eeb9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4246,6 +4263,10 @@ PrefabInstance:
     - target: {fileID: 3125216596852065839, guid: 4aa2f664f5a944f4987a3bb98072eeb9, type: 3}
       propertyPath: m_Name
       value: magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125216596852065839, guid: 4aa2f664f5a944f4987a3bb98072eeb9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5469,7 +5490,7 @@ MonoBehaviour:
   Cable: {fileID: 533281653}
   dropOff: {fileID: 1544996027}
   center: {fileID: 2020956222}
-  magnet: {fileID: 1528858915}
+  magnet: {fileID: 178510038}
   roundTimer: {fileID: 619453802}
   isResetting: 0
   hasResetStarted: 0
@@ -7107,3 +7128,84 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
+--- !u!1001 &8307368968711470243
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 533281654}
+    m_Modifications:
+    - target: {fileID: 5305278081820514164, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 1389241161}
+    - target: {fileID: 6758960316481024061, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243417770179846256, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_Name
+      value: mesh_magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0024000406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54939985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.007999897
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731723650686139082, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9cbc74ceee11b341957e96dd69f19e7, type: 3}

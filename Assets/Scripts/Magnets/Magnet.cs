@@ -109,6 +109,7 @@ public class Magnet : MonoBehaviour
     void StickObject(Rigidbody magneticObject)
     {
         // Stop the object's movement and disable gravity
+        Debug.Log("Sticking");
         magneticObject.velocity = Vector3.zero;
         magneticObject.useGravity = false;
         magneticObject.isKinematic = true;
@@ -121,7 +122,7 @@ public class Magnet : MonoBehaviour
 
         // Set the magnetic object to match the exact position of the magnet or adjust its local position
         magneticObject.transform.SetParent(holder.transform, true);
-        magneticObject.transform.localPosition = Vector3.down * .25f;  // Ensure object is centered relative to the magnet
+        magneticObject.transform.localPosition = Vector3.left * .25f;  // Ensure object is centered relative to the magnet
 
         stuckObjects.Add(magneticObject);  // Add object to stuckObjects list
     }
