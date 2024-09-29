@@ -20,9 +20,11 @@ public class RoundTimer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(StartTimer(roundLength));
-            Debug.Log("started Coroutine");
+            //Debug.Log("started Coroutine");
         }
-        if (controllable) { Debug.Log("controllable"); };
+        if (controllable) { 
+            //Debug.Log("controllable");
+        };
         
     }
 
@@ -32,7 +34,7 @@ public class RoundTimer : MonoBehaviour
         controllable = true;
         yield return new WaitForSeconds(roundDeltaTime);
         roundLength -= roundDeltaTime;
-        Debug.Log("roundLength = " + roundLength);
+        //Debug.Log("roundLength = " + roundLength);
 
         if (roundLength > 0) { StartCoroutine(StartTimer(roundLength)); }
         else

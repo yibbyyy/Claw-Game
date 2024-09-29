@@ -8,6 +8,6 @@ public class BombActivator : MonoBehaviour
     public void ActivateBomb()
     {
         bombUI.SetActive(true);  // Show the bomb UI
-        Debug.Log("Bomb UI Activated!");
+        Debug.Log("Bomb UI Activated!" + bombUI.activeSelf);
     }
 }
