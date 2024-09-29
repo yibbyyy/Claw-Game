@@ -7,6 +7,7 @@ public class Movement1 : MonoBehaviour
 {
     public float barResetDelay = .5f;
     public float moveBackDelay = 2f;
+    public float magnetTurnOffDelay = 1f;
     public float moveSpeed = 1;
     public float dropOffSpeed = 7;
 
@@ -16,7 +17,7 @@ public class Movement1 : MonoBehaviour
     public GameObject dropOff;
     public GameObject center;
 
-    private bool isResetting= false;
+    
     private bool droppedOff = false;
 
     private Vector3 topMove = Vector3.zero;
@@ -24,11 +25,14 @@ public class Movement1 : MonoBehaviour
 
     public Magnet magnet;
     public RoundTimer roundTimer;
+    public bool isResetting = false;
+    public bool hasResetStarted = false;
     public bool controllable;
     public bool isMagnetized = false;
 
     public bool readyToMoveBox = false;
     public bool readyToMoveCenter = false;
+    public bool moveToCenterStarted = false;
     public bool moving = false;
     
     private void Awake()
@@ -40,7 +44,7 @@ public class Movement1 : MonoBehaviour
     {
         controllable = roundTimer.controllable;
         isMagnetized = magnet.magnetizing;
-        if (isMagnetized)
+        if (isMagnetized && controllable == true)
         {
             controllable = false;
             isResetting = true;
@@ -69,19 +73,22 @@ public class Movement1 : MonoBehaviour
         }
         
         
-        if (isResetting)
+        if (isResetting && !hasResetStarted)
         {
+            hasResetStarted = true;
             StartCoroutine(BarDelay(barResetDelay));
 
-            if (readyToMoveBox && !moving)
-                StartCoroutine(MoveToDropBox(dropOff));
+            
+
+                
         }
-        if (droppedOff)
+        if (droppedOff && !moveToCenterStarted)
         {
+            moveToCenterStarted = true;
             StartCoroutine(MoveBackDelay(moveBackDelay));
 
-            if (readyToMoveCenter && !moving)
-                StartCoroutine(MoveToCenter(center));
+            
+                
         }
         
        
@@ -95,6 +102,7 @@ public class Movement1 : MonoBehaviour
 
     IEnumerator MoveToDropBox(GameObject position)
     {
+        
         controllable = false;
         moving = true;
         moveSpeed = 1f;
@@ -120,14 +128,19 @@ public class Movement1 : MonoBehaviour
             yield return null;
         }
         moving = false;
-        isResetting = false;
+       
         droppedOff = true;
+        //magnet.magnetizing = false;
+        StartCoroutine(MagnetTurnOffDelay(magnetTurnOffDelay));
+        isResetting = false;
+        hasResetStarted = false;
         yield return null;
 
 
     }
     IEnumerator MoveToCenter(GameObject position)
     {
+        
         controllable = false;
         moveSpeed = 1f;
         moving = true;
@@ -155,6 +168,8 @@ public class Movement1 : MonoBehaviour
 
         droppedOff = false;
         moving = false;
+        hasResetStarted = false;
+        moveToCenterStarted = false;
         Debug.Log("reset");
         yield return null;
 
@@ -162,13 +177,25 @@ public class Movement1 : MonoBehaviour
     IEnumerator BarDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        StartCoroutine(MoveToDropBox(dropOff));
         readyToMoveBox = true;
+        yield return null;
     }
 
     IEnumerator MoveBackDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        StartCoroutine(MoveToCenter(center));
         readyToMoveCenter = true;
+        yield return null;
+    }
+
+    IEnumerator MagnetTurnOffDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        magnet.magnetizing = false;
+        yield return null;
+
     }
 
 }

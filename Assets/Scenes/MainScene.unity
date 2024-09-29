@@ -4635,8 +4635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4e24ce766b70744b1f7c32fbbeec01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barResetDelay: 0.5
-  moveBackDelay: 0.5
+  barResetDelay: 2
+  moveBackDelay: 2
   moveSpeed: 1
   dropOffSpeed: 7
   Bar: {fileID: 1389241152}
@@ -4647,6 +4647,9 @@ MonoBehaviour:
   roundTimer: {fileID: 619453802}
   controllable: 0
   isMagnetized: 0
+  readyToMoveBox: 0
+  readyToMoveCenter: 0
+  moving: 0
 --- !u!1001 &1425332724
 PrefabInstance:
   m_ObjectHideFlags: 0

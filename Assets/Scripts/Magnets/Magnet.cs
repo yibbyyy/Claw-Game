@@ -21,7 +21,7 @@ public class Magnet : MonoBehaviour
 
     private Renderer magnetMaterial;
     private Color ogColor;
-    public Movement movement;
+    public Movement1 movement;
     private void Start()
     {
         magnetMaterial = GetComponent<Renderer>();
@@ -34,7 +34,7 @@ public class Magnet : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                magnetizing = !magnetizing;
+                magnetizing = true;
             }
 
             if (magnetizing)
@@ -63,6 +63,10 @@ public class Magnet : MonoBehaviour
             {
                 magnetMaterial.material.color = ogColor;
             }
+        }
+        else if (!magnetizing)
+        {
+            magnetMaterial.material.color = ogColor;
         }
         
         
