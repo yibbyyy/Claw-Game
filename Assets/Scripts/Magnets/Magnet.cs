@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
+    public GameObject magnet;
+
     public int polarity = 1;
     public float pullStrength = 1.5f;
     public float sphereCastRadius = 0.25f;
@@ -16,12 +18,16 @@ public class Magnet : MonoBehaviour
     public float maxDistance = 5f;
     public float maxStrength = 5f;
     RaycastHit hitData;
+
     HashSet<GameObject> gameObjects = new();
     public bool magnetizing = false;
+
 
     private Renderer magnetMaterial;
     private Color ogColor;
     public Movement1 movement;
+
+
     private void Start()
     {
         magnetMaterial = GetComponent<Renderer>();
@@ -55,7 +61,16 @@ public class Magnet : MonoBehaviour
                     Magnetic magnetic;
                     if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
                     {
-                        Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        magnetic.magnetized = true;
+                        Debug.Log("magnetized");
+                        /*
+                        if (magnetic.magnetized)
+                        {
+
+                            Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        }
+
+                        */
                     }
                 }
             }
@@ -70,18 +85,18 @@ public class Magnet : MonoBehaviour
 
     }
 
-    void Magnetize(Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
+    public void Magnetize(GameObject magnetObject, Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
         float distance = Vector3.Distance(transform.position, objectPos);
-
         if (distance < maxDistance)
         {
-            float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance); // Give a decimal representing how far between 0 distance and max distance.
-            float strength = Mathf.Lerp(0f, maxStrength, tDistance);
-            float scaledForce = magneticStrength * strength * polarity;
-            magneticObject.AddForce(TargetMe(hitData.collider.transform.position) * scaledForce, ForceMode.Force);
+            //float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance); // Give a decimal representing how far between 0 distance and max distance.
+            
+            float scaledForce = pullStrength * polarity;
+            magneticObject.AddForce((magnetObject.transform.position - objectPos) * scaledForce, ForceMode.Force);
 
         }
+
 
         /*
         //distance = Mathf.Max(minDistance, distance);
@@ -124,8 +139,35 @@ public class Magnet : MonoBehaviour
     /// </summary>
     /// <param name="target"></param>
     /// <returns></returns>
-    Vector3 TargetMe(Vector3 objectPos)
+    public Vector3 TargetMe(GameObject magnet, Vector3 objectPos)
     {
-        return this.transform.position - objectPos;
+        return magnet.transform.position - objectPos;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            Debug.Log("collided wit mag");
+            collision.rigidbody.useGravity = false;
+            collision.rigidbody.velocity = Vector3.zero;
+
+            collision.rigidbody.angularVelocity = Vector3.zero;
+            //Vector3 scale = collision.transform.localScale;
+            collision.rigidbody.freezeRotation = true;
+            collision.rigidbody.isKinematic = false;
+
+            Vector3 position = collision.transform.position;
+            Quaternion rotation = collision.transform.rotation;
+            Vector3 scale = collision.transform.lossyScale;
+
+            collision.transform.SetParent(transform.parent, false);
+            collision.transform.position = position;
+            collision.transform.rotation = rotation;
+            collision.transform.localScale = scale;
+            //collision.transform.localScale = scale; 
+            collision.gameObject.GetComponent<Magnetic>().stuck = true;
+
+        }
     }
 }

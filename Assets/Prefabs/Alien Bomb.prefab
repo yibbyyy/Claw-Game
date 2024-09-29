@@ -69,8 +69,16 @@ PrefabInstance:
       value: Alien Bomb
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
       propertyPath: m_TagString
       value: Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021813445201945944, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2021813445201945944, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
       propertyPath: m_TagString
@@ -172,4 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ff37527875eb6429a62707753a22d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 100
+  pointValue: 0
+  target: {fileID: 968514204640227004, guid: 86c9767b4df539c4ba4bba5bb31badfe, type: 3}
+  strength: 25
+  maxFrameCount: 10
