@@ -19,7 +19,7 @@ public class Magnetic : MonoBehaviour
     private void Awake()
     {
         magnetObject = GameObject.FindGameObjectWithTag("magnet");
-        magnet = magnetObject.GetComponent<Magnet>();
+        //magnet = magnetObject.GetComponent<Magnet>();
     }
     private void Start()
     {
@@ -27,13 +27,13 @@ public class Magnetic : MonoBehaviour
     }
     private void Update()
     {
-        
+        /*
         if (magnetized)
         {
             Debug.Log("magnetized = ");
             magnet.Magnetize(magnetObject, rb, transform.position, polarity, magneticStrength);
         }
-
+        
         //rb.useGravity = true;
         if (Vector3.Distance(transform.position, magnetObject.transform.position) > maxDistance && stuck)
         {
@@ -55,7 +55,7 @@ public class Magnetic : MonoBehaviour
             transform.rotation = rotation;
             transform.localScale = scale;
         }
-        
+        */
     }
     // goddamn
 }

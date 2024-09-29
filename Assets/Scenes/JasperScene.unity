@@ -2295,11 +2295,9 @@ MonoBehaviour:
   distanceExponent: 3
   dampingFactor: 0.1
   maxDistance: 5
+  stickDistance: 0.15
   maxStrength: 10
   magnetizing: 0
-  holding: 0
-  magnetizingLength: 60
-  magnetizingCount: 0
   movement: {fileID: 1389241161}
 --- !u!850595691 &678571415
 LightingSettings:
@@ -4881,7 +4879,7 @@ MonoBehaviour:
   Cable: {fileID: 533281653}
   dropOff: {fileID: 1544996027}
   center: {fileID: 2020956222}
-  magnet: {fileID: 0}
+  magnet: {fileID: 623316592}
   roundTimer: {fileID: 619453802}
   isResetting: 0
   hasResetStarted: 0

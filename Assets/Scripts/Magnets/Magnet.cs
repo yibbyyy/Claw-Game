@@ -47,14 +47,17 @@ public class Magnet : MonoBehaviour
 
         if (magnetizing)
         {
+            Debug.Log(magnetizing);
             magnetMaterial.material.color = Color.red;
 
             // Detect objects to magnetize
-            if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+            if (Physics.SphereCast(magnet.transform.position + (Vector3.down * .25f), sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
+                
                 Rigidbody tmpRb;
                 if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
+                    Debug.Log("hit = " + hitData.collider.gameObject.name);
                     if (!gameObjects.Contains(tmpRb.gameObject))
                     {
                         gameObjects.Add(tmpRb.gameObject);
@@ -63,8 +66,9 @@ public class Magnet : MonoBehaviour
                     Magnetic magnetic;
                     if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
                     {
+                        
                         // Magnetize the object
-                        //Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
                     }
                 }
             }
@@ -77,7 +81,7 @@ public class Magnet : MonoBehaviour
         }
     }
 
-    public void Magnetize(GameObject magnetObject, Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
+    public void Magnetize(Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
         float distance = Vector3.Distance(transform.position, objectPos);
 
