@@ -21,7 +21,7 @@ public class Magnet : MonoBehaviour
 
     private Renderer magnetMaterial;
     private Color ogColor;
-
+    public Movement movement;
     private void Start()
     {
         magnetMaterial = GetComponent<Renderer>();
@@ -30,37 +30,41 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (movement.controllable)
         {
-            magnetizing = !magnetizing;
-        }
-        
-        if (magnetizing)
-        {
-            magnetMaterial.material.color = Color.red;
-            if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+            if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("Hit:" + hitData.collider.gameObject.name);
-                Rigidbody tmpRb;
-                if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
+                magnetizing = !magnetizing;
+            }
+
+            if (magnetizing)
+            {
+                magnetMaterial.material.color = Color.red;
+                if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
                 {
-                    if (!gameObjects.Contains(tmpRb.gameObject))
+                    //Debug.Log("Hit:" + hitData.collider.gameObject.name);
+                    Rigidbody tmpRb;
+                    if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                     {
-                        gameObjects.Add(tmpRb.gameObject);
-                    }
-                    Magnetic magnetic;
-                    if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
-                    {
-                        Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        if (!gameObjects.Contains(tmpRb.gameObject))
+                        {
+                            gameObjects.Add(tmpRb.gameObject);
+                        }
+                        Magnetic magnetic;
+                        if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
+                        {
+                            Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                        }
                     }
                 }
+
             }
-       
+            else
+            {
+                magnetMaterial.material.color = ogColor;
+            }
         }
-        else
-        {
-            magnetMaterial.material.color = ogColor;
-        }
+        
         
 
     }
