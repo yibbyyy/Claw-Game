@@ -22,7 +22,9 @@ public class RoundTimer : MonoBehaviour
             StartCoroutine(StartTimer(roundLength));
             Debug.Log("started Coroutine");
         }
-        if (controllable) { Debug.Log("controllable"); };
+        if (controllable) { 
+            //Debug.Log("controllable");
+        };
         
     }
 
