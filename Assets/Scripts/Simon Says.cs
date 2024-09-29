@@ -108,7 +108,12 @@ public class SimonSays : MonoBehaviour
             if (buttonPressNum >= sequence.Count)
             {
                 Debug.Log("End of sequence");
+
                 // Make all buttons not interactible
+                for (int i = 0; i < gameObjectList.Count; i++)
+                {
+                    gameObjectList[i].GetComponent<Button>().interactable = true;
+                }
             }
         }
     }
