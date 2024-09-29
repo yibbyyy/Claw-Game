@@ -2209,13 +2209,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 330b6b437a387a840ad862121d7efd12, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 623316592}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 330b6b437a387a840ad862121d7efd12, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 623316591}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 330b6b437a387a840ad862121d7efd12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 623316590}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 330b6b437a387a840ad862121d7efd12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 623316595}
   m_SourcePrefab: {fileID: 100100000, guid: 330b6b437a387a840ad862121d7efd12, type: 3}
 --- !u!4 &623316588 stripped
 Transform:
@@ -2275,7 +2275,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &623316592
+--- !u!114 &623316595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2284,12 +2284,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 623316589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474ba48fda2e8a9468ab9ce3b9b63d40, type: 3}
+  m_Script: {fileID: 11500000, guid: 80e58d79c34ea614583a3bb358ddffe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnet: {fileID: 623316589}
   polarity: 1
-  pullStrength: 100
+  pullStrength: 3
   sphereCastRadius: 0.25
   maxForce: 100
   distanceExponent: 3
@@ -4879,7 +4878,7 @@ MonoBehaviour:
   Cable: {fileID: 533281653}
   dropOff: {fileID: 1544996027}
   center: {fileID: 2020956222}
-  magnet: {fileID: 623316592}
+  magnet: {fileID: 623316595}
   roundTimer: {fileID: 619453802}
   isResetting: 0
   hasResetStarted: 0

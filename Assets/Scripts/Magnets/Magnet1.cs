@@ -47,20 +47,22 @@ public class Magnet1 : MonoBehaviour
             magnetMaterial.material.color = Color.red;
 
             // Detect objects to magnetize
-            if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+            if (Physics.SphereCast(transform.position + (Vector3.down * .5f), sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
                 Rigidbody tmpRb;
                 if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
+                    Debug.Log(hitData.collider.gameObject.name);
                     if (!gameObjects.Contains(tmpRb.gameObject))
                     {
                         gameObjects.Add(tmpRb.gameObject);
                     }
 
-                    Magnetic magnetic;
-                    if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
+                    Magnetic1 magnetic;
+                    if (hitData.collider.TryGetComponent<Magnetic1>(out magnetic))
                     {
                         // Magnetize the object
+                        Debug.Log(tmpRb);
                         Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
                     }
                 }
@@ -85,7 +87,9 @@ public class Magnet1 : MonoBehaviour
             //float strength = Mathf.Lerp(0f, maxStrength, tDistance);
             float strength = 1 / Mathf.Pow(tDistance, 2);
             float scaledForce = magneticStrength * strength * polarity;
-            Debug.Log(distance);
+            Debug.Log("distance =" + distance);
+            Debug.Log("objectPos = " + objectPos);
+            Debug.Log("object = " + magneticObject);
             if (distance > stickDistance)  // Pull object toward magnet if not close enough to stick
             {
                 magneticObject.AddForce(TargetMe(objectPos) * scaledForce, ForceMode.Force);

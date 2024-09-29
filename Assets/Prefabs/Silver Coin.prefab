@@ -82,9 +82,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7154529294708412507}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5881547705017533473}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
       insertIndex: -1
@@ -92,26 +89,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2621903267419676236}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7024459701715172804}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
 --- !u!1 &3951017762936353196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
   m_PrefabInstance: {fileID: 4185458588692073725}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7154529294708412507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3951017762936353196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1430cd32bbde7a743a6cc7c03652208e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magneticStrength: 1
-  maxMagneticStrngth: 10
 --- !u!65 &5881547705017533473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,3 +162,17 @@ MonoBehaviour:
   target: {fileID: 968514204640227004, guid: 86c9767b4df539c4ba4bba5bb31badfe, type: 3}
   strength: 25
   maxFrameCount: 10
+--- !u!114 &7024459701715172804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951017762936353196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a040f7b74ab4c8e47b5dffd71d1292c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magneticStrength: 1
+  maxMagneticStrngth: 10
