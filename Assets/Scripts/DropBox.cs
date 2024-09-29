@@ -11,6 +11,8 @@ public class DropBox : MonoBehaviour
     public IScorable scorable;
     public int score;
     public int totalScore = 0;
+
+    public GameObject simonSays;
     private void Awake()
     {
         boxCollider = dropBox.GetComponent<Collider>();
@@ -22,6 +24,11 @@ public class DropBox : MonoBehaviour
         score = collision.gameObject.GetComponent<IScorable>().pointValue;
         totalScore += score;
         score = 0;
+        if (collision.gameObject.tag == "Bomb")
+        {
+            simonSays.SetActive(true);
+            Debug.Log("Dropped bomb");
+        }
         Destroy(collision.gameObject);
         Debug.Log("total Score  = " + totalScore);
 
