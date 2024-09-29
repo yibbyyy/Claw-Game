@@ -38,9 +38,19 @@ public class MainMenuController : MonoBehaviour
     
     }
     
-    public void GoBack()
+    public void ReturnButton()
     {
-        SceneManager.LoadScene("MainMenu"); 
+        
+        if (GameManager.instance.isPausedFromGame)
+        {
+            SceneManager.LoadScene("GameScene");  //Insert Game Scene name!!!
+            GameManager.instance.SetPausedFromGame(false);  
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");  
+        }
     }
 
 }
+

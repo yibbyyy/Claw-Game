@@ -54,4 +54,12 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();   
         Debug.Log("Quitting game...");  
     }
+
+    public void OpenOptionsMenu() //Idicates if were entering the options from the game or from the title screen
+{
+    GameManager.instance.SetPausedFromGame(true);  
+    pauseMenuUI.SetActive(false);  
+    SceneManager.LoadScene("OptionsMenu"); 
+}
+
 }
