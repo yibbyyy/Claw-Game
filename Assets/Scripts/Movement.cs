@@ -7,17 +7,20 @@ public class Movement : MonoBehaviour
 {
 
     public float moveSpeed = 1;
+    public float dropOffSpeed = 7;
 
     public GameObject Bar;
-    private Rigidbody BarBody;
     public GameObject Cable;
-    private Rigidbody CableBody;
+
+    public GameObject dropOff;
+    public GameObject center;
+
+    private bool isResetting= false;
+    private bool droppedOff = false;
 
     private Vector3 topMove = Vector3.zero;
     private Vector3 bottomMove = Vector3.zero;
 
-    private Vector3 barDestinationX = new Vector3 (-3.49f, 0 , 0);
-    private Vector3 magnetDestinationZ = new Vector3 (0, 0, 0.01f);
     
     public RoundTimer roundTimer;
     private bool controllable;
@@ -25,8 +28,6 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         controllable = false;
-        BarBody = Bar.GetComponent<Rigidbody>();
-        CableBody = Cable.GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
@@ -35,27 +36,67 @@ public class Movement : MonoBehaviour
         if (controllable)
         {
             moveSpeed = 7;
-            topMove.x = Input.GetAxisRaw("Vertical");
-            bottomMove.z = Input.GetAxisRaw("Horizontal");
+            topMove.z = Input.GetAxisRaw("Vertical");
+            bottomMove.x = Input.GetAxisRaw("Horizontal");
 
-            topMove = Vector3.ClampMagnitude(topMove, .1f);
-            bottomMove = Vector3.ClampMagnitude(bottomMove, .1f);
+            topMove = Vector3.ClampMagnitude(-topMove, .1f);
+            bottomMove = Vector3.ClampMagnitude(-bottomMove, .1f);
 
             Bar.transform.Translate(topMove * moveSpeed * Time.deltaTime);
             Cable.transform.Translate(bottomMove * moveSpeed * Time.deltaTime);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) )
         {
-            
-            DropOff(barDestinationX, magnetDestinationZ, Bar.transform.position, Cable.transform.position);
+           isResetting = true;   
         }
+
+        if (isResetting)
+        {
+            MoveTo(dropOff);
+        }
+        if (droppedOff)
+        {
+            MoveTo(center);
+        }
+
+       
     }
 
 
-    private void DropOff(Vector3 barDestination, Vector3 magnetDestination, Vector3 barPosition, Vector3 magnetPosition)
+   
+
+
+
+
+    private void MoveTo(GameObject position)
     {
         controllable = false;
-        moveSpeed = 4;
+        moveSpeed = 1f;
+        
+        Vector3 moveToZ = new Vector3(Bar.transform.position.x, Bar.transform.position.y, position.transform.position.z);
+        Vector3 moveToX = new Vector3(position.transform.position.x, Cable.transform.position.y, Cable.transform.position.z);
+
+        if (Vector3.Distance(Bar.transform.position, moveToZ) > 0.1f)
+        {
+            float step = moveSpeed * Time.deltaTime;
+
+            Bar.transform.position = Vector3.MoveTowards(Bar.transform.position, moveToZ, step);
+        }
+        
+        
+        else if (Vector3.Distance(Cable.transform.position, moveToX) > 0.1f)
+        {
+            float step = moveSpeed * Time.deltaTime;
+
+            Cable.transform.position = Vector3.MoveTowards(Cable.transform.position, moveToX, step);
+        }
+       
+        else 
+        {
+            Debug.Log("reset");
+            isResetting = false;
+            droppedOff = true;
+        }
         
     }
 

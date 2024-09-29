@@ -15,6 +15,7 @@ public class DropBox : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         Debug.Log(collision.gameObject.name);
     }
 }
