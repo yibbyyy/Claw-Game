@@ -1,0 +1,1020 @@
+fileFormatVersion: 2
+guid: 3a71f1ec935d4cf40a3cd862db5a0d62
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Minigamesspritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1698
+        width: 157
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fdfb3d9277bce45a33b48e5a92f5de
+      internalID: -870265926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1650
+        width: 157
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10957017112eb3e4195111e6e5b660b3
+      internalID: 658733703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1733
+        width: 137
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfe6512ca2b4a64e864572d108af263
+      internalID: 697003626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1732
+        width: 157
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1980635df35c832489172cf3dffde860
+      internalID: -511999097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 1650
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd540d583d76f14da1b5026fb97b4d0
+      internalID: -890217069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1539
+        width: 137
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993a3727c6728a2479027d578b285789
+      internalID: -1163353182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1493
+        width: 146
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f396dadcb570a84395c2f417a3b04d4
+      internalID: 637506681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 1490
+        width: 149
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7088fc4f5e161014ea98dcc42ccab7f8
+      internalID: -176049110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1635
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62fbd9ddb7de5440bcf1756beea7b8c
+      internalID: 682561528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1461
+        width: 146
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93acb03950d73804db33d56d39dc3311
+      internalID: -1929604694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 807
+        width: 583
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b55c85377f92f4ba5771b19114b8b9
+      internalID: 580613445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 997
+        width: 180
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c8c8f2648f47c4d99a343f53bdc0d6
+      internalID: 560989184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 1108
+        width: 271
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4edf543172329841b12dfe3d14c5c9f
+      internalID: -1889190669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1214
+        width: 232
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027ac52fd7b9e8e438165d4fdc211e01
+      internalID: 890735423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1095
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b84a6c961ebe4b419139f05555a2cc4
+      internalID: -2131670802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 833
+        width: 298
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22955d047e1147e48a8388b81b20e54f
+      internalID: -590347668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 929
+        width: 173
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373da949c4eae5247a201769c4f70823
+      internalID: -1048234156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 907
+        width: 266
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf8866518ab02642aa921c2494fb0ad
+      internalID: -1356620685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 833
+        width: 251
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dea3def823eaf54aaf6a453a30b8a01
+      internalID: -2043504539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 771
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcab1ba8b00b6d4db45e1a9910fef50
+      internalID: -1462208406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 638
+        width: 151
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd57a2a090395242815de86eb9fe9fe
+      internalID: -499856882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 751
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83a85aa0eb11534daa016a34a2cbc17
+      internalID: -738461233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 274
+        width: 225
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476c1a31b8e200745989ac47ef5bf348
+      internalID: 975974592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 371
+        width: 180
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b37d9e589deeaf478694eadd13b53c0
+      internalID: 54369096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 428
+        width: 293
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857eab4cb7905b04bb430dd883b39c1b
+      internalID: -791425452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 664
+        width: 20
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6071e1ff633c64ba0b1a7e1027cd1a
+      internalID: 727477169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 705
+        width: 7
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a8c0a0187c74d438a6d94982124666
+      internalID: -1978762266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 505
+        width: 47
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f14489c5b16b143969881d09a78770
+      internalID: 1245009472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 531
+        width: 95
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e793e7aff488e429d0fb452cddcda2
+      internalID: 1470921875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 195
+        width: 277
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b0593c43bfb494f8e940ea86653181
+      internalID: -638671140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 621
+        width: 43
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb215189f51f60d46be86a5f70f38eb9
+      internalID: 249200138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 316
+        width: 196
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84c54cf80422ec46a6136c6aa78bc00
+      internalID: 1816231333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 230
+        width: 224
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423a7f9bd0a7c354dbc3ad2ccc411904
+      internalID: 1343437332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 504
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57cdbc906264d848a5ab541c791ba8b
+      internalID: -1829026702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 327
+        width: 112
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374a1a50a2c8cf341b00063030291979
+      internalID: -328426933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 151
+        width: 254
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7096b9ec991e5340878a5ad0d64ef60
+      internalID: 1147095773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 263
+        width: 189
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f451496bf619e4f98d22bd1fd1ea23
+      internalID: 1425318773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 107
+        width: 132
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08265bea1209054459ed232f89f350d0
+      internalID: 267976256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 151
+        width: 84
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed11ed5c26d8cf246ac0c8284f948e7f
+      internalID: -380035522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigamesspritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 198
+        width: 495
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9aabe1b00be394dbf7509667c02a28
+      internalID: 952551207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Minigamesspritesheet_0: -870265926
+      Minigamesspritesheet_1: 658733703
+      Minigamesspritesheet_10: 580613445
+      Minigamesspritesheet_11: 560989184
+      Minigamesspritesheet_12: -1889190669
+      Minigamesspritesheet_13: 890735423
+      Minigamesspritesheet_14: -2131670802
+      Minigamesspritesheet_15: -590347668
+      Minigamesspritesheet_16: -1048234156
+      Minigamesspritesheet_17: -1356620685
+      Minigamesspritesheet_18: -2043504539
+      Minigamesspritesheet_19: -1462208406
+      Minigamesspritesheet_2: 697003626
+      Minigamesspritesheet_20: -499856882
+      Minigamesspritesheet_21: -738461233
+      Minigamesspritesheet_22: 975974592
+      Minigamesspritesheet_23: 54369096
+      Minigamesspritesheet_24: -791425452
+      Minigamesspritesheet_25: 727477169
+      Minigamesspritesheet_26: -1978762266
+      Minigamesspritesheet_27: 1245009472
+      Minigamesspritesheet_28: 1470921875
+      Minigamesspritesheet_29: -638671140
+      Minigamesspritesheet_3: -511999097
+      Minigamesspritesheet_30: 249200138
+      Minigamesspritesheet_31: 1816231333
+      Minigamesspritesheet_32: 1343437332
+      Minigamesspritesheet_33: -1829026702
+      Minigamesspritesheet_34: -328426933
+      Minigamesspritesheet_35: 1147095773
+      Minigamesspritesheet_36: 1425318773
+      Minigamesspritesheet_37: 267976256
+      Minigamesspritesheet_38: -380035522
+      Minigamesspritesheet_39: 952551207
+      Minigamesspritesheet_4: -890217069
+      Minigamesspritesheet_5: -1163353182
+      Minigamesspritesheet_6: 637506681
+      Minigamesspritesheet_7: -176049110
+      Minigamesspritesheet_8: 682561528
+      Minigamesspritesheet_9: -1929604694
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
