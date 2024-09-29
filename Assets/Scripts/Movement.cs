@@ -16,26 +16,51 @@ public class Movement : MonoBehaviour
     private Vector3 topMove = Vector3.zero;
     private Vector3 bottomMove = Vector3.zero;
 
+    private Vector3 barDestinationX = new Vector3 (-3.49f, 0 , 0);
+    private Vector3 magnetDestinationZ = new Vector3 (0, 0, 0.01f);
+    
+    public RoundTimer roundTimer;
+    private bool controllable;
 
     private void Awake()
     {
+        controllable = false;
         BarBody = Bar.GetComponent<Rigidbody>();
         CableBody = Cable.GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
     {
-        
+        controllable = roundTimer.controllable;
+        if (controllable)
+        {
 
-        topMove.x = Input.GetAxisRaw("Vertical");
-        bottomMove.z = Input.GetAxisRaw("Horizontal");
+            topMove.x = Input.GetAxisRaw("Vertical");
+            bottomMove.z = Input.GetAxisRaw("Horizontal");
 
-        topMove = Vector3.ClampMagnitude(topMove, .1f);
-        bottomMove = Vector3.ClampMagnitude(bottomMove, .1f);
+            topMove = Vector3.ClampMagnitude(topMove, .1f);
+            bottomMove = Vector3.ClampMagnitude(bottomMove, .1f);
 
-        Bar.transform.Translate(topMove * moveSpeed * Time.deltaTime);
-        Cable.transform.Translate(bottomMove * moveSpeed * Time.deltaTime);
+            Bar.transform.Translate(topMove * moveSpeed * Time.deltaTime);
+            Cable.transform.Translate(bottomMove * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            
+            DropOff(barDestinationX, magnetDestinationZ, Bar.transform.position, Cable.transform.position);
+        }
     }
 
+
+    private void DropOff(Vector3 barDestination, Vector3 magnetDestination, Vector3 barPosition, Vector3 magnetPosition)
+    {
+        controllable = false;
+        moveSpeed = 4;
+        Vector3 newBarDestination = barPosition + barDestination;
+        Vector3 newMagnetDestination = magnetPosition + magnetDestination;
+
+        Bar.transform.Translate(Vector3.Lerp(barPosition, newBarDestination, 0.5f));
+        Cable.transform.Translate(Vector3.Lerp(magnetPosition, newMagnetDestination, 0.5f));
+    }
 
 }
