@@ -14,20 +14,24 @@ public class Magnet : MonoBehaviour
     public float distanceExponent = 3f;
     public float dampingFactor = .1f;
     public float maxDistance = 5f;
+    public float stickDistance = 0.15f;  // Distance at which the object sticks to the magnet
     public float maxStrength = 5f;
+
     RaycastHit hitData;
     HashSet<GameObject> gameObjects = new();
-    public bool magnetizing = false;
+    HashSet<Rigidbody> stuckObjects = new();  // List to store stuck objects
 
+    public bool magnetizing = false;
     private Renderer magnetMaterial;
     private Color ogColor;
     public Movement1 movement;
+
     private void Start()
     {
         magnetMaterial = GetComponent<Renderer>();
         ogColor = magnetMaterial.material.color;
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (movement.controllable)
@@ -36,15 +40,15 @@ public class Magnet : MonoBehaviour
             {
                 magnetizing = true;
             }
-
-            
         }
+
         if (magnetizing)
         {
             magnetMaterial.material.color = Color.red;
+
+            // Detect objects to magnetize
             if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
-                //Debug.Log("Hit:" + hitData.collider.gameObject.name);
                 Rigidbody tmpRb;
                 if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
@@ -52,80 +56,86 @@ public class Magnet : MonoBehaviour
                     {
                         gameObjects.Add(tmpRb.gameObject);
                     }
+
                     Magnetic magnetic;
                     if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
                     {
+                        // Magnetize the object
                         Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
                     }
                 }
             }
-
         }
         else
         {
+            // Release all stuck objects when magnetizing is turned off
+            ReleaseStuckObjects();
             magnetMaterial.material.color = ogColor;
         }
-
-
-
     }
 
     void Magnetize(Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
         float distance = Vector3.Distance(transform.position, objectPos);
 
+        // Magnetizing objects if within maxDistance
         if (distance < maxDistance)
         {
-            float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance); // Give a decimal representing how far between 0 distance and max distance.
-            float strength = Mathf.Lerp(0f, maxStrength, tDistance);
+            float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance);
+            //float strength = Mathf.Lerp(0f, maxStrength, tDistance);
+            float strength = 1 / Mathf.Pow(tDistance, 2);
             float scaledForce = magneticStrength * strength * polarity;
-            magneticObject.AddForce(TargetMe(hitData.collider.transform.position) * scaledForce, ForceMode.Force);
-
-        }
-
-        /*
-        //distance = Mathf.Max(minDistance, distance);
-
-        //float distanceFactor = magneticObject.mass / Mathf.Pow(distance, distanceExponent) + 1;
-
-        //float scaledForce = magneticStrength * pullStrength * polarity * distanceFactor;
-        //scaledForce = Mathf.Clamp(scaledForce, 0, maxForce);
-
-        //scaledForce *= 2;
-        scaledForce = Mathf.Max(scaledForce, pastVelocity);
-        Debug.Log("Applying Force: " + scaledForce + "With distance: " + distance);
-        magneticObject.AddForce(TargetMe(objectPos).normalized * scaledForce, ForceMode.Force);
-        pastVelocity = magneticObject.velocity.magnitude;
-        float stickDistance = minDistance * 10;
-       
-        // Aggressive damping as object gets closer to magnet
-        if (distance <= minDistance)
-        {
-            Debug.Log("Damping applied");
-            // Reduce velocity significantly as object approaches stick distance
-            //magneticObject.velocity *= dampingFactor;
-            //magneticObject.velocity = pastVelocity;
-            // If velocity is low enough, stop the object entirely
-            if (magneticObject.velocity.magnitude <= velocityThreshold)
+            Debug.Log(distance);
+            if (distance > stickDistance)  // Pull object toward magnet if not close enough to stick
             {
-                //magneticObject.velocity = Vector3.zero;  // Stop movement completely
-                //magneticObject.useGravity = false;       // Disable gravity to prevent bouncing
+                magneticObject.AddForce(TargetMe(objectPos) * scaledForce, ForceMode.Force);
+            }
+            else if (!stuckObjects.Contains(magneticObject))  // Stick the object when close enough
+            {
+                StickObject(magneticObject);
             }
         }
-        else
-        {
-            // Enable gravity when far from magnet
-            //magneticObject.useGravity = true;
-        }*/
     }
 
-    /// <summary>
-    /// Get Vector direction of any other transform pointed towards this game object
-    /// </summary>
-    /// <param name="target"></param>
-    /// <returns></returns>
+    // Method to make objects stick to the magnet
+    // Method to make objects stick to the magnet
+    void StickObject(Rigidbody magneticObject)
+    {
+        // Stop the object's movement and disable gravity
+        magneticObject.velocity = Vector3.zero;
+        magneticObject.useGravity = false;
+        magneticObject.isKinematic = true;
+
+        // Create an empty "holder" GameObject at the magnet's position
+        GameObject holder = new GameObject("MagnetHolder");
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        holder.transform.position = newPos;  // Place at the magnet's location
+        holder.transform.rotation = transform.rotation;  // Match rotation
+        holder.transform.SetParent(this.transform, true);  // Set the holder as a child of the magnet
+
+        // Parent the magnetic object to the holder, which avoids scaling issues
+        magneticObject.transform.SetParent(holder.transform, true);
+
+        stuckObjects.Add(magneticObject);  // Add object to stuckObjects list
+    }
+
+
+    // Method to release all stuck objects
+    void ReleaseStuckObjects()
+    {
+        foreach (Rigidbody stuckObject in stuckObjects)
+        {
+            stuckObject.isKinematic = false;  // Re-enable physics interaction
+            stuckObject.useGravity = true;
+            stuckObject.transform.SetParent(null);  // Unparent the object so it no longer follows the magnet
+        }
+        stuckObjects.Clear();  // Clear the list of stuck objects
+    }
+
+    // Get Vector direction of any other transform pointed towards this game object
     Vector3 TargetMe(Vector3 objectPos)
     {
         return this.transform.position - objectPos;
     }
 }
+

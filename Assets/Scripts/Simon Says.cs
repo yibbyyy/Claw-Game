@@ -19,6 +19,7 @@ public class SimonSays : MonoBehaviour
     private List<GameObject> sequence = new List<GameObject>();
     public Sprite pressedSprite;
     public int buttonPressNum = 0;
+    public Explosion explosionRef;
     
     // Start is called before the first frame update
     void Start()
@@ -130,5 +131,14 @@ public class SimonSays : MonoBehaviour
         
 
         
+    }
+
+    // Call dispose from othe r file
+    public void Dispose()
+    {
+        userList.Clear();
+        sequence.Clear();
+        explosionRef.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
