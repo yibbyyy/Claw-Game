@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 1232775792995493091, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4503e4b807cb3e349bcfb70705e9503b, type: 2}
     - target: {fileID: 2021813445201945944, guid: 8cfa80b5956e1ec41a6444d5c71cc13c, type: 3}
       propertyPath: m_TagString
       value: Bomb
