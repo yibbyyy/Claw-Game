@@ -16,4 +16,5 @@ public class Magnetic : MonoBehaviour
     {
         //rb.useGravity = true;
     }
+    // goddamn
 }

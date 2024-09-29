@@ -14,7 +14,7 @@ public class Magnet : MonoBehaviour
     public float distanceExponent = 3f;
     public float dampingFactor = .1f;
     public float maxDistance = 5f;
-    public float stickDistance = 0.15f;  // Distance at which the object sticks to the magnet
+    public float stickDistance = 0.3f;  // Distance at which the object sticks to the magnet
     public float maxStrength = 5f;
 
     RaycastHit hitData;
@@ -108,16 +108,18 @@ public class Magnet : MonoBehaviour
 
         // Create an empty "holder" GameObject at the magnet's position
         GameObject holder = new GameObject("MagnetHolder");
-        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        holder.transform.position = newPos;  // Place at the magnet's location
+        holder.transform.position = transform.position;  // Place exactly at the magnet's location
         holder.transform.rotation = transform.rotation;  // Match rotation
         holder.transform.SetParent(this.transform, true);  // Set the holder as a child of the magnet
 
-        // Parent the magnetic object to the holder, which avoids scaling issues
+        // Set the magnetic object to match the exact position of the magnet or adjust its local position
         magneticObject.transform.SetParent(holder.transform, true);
+       
+        magneticObject.transform.localPosition = Vector3.down * .25f;  // Ensure object is centered relative to the magnet
 
         stuckObjects.Add(magneticObject);  // Add object to stuckObjects list
     }
+
 
 
     // Method to release all stuck objects
