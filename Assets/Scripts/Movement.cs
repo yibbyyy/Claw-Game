@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
         controllable = roundTimer.controllable;
         if (controllable)
         {
-
+            moveSpeed = 7;
             topMove.x = Input.GetAxisRaw("Vertical");
             bottomMove.z = Input.GetAxisRaw("Horizontal");
 
@@ -56,11 +56,7 @@ public class Movement : MonoBehaviour
     {
         controllable = false;
         moveSpeed = 4;
-        Vector3 newBarDestination = barPosition + barDestination;
-        Vector3 newMagnetDestination = magnetPosition + magnetDestination;
-
-        Bar.transform.Translate(Vector3.Lerp(barPosition, newBarDestination, 0.5f));
-        Cable.transform.Translate(Vector3.Lerp(magnetPosition, newMagnetDestination, 0.5f));
+        
     }
 
 }
