@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Magnet : MonoBehaviour
+public class Magnet1 : MonoBehaviour
 {
     public int polarity = 1;
     public float pullStrength = 1.5f;
