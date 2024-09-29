@@ -23,7 +23,7 @@ public class Movement1 : MonoBehaviour
     private Vector3 topMove = Vector3.zero;
     private Vector3 bottomMove = Vector3.zero;
 
-    public Magnet magnet;
+    public Magnet1 magnet;
     public RoundTimer roundTimer;
     public bool isResetting = false;
     public bool hasResetStarted = false;
