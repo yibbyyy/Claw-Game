@@ -45,5 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooling: {fileID: 0}
-  goldCoinSpawnMax: 50
-  silverCoinSpawnMax: 0
