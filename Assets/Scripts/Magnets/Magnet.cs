@@ -51,7 +51,7 @@ public class Magnet : MonoBehaviour
             magnetMaterial.material.color = Color.red;
 
             // Detect objects to magnetize
-            if (Physics.SphereCast(magnet.transform.position + (Vector3.down * .25f), sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+            if (Physics.SphereCast(transform.position + (Vector3.down * .25f), sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
                 
                 Rigidbody tmpRb;
@@ -63,8 +63,8 @@ public class Magnet : MonoBehaviour
                         gameObjects.Add(tmpRb.gameObject);
                     }
 
-                    Magnetic magnetic;
-                    if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
+                    Magnetic1 magnetic;
+                    if (hitData.collider.TryGetComponent<Magnetic1>(out magnetic))
                     {
                         
                         // Magnetize the object
