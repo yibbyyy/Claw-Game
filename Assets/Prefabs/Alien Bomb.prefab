@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magneticStrength: 1
-  maxMagneticStrngth: 10
+  maxMagneticStrngth: 5
 --- !u!54 &4546714915414658472
 Rigidbody:
   m_ObjectHideFlags: 0
