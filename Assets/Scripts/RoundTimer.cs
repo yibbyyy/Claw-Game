@@ -10,6 +10,9 @@ public class RoundTimer : MonoBehaviour
     public int roundDeltaTime = 1;
     public int roundLength = 5;
     public bool controllable;
+
+    public int fullRoundTime = 300;
+    public bool timerOn = false;
     private void Awake()
     {
         controllable = false;
@@ -20,6 +23,8 @@ public class RoundTimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && controllable == false)
         {
             StartCoroutine(StartTimer(roundLength));
+            if (!timerOn) { StartCoroutine(TotalTimer()); }
+            
             //Debug.Log("started Coroutine");
         }
         if (controllable) { 
@@ -31,6 +36,7 @@ public class RoundTimer : MonoBehaviour
 
     IEnumerator StartTimer(int roundLength)
     {
+        
         controllable = true;
         yield return new WaitForSeconds(roundLength);
 
@@ -47,6 +53,20 @@ public class RoundTimer : MonoBehaviour
         //Debug.Log("roundLength = " + roundLength);
 
         
+    }
+
+    IEnumerator TotalTimer()
+    {
+        timerOn = true;
+
+        while (fullRoundTime > 0)
+        {
+            yield return new WaitForSeconds(roundDeltaTime);
+            fullRoundTime -= 1;
+            Debug.Log("on = " + timerOn + " | RoundTime = " + fullRoundTime);
+        } 
+        
+        timerOn = false;
     }
 
 }
