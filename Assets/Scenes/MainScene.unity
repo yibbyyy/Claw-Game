@@ -3493,7 +3493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44318801538208470, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325817485170497461, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5553,6 +5553,7 @@ MonoBehaviour:
   scorable: {fileID: 0}
   score: 0
   totalScore: 0
+  simonSays: {fileID: 1939207230}
 --- !u!1001 &1575091796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6237,6 +6238,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106a58fb215512d46a2ce21b61f5d31d, type: 3}
+--- !u!1 &1939207230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 44318801538208470, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
+  m_PrefabInstance: {fileID: 830724109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2008322894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
