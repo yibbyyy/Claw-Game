@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,28 +17,49 @@ public class Magnet : MonoBehaviour
     public float maxStrength = 5f;
     RaycastHit hitData;
     HashSet<GameObject> gameObjects = new();
-    
-    
+    public bool magnetizing = false;
 
+    private Renderer magnetMaterial;
+    private Color ogColor;
+
+    private void Start()
+    {
+        magnetMaterial = GetComponent<Renderer>();
+        ogColor = magnetMaterial.material.color;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+        if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("Hit:" + hitData.collider.gameObject.name);
-            Rigidbody tmpRb;
-            if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
+            magnetizing = !magnetizing;
+        }
+        
+        if (magnetizing)
+        {
+            magnetMaterial.material.color = Color.red;
+            if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
-                if (!gameObjects.Contains(tmpRb.gameObject))
+                //Debug.Log("Hit:" + hitData.collider.gameObject.name);
+                Rigidbody tmpRb;
+                if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
-                    gameObjects.Add(tmpRb.gameObject);
-                }
-                Magnetic magnetic;
-                if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
-                {
-                    Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                    if (!gameObjects.Contains(tmpRb.gameObject))
+                    {
+                        gameObjects.Add(tmpRb.gameObject);
+                    }
+                    Magnetic magnetic;
+                    if (hitData.collider.TryGetComponent<Magnetic>(out magnetic))
+                    {
+                        Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
+                    }
                 }
             }
+       
+        }
+        else
+        {
+            magnetMaterial.material.color = ogColor;
         }
         
 
