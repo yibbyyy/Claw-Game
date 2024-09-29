@@ -21,7 +21,10 @@ public class Magnet : MonoBehaviour
 
     HashSet<GameObject> gameObjects = new();
     public bool magnetizing = false;
-
+    public bool holding = false;
+    public int magnetizingLength;
+    public int magnetizingCount = 0;
+    
 
     private Renderer magnetMaterial;
     private Color ogColor;
@@ -45,15 +48,20 @@ public class Magnet : MonoBehaviour
 
             
         }
+
         if (magnetizing)
         {
+            magnetizingCount++;
             magnetMaterial.material.color = Color.red;
-            if (Physics.SphereCast(transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
+            if (Physics.SphereCast(magnet.transform.position, sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
+                Debug.Log(transform.position);
                 //Debug.Log("Hit:" + hitData.collider.gameObject.name);
                 Rigidbody tmpRb;
                 if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
+
+                    Debug.Log("FLAG = " + hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb));
                     if (!gameObjects.Contains(tmpRb.gameObject))
                     {
                         gameObjects.Add(tmpRb.gameObject);
@@ -87,7 +95,7 @@ public class Magnet : MonoBehaviour
 
     public void Magnetize(GameObject magnetObject, Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
-        float distance = Vector3.Distance(transform.position, objectPos);
+        float distance = Vector3.Distance(magnet.transform.position, objectPos);
         if (distance < maxDistance)
         {
             //float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance); // Give a decimal representing how far between 0 distance and max distance.
@@ -156,17 +164,12 @@ public class Magnet : MonoBehaviour
             //Vector3 scale = collision.transform.localScale;
             collision.rigidbody.freezeRotation = true;
             collision.rigidbody.isKinematic = false;
-
-            Vector3 position = collision.transform.position;
-            Quaternion rotation = collision.transform.rotation;
-            Vector3 scale = collision.transform.lossyScale;
-
-            collision.transform.SetParent(transform.parent, false);
-            collision.transform.position = position;
-            collision.transform.rotation = rotation;
-            collision.transform.localScale = scale;
-            //collision.transform.localScale = scale; 
             collision.gameObject.GetComponent<Magnetic>().stuck = true;
+
+            Debug.Log("stuck = " + collision.gameObject.GetComponent<Magnetic>().stuck);
+
+            //collision.transform.localScale = scale; 
+            
 
         }
     }

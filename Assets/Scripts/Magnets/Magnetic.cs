@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Magnetic : MonoBehaviour
@@ -15,6 +13,7 @@ public class Magnetic : MonoBehaviour
     private int polarity = 1;
 
     private float maxDistance = .25f;
+    
 
 
     private void Awake()
@@ -28,6 +27,7 @@ public class Magnetic : MonoBehaviour
     }
     private void Update()
     {
+        
         if (magnetized)
         {
             Debug.Log("magnetized = ");
@@ -38,13 +38,23 @@ public class Magnetic : MonoBehaviour
         if (Vector3.Distance(transform.position, magnetObject.transform.position) > maxDistance && stuck)
         {
             rb.useGravity = true;
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
             magnetized = false;
         }
-
+        
         if (stuck)
         {
-            Debug.Log("stuck = ");
+            stuck = false;
+            Vector3 position = transform.position;
+            Quaternion rotation = transform.rotation;
+            Vector3 scale = transform.lossyScale;
+
+            transform.SetParent(magnetObject.transform, false);
+
+            transform.position = position;
+            transform.rotation = rotation;
+            transform.localScale = scale;
         }
+        
     }
 }
