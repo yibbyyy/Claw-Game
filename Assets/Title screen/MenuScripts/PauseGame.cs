@@ -39,13 +39,20 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;  // game speed 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // This should restart the active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // This should restart the active scene aka the game
     }
 
-    public void LoadMainMenu() //Go back to the main menu
+    public void LoadOptionsMenu()
     {
-        Time.timeScale = 1f;  
-        SceneManager.LoadScene("MainMenu"); 
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("OptionsMenu");  //This opens the option menu scene
+    
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     
@@ -54,12 +61,4 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();   
         Debug.Log("Quitting game...");  
     }
-
-    public void OpenOptionsMenu() //Idicates if were entering the options from the game or from the title screen
-{
-    GameManager.instance.SetPausedFromGame(true);  
-    pauseMenuUI.SetActive(false);  
-    SceneManager.LoadScene("OptionsMenu"); 
-}
-
 }

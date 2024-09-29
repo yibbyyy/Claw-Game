@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool isPausedFromGame = false;  
+    public bool isPausedFromGame = false; 
 
     void Awake()
     {
@@ -13,13 +13,10 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);  
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
-    
+   
     public void SetPausedFromGame(bool paused)
     {
         isPausedFromGame = paused;
