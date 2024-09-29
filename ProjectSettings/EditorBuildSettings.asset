@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets Title screen/TutorialScene2.unity
     guid: 6d02cba1ee78992458c0b81ea291e124
+  - enabled: 1
+    path: Assets/Assets Title screen/Tutorial1.unity
+    guid: 33882ebc88f703e4f863bb210a24413c
+  - enabled: 1
+    path: Assets/Assets Title screen/CreditsMenu.unity
+    guid: ce1671525658a294082de3fa6e98d93c
+  - enabled: 1
+    path: Assets/Assets Title screen/MainMenu.unity
+    guid: e842f4394b72d3045a1a8c7d460e8932
+  - enabled: 1
+    path: Assets/Assets Title screen/OptionsMenu.unity
+    guid: 9433a65ef9e5a6a4490a1c4589a414f0
   m_configObjects: {}

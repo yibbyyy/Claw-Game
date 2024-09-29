@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     
-    public void PlayGame()
+    public void tutorial()
     {
         SceneManager.LoadScene("Tutorial1"); 
     }
@@ -14,6 +14,12 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("TutorialScene2"); 
     }
+
+    public void play()
+    {
+        SceneManager.LoadScene("GameScene"); 
+    }
+
 
     
     public void OpenOptions()
