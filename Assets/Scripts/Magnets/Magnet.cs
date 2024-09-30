@@ -45,6 +45,13 @@ public class Magnet : MonoBehaviour
             }
         }
 
+        
+       
+    }
+
+
+    private void FixedUpdate()
+    {
         if (magnetizing)
         {
             Debug.Log(magnetizing);
@@ -53,7 +60,7 @@ public class Magnet : MonoBehaviour
             // Detect objects to magnetize
             if (Physics.SphereCast(transform.position + (Vector3.down * .25f), sphereCastRadius, Vector3.down, out hitData, Mathf.Infinity))
             {
-                
+
                 Rigidbody tmpRb;
                 if (hitData.collider.gameObject.TryGetComponent<Rigidbody>(out tmpRb))
                 {
@@ -66,21 +73,15 @@ public class Magnet : MonoBehaviour
                     Magnetic1 magnetic;
                     if (hitData.collider.TryGetComponent<Magnetic1>(out magnetic))
                     {
-                        
+
                         // Magnetize the object
                         Magnetize(tmpRb, hitData.collider.transform.position, polarity, magnetic.magneticStrength);
                     }
                 }
             }
         }
-        else
-        {
-            // Release all stuck objects when magnetizing is turned off
-            ReleaseStuckObjects();
-            magnetMaterial.material.color = ogColor;
-        }
+        
     }
-
     public void Magnetize(Rigidbody magneticObject, Vector3 objectPos, int polarity, float magneticStrength)
     {
         float distance = Vector3.Distance(transform.position, objectPos);
@@ -93,6 +94,7 @@ public class Magnet : MonoBehaviour
             float strength = 1 / Mathf.Pow(tDistance, 2);
             float scaledForce = magneticStrength * strength * polarity;
             Debug.Log(distance);
+            /*
             if (distance > stickDistance)  // Pull object toward magnet if not close enough to stick
             {
                 magneticObject.AddForce(TargetMe(objectPos) * scaledForce, ForceMode.Force);
@@ -101,6 +103,7 @@ public class Magnet : MonoBehaviour
             {
                 StickObject(magneticObject);
             }
+            */
         }
     }
 
