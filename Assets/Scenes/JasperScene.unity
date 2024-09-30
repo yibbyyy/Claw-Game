@@ -3582,14 +3582,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polarity: 1
-  pullStrength: 3
+  pullStrength: 50
   sphereCastRadius: 0.25
   maxForce: 100
   distanceExponent: 3
   dampingFactor: 0.1
   maxDistance: 5
   stickDistance: 0.15
-  maxStrength: 5
+  maxStrength: 25
   magnetizing: 0
   movement: {fileID: 1389241161}
 --- !u!1 &963194225
