@@ -14,7 +14,7 @@ public class Magnet1 : MonoBehaviour
     public float distanceExponent = 3f;
     public float dampingFactor = .1f;
     public float maxDistance = 5f;
-    public float stickDistance = 0.15f;  // Distance at which the object sticks to the magnet
+    public float stickDistance = 1;  // Distance at which the object sticks to the magnet
     public float maxStrength = 5f;
 
     RaycastHit hitData;
@@ -86,7 +86,7 @@ public class Magnet1 : MonoBehaviour
             float tDistance = Mathf.InverseLerp(maxDistance, 0f, distance);
             //float strength = Mathf.Lerp(0f, maxStrength, tDistance);
             float strength = 1 / Mathf.Pow(tDistance, 2);
-            float scaledForce = magneticStrength * strength * polarity;
+            float scaledForce = magneticStrength * strength * polarity * 50;
             Debug.Log("distance =" + distance);
             Debug.Log("objectPos = " + objectPos);
             Debug.Log("object = " + magneticObject);
@@ -94,8 +94,14 @@ public class Magnet1 : MonoBehaviour
             {
                 magneticObject.AddForce(TargetMe(objectPos) * scaledForce, ForceMode.Force);
             }
+            if (distance < stickDistance && !stuckObjects.Contains(magneticObject))
+            {
+                Debug.Log("Stuck");
+                StickObject(magneticObject);
+            }
             else if (!stuckObjects.Contains(magneticObject))  // Stick the object when close enough
             {
+                Debug.Log("Stuck");
                 StickObject(magneticObject);
             }
         }
@@ -118,7 +124,7 @@ public class Magnet1 : MonoBehaviour
 
         // Set the magnetic object to match the exact position of the magnet or adjust its local position
         magneticObject.transform.SetParent(holder.transform, true);
-        magneticObject.transform.localPosition = Vector3.down * .25f;  // Ensure object is centered relative to the magnet
+        magneticObject.transform.localPosition = Vector3.down * 3;  // Ensure object is centered relative to the magnet
 
         stuckObjects.Add(magneticObject);  // Add object to stuckObjects list
     }

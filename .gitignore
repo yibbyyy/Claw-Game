@@ -108,3 +108,4 @@ $RECYCLE.BIN/
 # Denote all files that are truly binary and should not be modified.
 *.png binary
 *.jpg binary
+Packages/packages-lock.json
