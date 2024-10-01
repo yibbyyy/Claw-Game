@@ -6,10 +6,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ClawTimer : MonoBehaviour
 {
+    
     public float clawTimerDuration;
     public float clawTimer;
     public bool clawTimerRunning = false;
-
+    
     public TMP_Text clawTimerUI;
 
     public static event Action ClawTimerEnded;
@@ -17,6 +18,8 @@ public class ClawTimer : MonoBehaviour
     private void Start()
     {
         clawTimer = clawTimerDuration;
+        // sub to StartClawTimer event
+        ClawManager.StartClawTimer += clawTimerStart;
 
     }
     public void clawTimerStart()
@@ -44,13 +47,13 @@ public class ClawTimer : MonoBehaviour
                 clawTimerRunning = false;
                 Debug.Log("Claw Timer Finished");
                 ClawTimerEnded?.Invoke();
+
+                clawTimer = clawTimerDuration;
+                UpdateTimerUI();
             }
         }
     }
 
-    private void UpdateTimer()
-    {
-
-    }
+    
     
 }
