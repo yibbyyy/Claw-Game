@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class ClawManager : MonoBehaviour
 {
     public GameObject Bar, Cable, Magnet;
     public float moveSpeed = 7;
+    public float clawTimeDuration = 5;
 
-    public float zMaxBound = 3.25f;
-    public float zMinBound = 0.28f;
-
-    public float xMaxBound = 1.5f;
-    public float xMinBound = -1.3f;
+    public float clawTimer;
+    
     Vector3 barMove = Vector3.zero;
     Vector3 cableMove = Vector3.zero;
 
@@ -33,11 +31,20 @@ public class InputManager : MonoBehaviour
     {
         if (currentState == State.waitingForInput)
         {
+            EnterWaitingForInput();
             ProcessInputs();
         }
     }
+
+    void EnterWaitingForInput()
+    {
+        // Start Timer
+        clawTimer = clawTimeDuration;
+    }
     void ProcessInputs()
     {
+        
+        // Moving Claw
         barMove.z = Input.GetAxisRaw("Vertical");
         cableMove.x = Input.GetAxisRaw("Horizontal");
 
@@ -52,5 +59,11 @@ public class InputManager : MonoBehaviour
         magnetPos.x = Cable.transform.position.x;
         magnetPos.y = Magnet.transform.position.y;
         Magnet.transform.position = magnetPos;
-}
+
+        // Magnetizing
+
+        // Timer Runs out
+    }
+
+    
 }

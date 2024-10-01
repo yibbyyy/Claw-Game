@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Movement1 : MonoBehaviour
 {
+    /*
     public float barResetDelay = .5f;
     public float moveBackDelay = 2f;
     public float magnetTurnOffDelay = 1f;
@@ -197,5 +198,5 @@ public class Movement1 : MonoBehaviour
         yield return null;
 
     }
-
+    */
 }

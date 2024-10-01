@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf5a531f07dbb45983486597618b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Permeability: 0.28
+  Permeability: 0.17
   MaxForce: 500
   UseScaleForDebugDraw: 0
 --- !u!4 &303456761
