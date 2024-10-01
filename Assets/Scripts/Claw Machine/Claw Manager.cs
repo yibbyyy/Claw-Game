@@ -7,9 +7,9 @@ public class ClawManager : MonoBehaviour
 {
     public GameObject Bar, Cable, Magnet;
     public float moveSpeed = 7;
-    public float clawTimeDuration = 5;
+   
 
-    public float clawTimer;
+    
     
     Vector3 barMove = Vector3.zero;
     Vector3 cableMove = Vector3.zero;
@@ -39,7 +39,7 @@ public class ClawManager : MonoBehaviour
     void EnterWaitingForInput()
     {
         // Start Timer
-        clawTimer = clawTimeDuration;
+        
     }
     void ProcessInputs()
     {
