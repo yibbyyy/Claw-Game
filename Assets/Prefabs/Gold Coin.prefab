@@ -87,7 +87,7 @@ PrefabInstance:
       addedObject: {fileID: -8488151139632163832}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2771007819627747606}
+      addedObject: {fileID: 3270857469879857583}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2385616de5996408ba1ce02cae756d, type: 3}
 --- !u!1 &5212744005791545380 stripped
 GameObject:
@@ -158,7 +158,7 @@ MonoBehaviour:
   target: {fileID: 968514204640227004, guid: 86c9767b4df539c4ba4bba5bb31badfe, type: 3}
   strength: 25
   maxFrameCount: 10
---- !u!114 &2771007819627747606
+--- !u!114 &3270857469879857583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,8 +167,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5212744005791545380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a040f7b74ab4c8e47b5dffd71d1292c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 55b977006a01abe4f8f605800aa8752b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magneticStrength: 1
-  maxMagneticStrngth: 10
+  MagnetForce: 1
+  MagneticPole: 1
+  RigidBody: {fileID: -6341626807051048675}

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Movement1 : MonoBehaviour
 {
+    /*
     public float barResetDelay = .5f;
     public float moveBackDelay = 2f;
     public float magnetTurnOffDelay = 1f;
@@ -23,7 +24,7 @@ public class Movement1 : MonoBehaviour
     private Vector3 topMove = Vector3.zero;
     private Vector3 bottomMove = Vector3.zero;
 
-    public Magnet1 magnet;
+    public Magnet magnet;
     public RoundTimer roundTimer;
     public bool isResetting = false;
     public bool hasResetStarted = false;
@@ -197,5 +198,5 @@ public class Movement1 : MonoBehaviour
         yield return null;
 
     }
-
+    */
 }
