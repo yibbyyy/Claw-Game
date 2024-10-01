@@ -84,7 +84,7 @@ public class MagnetWorld : MonoBehaviour
       var unitPt = Random.insideUnitSphere;
 
     }
-
+    /*
     if (Selection.activeTransform == null)
       return;
     var selectedMagnets = Selection.activeTransform.gameObject.GetComponentsInChildren<MagneticObject>();
@@ -134,7 +134,10 @@ public class MagnetWorld : MonoBehaviour
         }
 
         Gizmos.DrawLine(m1.transform.position, m1.transform.position + f);
+    
       }
     }
+    */
   }
+    
 }
