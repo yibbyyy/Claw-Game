@@ -18,7 +18,7 @@ public class NewSpawnManager : MonoBehaviour
     private int aBombWeight = 1;
     private string gBar = "New Gold Bar";
     private int gBarWeight = 1;
-    private string chest = "NewMetalContainer";
+    private string chest = "Metal Box";
     private int chestWeight = 1;
     private string key = "Key";
     private int keyWeight = 1;
@@ -26,7 +26,9 @@ public class NewSpawnManager : MonoBehaviour
     private int clockWeight = 1;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();
-    private IList<string> strings = new List<string>();
+    private IList<string> allSpawnables = new List<string>();
+    private IList<string> lootSpawnables = new List<string>();
+    private IList<string> coinSpawnables = new List<string>();
 
     private IList<Transform> spawnTransforms = new List<Transform>();
 
@@ -34,7 +36,15 @@ public class NewSpawnManager : MonoBehaviour
     public float waitBetweenRefills;
     private int refill = 0;
 
+    public Vector3 lootSpawnDirection;
 
+    public enum spawnStates
+    {
+        idle,
+        treasureFill,
+        coinFill,
+        generalFill
+    }
 
     private void Awake()
     {
@@ -47,7 +57,17 @@ public class NewSpawnManager : MonoBehaviour
         spawnables.Add(key, keyWeight);
         spawnables.Add(clock, clockWeight);
 
-        strings.AddRange(spawnables.Keys);
+        allSpawnables.AddRange(spawnables.Keys);
+
+        lootSpawnables.Add("Alien Bomb");
+        lootSpawnables.Add("New Gold Bar");
+        lootSpawnables.Add("Metal Box");
+        lootSpawnables.Add("Key");
+        lootSpawnables.Add("Clock");
+
+        coinSpawnables.Add("YellowCoin");
+        coinSpawnables.Add("GreyCoin");
+
 
         for (int i = 0; i < this.transform.childCount; i++) 
         {
@@ -67,30 +87,20 @@ public class NewSpawnManager : MonoBehaviour
         if (Input.GetMouseButtonDown(2))
         {
             Debug.Log("Fill Basin");
-            StartCoroutine(FillBasin());
+            //StartCoroutine(FillBasin());
+            spawnLoot();
         }
     }
 
 
     [ContextMenu("Spawn Somethin")]
-    void spawnSeveral()
+    void spawnCoins()
     {
 
         Debug.Log("spawned");
         foreach (Transform t in spawnTransforms)
         {
-            string spawnable = strings[Random.Range(0, strings.Count)];
-            if (spawnable == strings[2])
-            {
-                if (Random.Range(0, 100) < 90)
-                {
-                    spawnable = strings[2];
-                }
-                else
-                {
-                    spawnable = strings[Random.Range(0, strings.Count - 1)];
-                }
-            }
+            string spawnable = coinSpawnables[Random.Range(0, coinSpawnables.Count)];
             float spawnCount = Random.Range(1, 10) * spawnables[spawnable];
 
             Debug.Log("spawnable = " + spawnable + " | spawn count = " + spawnCount + " | spawned at = " + t.position);
@@ -102,15 +112,29 @@ public class NewSpawnManager : MonoBehaviour
         }
     }
 
+    void spawnLoot()
+    {
+        Debug.Log("Loot Round");
+        foreach(Transform t in spawnTransforms)
+        {
+            string spawnable = lootSpawnables[Random.Range(0, lootSpawnables.Count)];
+            pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(lootSpawnDirection));
+        }
+        Debug.Break();
+
+    }
+
+
     IEnumerator FillBasin()
     {
         while (refill < refillCounts)
         {
             Debug.Log("refill = " + refill + " | refillCounts = " + refillCounts);
-            spawnSeveral();
+            spawnCoins();
             yield return new WaitForSeconds(waitBetweenRefills);
             refill++;
         }
+        
 
     }
 
