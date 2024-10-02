@@ -7,6 +7,11 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 public class NewSpawnManager : MonoBehaviour
 {
+    public GameObject dropBoxWalls;
+    public float moveSpeed;
+    private float maxUpperDisplacement;
+    private float maxLowerDisplacement;
+
     public ObjectPooling pooling;
     public Transform spawner;
 
@@ -14,7 +19,7 @@ public class NewSpawnManager : MonoBehaviour
     private int yCoinWeight = 1;
     private string gCoin = "GreyCoin";
     private int gCoinWeight = 1;
-    private string aBomb = "Alien Bomb";
+    private string aBomb = "A Bomb";
     private int aBombWeight = 1;
     private string gBar = "New Gold Bar";
     private int gBarWeight = 1;
@@ -36,13 +41,22 @@ public class NewSpawnManager : MonoBehaviour
     public float waitBetweenRefills;
     private int refill = 0;
 
+    public int lootRefillCount;
+    public float waitBetweenLootRefills;
+    private int lootRefill = 0;
+
     public Vector3 lootSpawnDirection;
 
-    public enum spawnStates
+    public State currentState = State.empty;
+
+    public enum State
     {
-        idle,
+        empty,
+        filled,
         treasureFill,
         coinFill,
+        raiseWalls,
+        lowerWalls,
         generalFill
     }
 
@@ -59,14 +73,14 @@ public class NewSpawnManager : MonoBehaviour
 
         allSpawnables.AddRange(spawnables.Keys);
 
-        lootSpawnables.Add("Alien Bomb");
-        lootSpawnables.Add("New Gold Bar");
-        lootSpawnables.Add("Metal Box");
-        lootSpawnables.Add("Key");
-        lootSpawnables.Add("Clock");
+        lootSpawnables.Add(aBomb);
+        lootSpawnables.Add(gBar);
+        lootSpawnables.Add(chest);
+        lootSpawnables.Add(key);
+        lootSpawnables.Add(clock);
 
-        coinSpawnables.Add("YellowCoin");
-        coinSpawnables.Add("GreyCoin");
+        coinSpawnables.Add(yCoin);
+        coinSpawnables.Add(gCoin);
 
 
         for (int i = 0; i < this.transform.childCount; i++) 
@@ -75,29 +89,40 @@ public class NewSpawnManager : MonoBehaviour
         }
 
 
-        
+        maxLowerDisplacement = dropBoxWalls.transform.position.y;
+        maxUpperDisplacement = dropBoxWalls.transform.position.y + 2.25f;
 
-        Debug.Log(spawnTransforms.Count);
+
 
     }
 
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(2) && currentState == State.empty)
         {
-            Debug.Log("Fill Basin");
-            //StartCoroutine(FillBasin());
-            spawnLoot();
+            currentState = State.treasureFill;
+            FirstFill();
         }
+        if (dropBoxWalls.transform.position.y < maxUpperDisplacement && currentState == State.raiseWalls)
+        {
+            raiseDropBoxWalls();
+        }
+        if (dropBoxWalls.transform.position.y >= maxUpperDisplacement && currentState == State.raiseWalls)
+        {
+            currentState = State.filled;
+        }
+
     }
 
 
-    [ContextMenu("Spawn Somethin")]
+    void FirstFill()
+    {
+        StartCoroutine(FillLoot());
+    }
+
+
     void spawnCoins()
     {
-
-        Debug.Log("spawned");
         foreach (Transform t in spawnTransforms)
         {
             string spawnable = coinSpawnables[Random.Range(0, coinSpawnables.Count)];
@@ -114,18 +139,26 @@ public class NewSpawnManager : MonoBehaviour
 
     void spawnLoot()
     {
-        Debug.Log("Loot Round");
-        foreach(Transform t in spawnTransforms)
+        foreach (Transform t in spawnTransforms)
         {
             string spawnable = lootSpawnables[Random.Range(0, lootSpawnables.Count)];
-            pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(lootSpawnDirection));
+            if (spawnable == aBomb)
+            {
+                pooling.SpawnFromPool(spawnable, t.position, Quaternion.identity);
+            }
+            if (spawnable == clock)
+            {
+                pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(-90, 0, 0));
+            }
+            else
+            {
+                pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(0, 0, 90));
+            }
         }
-        Debug.Break();
-
     }
 
 
-    IEnumerator FillBasin()
+    IEnumerator FillCoins()
     {
         while (refill < refillCounts)
         {
@@ -134,8 +167,39 @@ public class NewSpawnManager : MonoBehaviour
             yield return new WaitForSeconds(waitBetweenRefills);
             refill++;
         }
-        
 
+        if (refill >= refillCounts)
+        {
+            refill = 0;
+            currentState = State.raiseWalls;
+            raiseDropBoxWalls();
+        }
     }
 
+    IEnumerator FillLoot()
+    {
+        while (lootRefill < lootRefillCount)
+        {
+            spawnLoot();
+            yield return new WaitForSeconds(waitBetweenLootRefills);
+            lootRefill++;
+        }
+
+        if(lootRefill >= lootRefillCount)
+        {
+            lootRefill = 0;
+            currentState = State.coinFill;
+            StartCoroutine(FillCoins());
+        }
+    }
+
+    void raiseDropBoxWalls()
+    {
+        dropBoxWalls.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+    }
+
+    void lowerDropBoxWalls()
+    {
+        dropBoxWalls.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+    }
 }   
