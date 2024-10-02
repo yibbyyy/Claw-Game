@@ -21,6 +21,8 @@ public class ClawTimer : MonoBehaviour
         // sub to StartClawTimer event
         ClawManager.StartClawTimer += clawTimerStart;
 
+        ClawManager.StopClawTimer += ResetTimer;
+
     }
     public void clawTimerStart()
     {
@@ -54,6 +56,12 @@ public class ClawTimer : MonoBehaviour
         }
     }
 
-    
+    public void ResetTimer()
+    {
+        clawTimerRunning = false;
+
+        clawTimer = clawTimerDuration;
+        UpdateTimerUI();
+    }
     
 }
