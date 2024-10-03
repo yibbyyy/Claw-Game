@@ -44,6 +44,13 @@ public class SimonSays : MonoBehaviour
 
     }
 
+    protected enum State
+    {
+        playingSequence,
+        acceptingInput
+    }
+
+    protected State currentState = State.playingSequence;
     // Update is called once per frame
     void Update()
     {
@@ -52,25 +59,16 @@ public class SimonSays : MonoBehaviour
 
         // Play sequence by doing button click animation
         // Need gameobject button component
-        if (playSequence && !autoSequenceStarted)
+        if (currentState == State.playingSequence)
         {
-            Debug.Log("Starting sequence");
-            autoSequenceStarted = true;
             StartCoroutine(PlaySequence());
-            
         }
-        // Accept input from mouseclick on buttons and add click to input list
-
-        if (canTakeInput)
+        
+        else if (currentState == State.acceptingInput)
         {
-            
-            for (int i = 0; i < gameObjectList.Count; i++)
-            {
-                gameObjectList[i].GetComponent<Button>().interactable = true;
-            }
+            // Handled by events
         }
-        // After adding click to input list check with sequence index if wrong blow up
-        // If right, move index and accept input
+       
     }
 
     IEnumerator PlaySequence()
@@ -88,11 +86,18 @@ public class SimonSays : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenbuttons);
 
         }
-        playSequence = false;
-        autoSequenceStarted = false;
-        canTakeInput = true;
+        
+        // Subscribe ClickedButton() to all button onclick events
+        for (int i = 0;i < gameObjectList.Count; i++)
+        {
+            gameObjectList[i].GetComponent<Button>().onClick.AddListener(ClickedButton);
+        }
+
+        ToggleInteractibility(true);
+        currentState = State.acceptingInput;
         StartCoroutine(Timer(timerDuration));
     }
+
 
     public void ClickedButton()
     {
@@ -127,10 +132,19 @@ public class SimonSays : MonoBehaviour
             yield return new WaitForSeconds(1f);
             timeremaining--;
         }
+        // Play event that bomb blew up
         Debug.Log("ran out of time");
         
 
         
+    }
+
+    private void ToggleInteractibility(bool toggle)
+    {
+        for (int i = 0; i < gameObjectList.Count; i++)
+        {
+            gameObjectList[i].GetComponent<Button>().interactable = toggle;
+        }
     }
 
     // Call dispose from othe r file
