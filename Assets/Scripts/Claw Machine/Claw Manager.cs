@@ -31,6 +31,7 @@ public class ClawManager : MonoBehaviour
     Vector3 barMove = Vector3.zero;
     Vector3 cableMove = Vector3.zero;
 
+    private float minX, maxX;
     public State currentState = State.idle;
     private Vector3 magnetPos;
     
@@ -49,6 +50,9 @@ public class ClawManager : MonoBehaviour
 
         startMagnetizing += ResetClaw;
         
+
+        minX = Cable.transform.position.x - 1.5f;
+        maxX = Cable.transform.position.x + 1.5f;
     }
 
     
@@ -87,7 +91,32 @@ public class ClawManager : MonoBehaviour
 
         
         Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
-        Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
+
+
+        Debug.Log(Cable.transform.position.x);
+        Debug.Log("Max x is: " + maxX);
+        if (Cable.transform.position.x >= maxX)
+            {
+            Debug.Log("Got to MaxX");
+                if (cableMove.x > 0)
+                {
+                Debug.Log("Got through both if statements x: " + cableMove.x);
+                    Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
+                }
+            }
+
+        if (Cable.transform.position.x <= minX)
+            {
+                if (cableMove.x < 0)
+                {
+                    Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
+                }
+            }
+        if (Cable.transform.position.x < maxX && Cable.transform.position.x > minX)
+        {
+            Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
+        }
+        
         SyncMagnetPos();
         
 
