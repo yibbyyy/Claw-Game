@@ -13,16 +13,18 @@ public class SimonSays : GenericBomb
     public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
     public List<GameObject> gameObjectList= new List<GameObject>();
+    public Dictionary<GameObject, float> pitchForButtons = new();
     public List<GameObject> userList = new List<GameObject>();
     private List<GameObject> sequence = new List<GameObject>();
     public Sprite pressedSprite;
     public int buttonPressNum = 0;
-
+    private AudioSource audioSource;
 
     protected State currentState = State.playingSequence;
     // Start is called before the first frame update
     private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
         // Randomize sequence length of 4 - 10
         int sequenceLen = Random.Range(4, 5);
@@ -72,6 +74,7 @@ public class SimonSays : GenericBomb
        
     }
 
+   
     IEnumerator PlaySequence()
     {
         float duration = 0;
@@ -89,6 +92,8 @@ public class SimonSays : GenericBomb
             Sprite tmp = sequence[i].GetComponent<Button>().image.sprite;
             sequence[i].GetComponent<Button>().image.sprite = pressedSprite;
 
+            // Play Sound
+            sequence[i].GetComponent<AudioSource>().Play();
             duration = 0;
             while (duration < delayBetweenbuttons)
             {
