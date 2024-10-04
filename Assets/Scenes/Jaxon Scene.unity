@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12752,60 +12752,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[0].size
-      value: 2000
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[1].size
-      value: 2000
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[2].size
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[3].size
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[4].size
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[5].size
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[6].size
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 4194334142768744803, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
+      objectReference: {fileID: 8700614544681796565, guid: 94df67eb1cfc12b4f9ba2108e3b6df79, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 8976927541479420986, guid: dfece493864e08a4dabb3056c96b9fec, type: 3}
+      objectReference: {fileID: 3511905311404768378, guid: 6b96c5ef1d7ff944992ce75f9bbc68e2, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[2].prefab
       value: 
-      objectReference: {fileID: 6476832614747696572, guid: 3ab068e0ce1369a4c9a354d11a25e65e, type: 3}
+      objectReference: {fileID: 6125195830815434740, guid: f430401931dcf2d46a7ffdca6aa90b77, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[3].prefab
       value: 
-      objectReference: {fileID: 3976218284619398915, guid: 65636c408256df04791661e354b0ea9b, type: 3}
+      objectReference: {fileID: 1504027629097118637, guid: a4d4b64d8348afa42b3857f4724cf4a6, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[4].prefab
       value: 
-      objectReference: {fileID: 3371166300456249406, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
+      objectReference: {fileID: 5119513291760288489, guid: 5ead0c18ff2c0d447a102b6957d74748, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[5].prefab
       value: 
-      objectReference: {fileID: 9169303836203594210, guid: 06976e40f955bb146be9d7c234c1f323, type: 3}
+      objectReference: {fileID: 5239423142173006989, guid: a3537cb3a13140d4a9e658706b5846a2, type: 3}
     - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
       propertyPath: pools.Array.data[6].prefab
       value: 
-      objectReference: {fileID: 7710051168135549444, guid: d41ba2215338978458be4fd7c70fc35d, type: 3}
+      objectReference: {fileID: 668556241813145666, guid: db035ae26259ce046b5ac9c676c3dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
