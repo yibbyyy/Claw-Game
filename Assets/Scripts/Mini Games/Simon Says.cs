@@ -12,6 +12,7 @@ public class SimonSays : GenericBomb
     public float startDelay = 1f;
     public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
+    public float disposeDelay = .5f;
     public List<GameObject> gameObjectList= new List<GameObject>();
     public Dictionary<GameObject, float> pitchForButtons = new();
     public List<GameObject> userList = new List<GameObject>();
@@ -143,7 +144,9 @@ public class SimonSays : GenericBomb
             buttonPressNum++;
             if (buttonPressNum >= sequence.Count)
             {
+                // Play success sound feedback
                 Debug.Log("Succesful Defuse");
+                
                 // Can fire event and/or just change exploded to true so timer doesn't go off
                 exploded = true;
 
@@ -183,16 +186,29 @@ public class SimonSays : GenericBomb
         }
     }
 
-    // Call dispose from othe r file
-    public override void Dispose()
+    IEnumerator DisposeDelay()
     {
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
-        ToggleButtonSubscription(false);
-        ToggleInteractibility(false);
+        float duration = 0f;
+
+        while (duration < disposeDelay)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
         userList.Clear();
         buttonPressNum = 0;
         sequence.Clear();
         exploded = false;
         base.Dispose();
+    }
+
+    // Call dispose from othe r file
+    public override void Dispose()
+    {
+        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        ToggleInteractibility(false);
+        ToggleButtonSubscription(false);
+        StartCoroutine(DisposeDelay());
+        
     }
 }
