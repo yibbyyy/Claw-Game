@@ -164,9 +164,9 @@ public class ClawManager : MonoBehaviour
 
     private void StartMagnet()
     {
-        //SyncMagnetPos();
+        SyncMagnetPos();
         // Turn Magnet On
-        ToggleMagnet();
+        
         ChangeMagnetColor(Color.red);
         World.Permeability = startingPermiability;
 
@@ -178,10 +178,7 @@ public class ClawManager : MonoBehaviour
         World.Permeability = 0;
         // Can invoke a stop magnet event if needed
     }
-    private void ToggleMagnet()
-    {
-        World.enabled = !World.enabled;
-    }
+    
 
     private void ChangeMagnetColor(Color color)
     {
@@ -196,8 +193,12 @@ public class ClawManager : MonoBehaviour
 
     IEnumerator MoveToBin()
     {
-        
-        yield return new WaitForSeconds(pickupTime);
+        float duration = 0;
+        while (duration < pickupTime)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
         //World.Permeability = movingPermiability;
         Vector3 moveToZ = new Vector3(Bar.transform.position.x, Bar.transform.position.y, dropoff.transform.position.z);
         while (Vector3.Distance(Bar.transform.position, moveToZ) > 0.1f)
@@ -219,7 +220,12 @@ public class ClawManager : MonoBehaviour
             yield return null;
         }
         // Wait a delay for items to settle over box
-        yield return new WaitForSeconds(dropOffDelay);
+        duration = 0;
+        while (duration < dropOffDelay)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
         Debug.Log("Start drop");
         StopMagnet();
         StartCoroutine(DropOffToCenter());
@@ -229,7 +235,12 @@ public class ClawManager : MonoBehaviour
     IEnumerator DropOffToCenter()
     {
         // Wait for items to fall
-        yield return new WaitForSeconds(dropOffTime);
+        float duration = 0;
+        while (duration < dropOffTime)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
 
         // Start moving towards center
         Vector3 moveToZ = new Vector3(Bar.transform.position.x, Bar.transform.position.y, center.transform.position.z);
