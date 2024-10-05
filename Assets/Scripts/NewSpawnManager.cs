@@ -31,19 +31,19 @@ public class NewSpawnManager : MonoBehaviour
     private int clockWeight = 1;
     */
 
-    private string yCoin = "Big Yellow Coin";
+    private string yCoin = "YellowCoin";
     private int yCoinWeight = 1;
-    private string gCoin = "Big Grey Coin";
+    private string gCoin = "GreyCoin";
     private int gCoinWeight = 1;
-    private string aBomb = "Big A Bomb";
+    private string aBomb = "A Bomb";
     private int aBombWeight = 1;
-    private string gBar = "Big Gold Bar";
+    private string gBar = "New Gold Bar";
     private int gBarWeight = 1;
-    private string chest = "Big Box";
+    private string chest = "Metal Box";
     private int chestWeight = 1;
-    private string key = "Big Key";
+    private string key = "Key";
     private int keyWeight = 1;
-    private string clock = "Big Clock";
+    private string clock = "Clock";
     private int clockWeight = 1;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();
@@ -142,14 +142,8 @@ public class NewSpawnManager : MonoBehaviour
         foreach (Transform t in spawnTransforms)
         {
             string spawnable = coinSpawnables[Random.Range(0, coinSpawnables.Count)];
-            float spawnCount = Random.Range(1, 10) * spawnables[spawnable];
-
-            Debug.Log("spawnable = " + spawnable + " | spawn count = " + spawnCount + " | spawned at = " + t.position);
-            for (int i = 0; i < spawnCount; i++)
-            {
-                Vector3 displacement = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
-                pooling.SpawnFromPool(spawnable, t.position + displacement, Quaternion.identity);
-            }
+            Vector3 randomRotation = new Vector3 (Random.Range(-15f, 15f), Random.Range(-15f, 15f), Random.Range(-15f, 15f));
+            pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(randomRotation));
         }
     }
 

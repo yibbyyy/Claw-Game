@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3506768030841542093, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3506768030841542093, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3506768030841542093, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3506768030841542093, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3506768030841542093, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194334142768744803, guid: 1894a83b86dfd644fad33cd4f384d794, type: 3}
       propertyPath: m_Name
-      value: YellowCoin Variant
+      value: Big Yellow Coin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
