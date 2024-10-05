@@ -14,7 +14,7 @@ public class NewSpawnManager : MonoBehaviour
 
     public ObjectPooling pooling;
     public Transform spawner;
-
+    /*
     private string yCoin = "YellowCoin";
     private int yCoinWeight = 1;
     private string gCoin = "GreyCoin";
@@ -28,6 +28,22 @@ public class NewSpawnManager : MonoBehaviour
     private string key = "Key";
     private int keyWeight = 1;
     private string clock = "Clock";
+    private int clockWeight = 1;
+    */
+
+    private string yCoin = "Big Yellow Coin";
+    private int yCoinWeight = 1;
+    private string gCoin = "Big Grey Coin";
+    private int gCoinWeight = 1;
+    private string aBomb = "Big A Bomb";
+    private int aBombWeight = 1;
+    private string gBar = "Big Gold Bar";
+    private int gBarWeight = 1;
+    private string chest = "Big Box";
+    private int chestWeight = 1;
+    private string key = "Big Key";
+    private int keyWeight = 1;
+    private string clock = "Big Clock";
     private int clockWeight = 1;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();

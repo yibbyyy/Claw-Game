@@ -5,25 +5,26 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class SimonSays : MonoBehaviour
+public class SimonSays : GenericBomb
 {
     //public GameObject up, down, left, right;
+    
     public float startDelay = 1f;
     public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
-    public bool playSequence = true;
-    public bool autoSequenceStarted = false;
-    public bool canTakeInput = false;
     public List<GameObject> gameObjectList= new List<GameObject>();
+    public Dictionary<GameObject, float> pitchForButtons = new();
     public List<GameObject> userList = new List<GameObject>();
     private List<GameObject> sequence = new List<GameObject>();
     public Sprite pressedSprite;
     public int buttonPressNum = 0;
-    public Explosion explosionRef;
-    
+    private AudioSource audioSource;
+
+    protected State currentState = State.playingSequence;
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
         // Randomize sequence length of 4 - 10
         int sequenceLen = Random.Range(4, 5);
@@ -32,15 +33,20 @@ public class SimonSays : MonoBehaviour
         int buttonIndex;
         for (int i = 0; i < sequenceLen; i++)
         {
-            buttonIndex = Random.Range(0, 3);
+            buttonIndex = Random.Range(0, 4);
            // Debug.Log("Button Index: " + buttonIndex);
             sequence.Add(gameObjectList[buttonIndex]);
            
         }
         //Debug.Log("Sequence list: " + sequence.Count);
+        for (int i = 0;i < sequenceLen; i++)
+        {
+            Debug.Log(i + " " + sequence[i].name);
+        }
+        // Play sequence
+        StartCoroutine(PlaySequence());
 
 
-        
 
     }
 
@@ -50,18 +56,15 @@ public class SimonSays : MonoBehaviour
         acceptingInput
     }
 
-    protected State currentState = State.playingSequence;
+    
     // Update is called once per frame
     void Update()
     {
 
-        //Debug.Log("Simon says update happening");
-
-        // Play sequence by doing button click animation
-        // Need gameobject button component
+        
         if (currentState == State.playingSequence)
         {
-            StartCoroutine(PlaySequence());
+            // Handled in start
         }
         
         else if (currentState == State.acceptingInput)
@@ -71,27 +74,46 @@ public class SimonSays : MonoBehaviour
        
     }
 
+   
     IEnumerator PlaySequence()
     {
-        yield return new WaitForSeconds(startDelay);
+        float duration = 0;
+        while (duration < startDelay)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
+        
 
         for(int i  = 0; i < sequence.Count; i++)
         {
+            // Pressing button
             Debug.Log(sequence[i].name);
             Sprite tmp = sequence[i].GetComponent<Button>().image.sprite;
             sequence[i].GetComponent<Button>().image.sprite = pressedSprite;
 
-            yield return new WaitForSeconds(delayBetweenbuttons);
+            // Play Sound
+            sequence[i].GetComponent<AudioSource>().Play();
+            duration = 0;
+            while (duration < delayBetweenbuttons)
+            {
+                duration += Time.deltaTime;
+                yield return null;
+            }
+
             sequence[i].GetComponent<Button>().image.sprite = tmp;
-            yield return new WaitForSeconds(delayBetweenbuttons);
+            // Releasing button
+            duration = 0;
+            while (duration < delayBetweenbuttons)
+            {
+                duration += Time.deltaTime;
+                yield return null;
+            }
 
         }
-        
-        // Subscribe ClickedButton() to all button onclick events
-        for (int i = 0;i < gameObjectList.Count; i++)
-        {
-            gameObjectList[i].GetComponent<Button>().onClick.AddListener(ClickedButton);
-        }
+
+        ToggleButtonSubscription(true);
+       
 
         ToggleInteractibility(true);
         currentState = State.acceptingInput;
@@ -101,44 +123,58 @@ public class SimonSays : MonoBehaviour
 
     public void ClickedButton()
     {
+        //Debug.Log("Clicked Button was called by: " + EventSystem.current.currentSelectedGameObject.name);
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
         if (clickedButton != null )
         {
             userList.Add(clickedButton);
             if (userList[buttonPressNum]  != sequence[buttonPressNum] )
             {
-                Debug.Log("Bomb blows up");
+                //Debug.Log("Button press num: " + buttonPressNum);
+                //Debug.Log("Incorrect button user: " + userList[buttonPressNum] + " Actual: " + sequence[buttonPressNum]);
+                if (!exploded)
+                {
+                    //Debug.Log("Bomb blows up");
+                    StartCoroutine(BombExplosion());
+                }
+                
             }
 
             buttonPressNum++;
             if (buttonPressNum >= sequence.Count)
             {
-                Debug.Log("End of sequence");
+                Debug.Log("Succesful Defuse");
+                // Can fire event and/or just change exploded to true so timer doesn't go off
+                exploded = true;
 
                 // Make all buttons not interactible
-                for (int i = 0; i < gameObjectList.Count; i++)
-                {
-                    gameObjectList[i].GetComponent<Button>().interactable = true;
-                }
+                
+                Dispose();
             }
         }
     }
 
-    IEnumerator Timer(float duration)
+    
+    private void ToggleButtonSubscription(bool toggle)
     {
-        float timeremaining =  duration;
-        while (timeremaining > 0)
+        if (toggle)
         {
-            yield return new WaitForSeconds(1f);
-            timeremaining--;
+            // Subscribe ClickedButton() to all button onclick events
+            for (int i = 0; i < gameObjectList.Count; i++)
+            {
+                gameObjectList[i].GetComponent<Button>().onClick.AddListener(ClickedButton);
+            }
         }
-        // Play event that bomb blew up
-        Debug.Log("ran out of time");
-        
 
-        
+        else
+        {
+            // Unsubscribe ClickedButton() to all button onclick events
+            for (int i = 0; i < gameObjectList.Count; i++)
+            {
+                gameObjectList[i].GetComponent<Button>().onClick.RemoveListener(ClickedButton);
+            }
+        }
     }
-
     private void ToggleInteractibility(bool toggle)
     {
         for (int i = 0; i < gameObjectList.Count; i++)
@@ -148,11 +184,15 @@ public class SimonSays : MonoBehaviour
     }
 
     // Call dispose from othe r file
-    public void Dispose()
+    public override void Dispose()
     {
+        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        ToggleButtonSubscription(false);
+        ToggleInteractibility(false);
         userList.Clear();
+        buttonPressNum = 0;
         sequence.Clear();
-        explosionRef.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        exploded = false;
+        base.Dispose();
     }
 }

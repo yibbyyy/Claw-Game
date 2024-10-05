@@ -26,8 +26,11 @@ public class ClawManager : MonoBehaviour
     public static event Action startMagnetizing;
     public static event Action StopClawTimer;
 
+    /*
+     * Local Actions if we wanted to track these events.
     public event Action StartReset;
     public event Action MovedToDropBox;
+    */
     Vector3 barMove = Vector3.zero;
     Vector3 cableMove = Vector3.zero;
 
