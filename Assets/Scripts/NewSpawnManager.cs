@@ -195,7 +195,7 @@ public class NewSpawnManager : MonoBehaviour
             lootRefill++;
         }
 
-        if(lootRefill >= lootRefillCount)
+        if (lootRefill >= lootRefillCount)
         {
             lootRefill = 0;
             currentState = State.coinFill;
