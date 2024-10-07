@@ -6,7 +6,7 @@ using UnityEngine;
 using TMPro;
 public class GenericBomb : MonoBehaviour, IDisposable
 {
-    public GameObject InnerExplosion, OuterExplosion, BombImage;
+    public GameObject InnerExplosion, OuterExplosion, BombCanvas;
 
     public TMP_Text bombTimerUI;
 
@@ -35,8 +35,8 @@ public class GenericBomb : MonoBehaviour, IDisposable
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        // Turn off bomb image
-        BombImage.gameObject.SetActive(false);
+        // Turn off bomb canvas
+        BombCanvas.SetActive(false);
         // Show outer explosion
         InnerExplosion.SetActive(false);
         OuterExplosion.SetActive(true);
@@ -89,7 +89,7 @@ public class GenericBomb : MonoBehaviour, IDisposable
     }
     public virtual void Dispose()
     {
-        BombImage.gameObject.SetActive(true);
+        BombCanvas.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 }

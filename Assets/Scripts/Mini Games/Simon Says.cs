@@ -25,6 +25,7 @@ public class SimonSays : GenericBomb
     // Start is called before the first frame update
     private void OnEnable()
     {
+        bombTimerUI.text = bombTimerDuration.ToString("F2");
         audioSource = GetComponent<AudioSource>();
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
         // Randomize sequence length of 4 - 10
@@ -44,6 +45,9 @@ public class SimonSays : GenericBomb
         {
             Debug.Log(i + " " + sequence[i].name);
         }
+
+        // Make buttons not interactibile until sequence is played
+        ToggleInteractibility(false);
         // Play sequence
         StartCoroutine(PlaySequence());
 
