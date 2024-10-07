@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 
@@ -7,10 +8,14 @@ public class GameTimer : MonoBehaviour
 {
     public GameObject timerDisplay;
     public int timerLengthInSec;
+    private int expectedLengh;
 
     public Object[] sprites;
     IList<Transform> places = new List<Transform>();
 
+    public Sprite[] sprites2 = new Sprite[10];
+
+    private State currentState = State.stopped;
     private enum State
     {
         started,
@@ -23,6 +28,9 @@ public class GameTimer : MonoBehaviour
     {
         sprites = Resources.LoadAll("Digits", typeof(Texture2D));
         places = timerDisplay.GetComponentsInChildren<Transform>();
+
+        expectedLengh = places.Count - 1;
+        
         
         foreach(var sprite in sprites)
         {
@@ -37,7 +45,12 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        
+
+        if (Input.GetKeyDown("q") && currentState == State.stopped )
+        {
+            currentState = State.started;
+            StartCoroutine(Timer());
+        }
     }
 
     public void StartTimerCoroutine()
@@ -54,7 +67,7 @@ public class GameTimer : MonoBehaviour
 
     IEnumerator Timer()
     {
-        while (timerLengthInSec < 0)
+        while (timerLengthInSec > 0)
         {
             ConvertTime();
             yield return new WaitForSeconds(1);
@@ -68,13 +81,26 @@ public class GameTimer : MonoBehaviour
     private void ConvertTime()
     {
         string timerCountString = timerLengthInSec.ToString();
-        for (int i = 0; i < places.Count; i++)
+        
+        for (int i = 0; i < places.Count - 1; i++)
         {
-            int dig = timerCountString[i];
-            Transform transform = places[i].transform;
-            Object sprite = sprites[dig];
-            Debug.Log("dig = " + dig + " | transform = " + transform + " | sprite = " + sprite);
-            Instantiate(sprite, transform);
+
+            string tempString = timerCountString.PadLeft(expectedLengh, '0');
+
+            //Gets sprite renderer from the indexed child 
+            SpriteRenderer spriteRenderer = timerDisplay.transform.GetChild(i).GetComponent<SpriteRenderer>();
+
+            //Takes passed string and indexes into it, returning the integer at that index
+            int dig = tempString[i] - '0';      //Fucking cool ass trick please dont forget about this + look into how it actually works again 
+
+            //Debug.Log("timerCountString = " + timerCountString+ " | i = " + i + " | dig = " + dig);
+
+            //on the chopping block we will see.
+            Sprite newSprite = sprites2[dig];
+            Debug.Log("dig = " + dig + " | transform = " + transform + " | sprite = " + newSprite);
+
+            spriteRenderer.sprite = newSprite;
+      
         }
     }
 }

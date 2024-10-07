@@ -7577,8 +7577,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 1099520602}
-  timerLengthInSec: 300
+  timerLengthInSec: 102
   sprites: []
+  sprites2:
+  - {fileID: 21300000, guid: 4c645520f75cef840b948e010b7274f7, type: 3}
+  - {fileID: 21300000, guid: 6fb0b3ea22129f44789bf06ee898a571, type: 3}
+  - {fileID: 21300000, guid: 037f6adcaf7b5bc4d945f2fa0c174f8e, type: 3}
+  - {fileID: 21300000, guid: d6ab72e037dea144280e24c1fe251e66, type: 3}
+  - {fileID: 21300000, guid: ea5619cd9d1405e48a71edd73a1ab989, type: 3}
+  - {fileID: 21300000, guid: da33f9d479e3fe74783b66d2ec02f250, type: 3}
+  - {fileID: 21300000, guid: 795dbc016e8e03c4aa3a94304b60d187, type: 3}
+  - {fileID: 21300000, guid: a74774335ed38ad48b726d0e59fe8323, type: 3}
+  - {fileID: 21300000, guid: 6cdbede73f1ba1d4fa1331d5a52ef6e3, type: 3}
+  - {fileID: 21300000, guid: f78365273b80cfa4f8a94ae898e6cd39, type: 3}
 --- !u!43 &1113628187
 Mesh:
   m_ObjectHideFlags: 0
