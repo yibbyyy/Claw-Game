@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class SimonSays : GenericBomb
 {
     //public GameObject up, down, left, right;
-    
+    public GameObject SucessText;
     public float startDelay = 1f;
     public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
@@ -20,11 +20,13 @@ public class SimonSays : GenericBomb
     public Sprite pressedSprite;
     public int buttonPressNum = 0;
     private AudioSource audioSource;
+    public bool win = false;
 
     protected State currentState = State.playingSequence;
     // Start is called before the first frame update
     private void OnEnable()
     {
+        win = false;
         bombTimerUI.text = bombTimerDuration.ToString("F2");
         audioSource = GetComponent<AudioSource>();
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
@@ -145,19 +147,21 @@ public class SimonSays : GenericBomb
                 
             }
 
-            buttonPressNum++;
-            if (buttonPressNum >= sequence.Count)
+            
+            else if (buttonPressNum >= sequence.Count - 1)
             {
                 // Play success sound feedback
                 Debug.Log("Succesful Defuse");
-                
+                StopAllCoroutines();
                 // Can fire event and/or just change exploded to true so timer doesn't go off
+                win = true;
                 exploded = true;
 
-                // Make all buttons not interactible
+                // Play sucess sound
                 
                 Dispose();
             }
+            buttonPressNum++;
         }
     }
 
@@ -198,6 +202,20 @@ public class SimonSays : GenericBomb
         {
             duration += Time.deltaTime;
             yield return null;
+        }
+
+        if (win)
+        {
+            audioSource.Play();
+            SucessText.SetActive(true);
+            duration = 0f;
+
+            while (duration < 2.5f)
+            {
+                duration += Time.deltaTime;
+                yield return null;
+            }
+            SucessText.SetActive(false);
         }
         userList.Clear();
         buttonPressNum = 0;
