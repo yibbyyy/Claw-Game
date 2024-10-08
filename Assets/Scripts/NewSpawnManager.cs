@@ -105,8 +105,8 @@ public class NewSpawnManager : MonoBehaviour
         }
 
 
-        maxLowerDisplacement = dropBoxWalls.transform.position.y;
-        maxUpperDisplacement = dropBoxWalls.transform.position.y + 2.25f;
+        maxLowerDisplacement = dropBoxWalls.transform.position.y - 2.5f;
+        maxUpperDisplacement = dropBoxWalls.transform.position.y;
 
 
 
@@ -119,11 +119,11 @@ public class NewSpawnManager : MonoBehaviour
             currentState = State.treasureFill;
             FirstFill();
         }
-        if (dropBoxWalls.transform.position.y < maxUpperDisplacement && currentState == State.raiseWalls)
+        if (dropBoxWalls.transform.position.y > maxLowerDisplacement && currentState == State.lowerWalls)
         {
-            raiseDropBoxWalls();
+            lowerDropBoxWalls();
         }
-        if (dropBoxWalls.transform.position.y >= maxUpperDisplacement && currentState == State.raiseWalls)
+        if (dropBoxWalls.transform.position.y <= maxUpperDisplacement && currentState == State.raiseWalls)
         {
             currentState = State.filled;
         }
@@ -181,7 +181,7 @@ public class NewSpawnManager : MonoBehaviour
         if (refill >= refillCounts)
         {
             refill = 0;
-            currentState = State.raiseWalls;
+            currentState = State.lowerWalls;
             raiseDropBoxWalls();
         }
     }

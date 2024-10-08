@@ -19,7 +19,7 @@ public class DropBox : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
         score = collision.gameObject.GetComponent<IScorable>().pointValue;
         totalScore += score;
@@ -30,7 +30,7 @@ public class DropBox : MonoBehaviour
             Debug.Log("Dropped bomb");
         }
         Destroy(collision.gameObject);
-        Debug.Log("total Score  = " + totalScore);
+        //Debug.Log("total Score  = " + totalScore);
 
     }
 }
