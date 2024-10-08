@@ -11,44 +11,47 @@ public class WireCut : GenericBomb
     public GameObject SucessText;
     public float startDelay = 1f;
     public float timerDuration = 5f;
-    public float delayBetweenbuttons = .5f;
     public float disposeDelay = .5f;
     
     public List<Color> colorList = new List<Color>();
-    public List<Color> selectedColorsSequence = new List<Color>();
     public HashSet<Color> colorSet = new HashSet<Color>();
+
+    
     public List<GameObject> gameObjectList = new List<GameObject>();
-    //public List<GameObject> stickyNoteSprites = new List<GameObject>();
+    public List<GameObject> stickyNoteStars = new();
     public List<Sprite> wireCutSpriteList = new List<Sprite>();
     public List<Sprite> ogWireSprites = new List<Sprite>();
-    public Dictionary<GameObject, float> pitchForButtons = new();
 
-    public Sprite orangeSprite, greenSprite, yellowSprite, redSprite, blueSprite, pinkSprite;
+    public HashSet<Color> userSet = new();
+    Dictionary<GameObject, Sprite> wireCutSprites = new();
 
-    public List<Color> userList = new();
-    public Sprite pressedSprite;
     public int wireCutNum = 0;
     private AudioSource audioSource;
     public bool win = false;
+    Color yellow = new(1, 1, 0, 1);
 
-    readonly Color orange = new Color(255, 150, 0, 255);
-    readonly Color pink = new Color(255, 0, 255, 255);
-    protected State currentState = State.playingSequence;
+    int wiresNeedCutLen;
 
-    Dictionary<GameObject, Sprite> wireCutSprites = new();
+
+
 
     private void OnEnable()
     {
-        Dictionary<Color, Sprite> colorToSprite = new()
+        
+        Dictionary<Color, GameObject> ColorToStars = new()
         {
-            {orange,  orangeSprite},
-            {Color.green, greenSprite},
-            {Color.yellow, yellowSprite},
-            {Color.red, redSprite},
-            {Color.blue, blueSprite},
-            {pink, pinkSprite}
+            {Color.red, stickyNoteStars[0]},
+            {Color.blue, stickyNoteStars[1]},
+            {Color.green, stickyNoteStars[2]},
+            {yellow, stickyNoteStars[3]}
         };
 
+        /*
+        foreach (Color c in ColorToStars.Keys)
+        {
+            Debug.Log("Key is: " + c + "Value is: " + ColorToStars[c]);
+        }
+        */
         // Map gameobjects to their respective cut wire sprite
         for (int i = 0; i < gameObjectList.Count; i++)
         {
@@ -58,84 +61,56 @@ public class WireCut : GenericBomb
         win = false;
         bombTimerUI.text = bombTimerDuration.ToString("F2");
         audioSource = GetComponent<AudioSource>();
-        // Pick between 6 colors to select 4 to be wire sequence
-        
-        while (selectedColorsSequence.Count < 4)
+
+
+        // Pick how many wires need to be cut
+
+        wiresNeedCutLen = Random.Range(1, 4);
+
+
+        while (colorSet.Count < wiresNeedCutLen)
         {
-            int colorIndex = Random.Range(0, colorList.Count);
-            if (!colorSet.Contains(colorList[colorIndex]))
+            Color c = colorList[Random.Range(0, 4)];
+
+            if (!colorSet.Contains(c))
             {
-                colorSet.Add(colorList[colorIndex]);
-                selectedColorsSequence.Add(colorList[colorIndex]);
+                colorSet.Add(c);
             }
         }
-        foreach (Color color in selectedColorsSequence)
+        /*
+        foreach (Color color in colorSet)
         {
             Debug.Log(color.ToString());
         }
+        */
+        
+        //Now we have a random number of colors with a random sequence
 
-        Assert.AreEqual(selectedColorsSequence.Count, gameObjectList.Count);
-        // Now we have a random sequence of 4 colors
+        
+        
 
-        // Randomize the sequence of 4 colors so we can assign a color randomly to wires
-        List<Color> randomizedColors = ShuffleColors(selectedColorsSequence);
-        for ( int i = 0; i < gameObjectList.Count; i++)
+        // Also set the sticky note star sprites to the right sequence
+        foreach( Color color in colorSet)
         {
-            gameObjectList[i].GetComponent<Image>().color = randomizedColors[i];
+            ColorToStars[color].SetActive(true);
         }
-
-        // Also set the sticky note sprites to the right sequence
 
         StartCoroutine(Timer(timerDuration));
-
-        //Debug.Log("Sequence Length: " +  sequenceLen);
-
-
-
+        ToggleInteractibility(true);
+        ToggleButtonSubscription(true);
+        
 
 
 
-    }
 
-    // Fisher-Yates Shuffle Algorithm to shuffle colors
-    List<Color> ShuffleColors(List<Color> availableColors)
-    {
-        List<Color> shuffledColors = new List<Color>(availableColors);
-        int n = shuffledColors.Count;
-        for (int i = 0; i < n; i++)
-        {
-            int randomIndex = Random.Range(i, n);
-            Color temp = shuffledColors[i];
-            shuffledColors[i] = shuffledColors[randomIndex];
-            shuffledColors[randomIndex] = temp;
-        }
-        return shuffledColors;
-    }
 
-    protected enum State
-    {
-        playingSequence,
-        acceptingInput
+
     }
 
     
+   
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        if (currentState == State.playingSequence)
-        {
-            // Handled in start
-        }
-
-        else if (currentState == State.acceptingInput)
-        {
-            // Handled by events
-        }
-
-    }
+    
 
 
     
@@ -155,37 +130,44 @@ public class WireCut : GenericBomb
 
             // Change sprite to cut wire
             clickedButton.GetComponent<Image>().sprite = wireCutSprites[clickedButton];
-            userList.Add(clickedButton.GetComponent<Image>().color);
-            if (userList[wireCutNum] != selectedColorsSequence[wireCutNum])
+
+            // Check if the color of wire is in the color sequence
+            if (colorSet.Contains(clickedButton.GetComponent<Image>().color))
             {
-                //Debug.Log("Button press num: " + buttonPressNum);
-                //Debug.Log("Incorrect button user: " + userList[buttonPressNum] + " Actual: " + sequence[buttonPressNum]);
+                userSet.Add(clickedButton.GetComponent<Image>().color);
+                if (userSet.SetEquals(colorSet))
+                {
+                    // Defuse successful!
+                    StopAllCoroutines();
+                    // Can fire event and/or just change exploded to true so timer doesn't go off
+                    win = true;
+                    exploded = true;
+
+                    
+
+                    Dispose();
+                }
+            }
+            else
+            {
                 if (!exploded)
                 {
                     //Debug.Log("Bomb blows up");
                     StartCoroutine(BombExplosion());
                 }
-
             }
-
-
-            else if (wireCutNum >= selectedColorsSequence.Count - 1)
-            {
-                // Play success sound feedback
-                Debug.Log("Succesful Defuse");
-                StopAllCoroutines();
-                // Can fire event and/or just change exploded to true so timer doesn't go off
-                win = true;
-                exploded = true;
-
-                // Play sucess sound
-
-                Dispose();
-            }
-            wireCutNum++;
+            
         }
     }
 
+    private void ToggleStars(bool toggle)
+    {
+            for (int i = 0; i < gameObjectList.Count; i++)
+            {
+                stickyNoteStars[i].SetActive(toggle);
+            }
+       
+    }
     
     private void ToggleButtonSubscription(bool toggle)
     {
@@ -215,6 +197,14 @@ public class WireCut : GenericBomb
         }
     }
 
+    private void CleanUpWires()
+    {
+        for (int i = 0; i < gameObjectList.Count; i++)
+        {
+            gameObjectList[i].GetComponent<Image>().sprite = ogWireSprites[i];
+            gameObjectList[i].SetActive(true);
+        }
+    }
     IEnumerator DisposeDelay()
     {
         float duration = 0f;
@@ -238,10 +228,12 @@ public class WireCut : GenericBomb
             }
             SucessText.SetActive(false);
         }
-        userList.Clear();
+        userSet.Clear();
+        colorSet.Clear();
+        CleanUpWires();
+        // Set wires to be og sprites and set them to be active
         
-        wireCutNum = 0;
-        selectedColorsSequence.Clear();
+        
         exploded = false;
         base.Dispose();
     }
@@ -252,6 +244,7 @@ public class WireCut : GenericBomb
         bombTimerUI.text = bombTimerDuration.ToString("F2");
         ToggleInteractibility(false);
         ToggleButtonSubscription(false);
+        ToggleStars(false);
         StartCoroutine(DisposeDelay());
 
     }
