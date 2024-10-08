@@ -8,10 +8,11 @@ using UnityEngine.EventSystems;
 public class SimonSays : GenericBomb
 {
     //public GameObject up, down, left, right;
-    
+    public GameObject SucessText;
     public float startDelay = 1f;
     public float timerDuration = 5f;
     public float delayBetweenbuttons = .5f;
+    public float disposeDelay = .5f;
     public List<GameObject> gameObjectList= new List<GameObject>();
     public Dictionary<GameObject, float> pitchForButtons = new();
     public List<GameObject> userList = new List<GameObject>();
@@ -19,11 +20,14 @@ public class SimonSays : GenericBomb
     public Sprite pressedSprite;
     public int buttonPressNum = 0;
     private AudioSource audioSource;
+    public bool win = false;
 
     protected State currentState = State.playingSequence;
     // Start is called before the first frame update
     private void OnEnable()
     {
+        win = false;
+        bombTimerUI.text = bombTimerDuration.ToString("F2");
         audioSource = GetComponent<AudioSource>();
         //Debug.Log("Gameobject list " +  gameObjectList.Count);
         // Randomize sequence length of 4 - 10
@@ -43,6 +47,9 @@ public class SimonSays : GenericBomb
         {
             Debug.Log(i + " " + sequence[i].name);
         }
+
+        // Make buttons not interactibile until sequence is played
+        ToggleInteractibility(false);
         // Play sequence
         StartCoroutine(PlaySequence());
 
@@ -140,17 +147,21 @@ public class SimonSays : GenericBomb
                 
             }
 
-            buttonPressNum++;
-            if (buttonPressNum >= sequence.Count)
+            
+            else if (buttonPressNum >= sequence.Count - 1)
             {
+                // Play success sound feedback
                 Debug.Log("Succesful Defuse");
+                StopAllCoroutines();
                 // Can fire event and/or just change exploded to true so timer doesn't go off
+                win = true;
                 exploded = true;
 
-                // Make all buttons not interactible
+                // Play sucess sound
                 
                 Dispose();
             }
+            buttonPressNum++;
         }
     }
 
@@ -183,16 +194,43 @@ public class SimonSays : GenericBomb
         }
     }
 
-    // Call dispose from othe r file
-    public override void Dispose()
+    IEnumerator DisposeDelay()
     {
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
-        ToggleButtonSubscription(false);
-        ToggleInteractibility(false);
+        float duration = 0f;
+
+        while (duration < disposeDelay)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
+
+        if (win)
+        {
+            audioSource.Play();
+            SucessText.SetActive(true);
+            duration = 0f;
+
+            while (duration < 2.5f)
+            {
+                duration += Time.deltaTime;
+                yield return null;
+            }
+            SucessText.SetActive(false);
+        }
         userList.Clear();
         buttonPressNum = 0;
         sequence.Clear();
         exploded = false;
         base.Dispose();
+    }
+
+    // Call dispose from othe r file
+    public override void Dispose()
+    {
+        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        ToggleInteractibility(false);
+        ToggleButtonSubscription(false);
+        StartCoroutine(DisposeDelay());
+        
     }
 }

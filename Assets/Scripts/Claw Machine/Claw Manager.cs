@@ -34,7 +34,7 @@ public class ClawManager : MonoBehaviour
     Vector3 barMove = Vector3.zero;
     Vector3 cableMove = Vector3.zero;
 
-    private float minX, maxX;
+    private float minX, maxX, minZ, maxZ;
     public State currentState = State.idle;
     private Vector3 magnetPos;
     
@@ -56,6 +56,10 @@ public class ClawManager : MonoBehaviour
 
         minX = Cable.transform.position.x - 1.5f;
         maxX = Cable.transform.position.x + 1.5f;
+        // Back of box
+        maxZ = 3.25f;
+        // Front of box
+        minZ = .25f;
     }
 
     
@@ -92,18 +96,38 @@ public class ClawManager : MonoBehaviour
         barMove = Vector3.ClampMagnitude(-barMove, .1f);
         cableMove = Vector3.ClampMagnitude(-cableMove, .1f);
 
-        
-        Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
+        if (Bar.transform.position.z >= maxZ)
+        {
+            //Debug.Log("Got to MaxZ");
+            if (barMove.z > 0)
+            {
+                //Debug.Log("Got through both if statements z: " + barMove.z);
+                Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
+            }
+        }
+
+        if (Bar.transform.position.z <= minZ)
+        {
+            if (barMove.z < 0)
+            {
+                Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
+            }
+        }
+        if (Bar.transform.position.z < maxZ && Bar.transform.position.z > minZ)
+        {
+            Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
+        }
+        //Bar.transform.Translate(-barMove * moveSpeed * Time.deltaTime);
 
 
-        Debug.Log(Cable.transform.position.x);
-        Debug.Log("Max x is: " + maxX);
+        //Debug.Log(Cable.transform.position.x);
+        //Debug.Log("Max x is: " + maxX);
         if (Cable.transform.position.x >= maxX)
             {
-            Debug.Log("Got to MaxX");
+            //Debug.Log("Got to MaxX");
                 if (cableMove.x > 0)
                 {
-                Debug.Log("Got through both if statements x: " + cableMove.x);
+                //Debug.Log("Got through both if statements x: " + cableMove.x);
                     Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
                 }
             }
@@ -164,9 +188,9 @@ public class ClawManager : MonoBehaviour
 
     private void StartMagnet()
     {
-        //SyncMagnetPos();
+        SyncMagnetPos();
         // Turn Magnet On
-        ToggleMagnet();
+        
         ChangeMagnetColor(Color.red);
         World.Permeability = startingPermiability;
 
@@ -178,10 +202,7 @@ public class ClawManager : MonoBehaviour
         World.Permeability = 0;
         // Can invoke a stop magnet event if needed
     }
-    private void ToggleMagnet()
-    {
-        World.enabled = !World.enabled;
-    }
+    
 
     private void ChangeMagnetColor(Color color)
     {
@@ -196,8 +217,12 @@ public class ClawManager : MonoBehaviour
 
     IEnumerator MoveToBin()
     {
-        
-        yield return new WaitForSeconds(pickupTime);
+        float duration = 0;
+        while (duration < pickupTime)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
         //World.Permeability = movingPermiability;
         Vector3 moveToZ = new Vector3(Bar.transform.position.x, Bar.transform.position.y, dropoff.transform.position.z);
         while (Vector3.Distance(Bar.transform.position, moveToZ) > 0.1f)
@@ -219,7 +244,12 @@ public class ClawManager : MonoBehaviour
             yield return null;
         }
         // Wait a delay for items to settle over box
-        yield return new WaitForSeconds(dropOffDelay);
+        duration = 0;
+        while (duration < dropOffDelay)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
         Debug.Log("Start drop");
         StopMagnet();
         StartCoroutine(DropOffToCenter());
@@ -229,7 +259,12 @@ public class ClawManager : MonoBehaviour
     IEnumerator DropOffToCenter()
     {
         // Wait for items to fall
-        yield return new WaitForSeconds(dropOffTime);
+        float duration = 0;
+        while (duration < dropOffTime)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
 
         // Start moving towards center
         Vector3 moveToZ = new Vector3(Bar.transform.position.x, Bar.transform.position.y, center.transform.position.z);

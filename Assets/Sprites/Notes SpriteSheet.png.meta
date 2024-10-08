@@ -1,0 +1,1813 @@
+fileFormatVersion: 2
+guid: 40b2aff45bae0fd4da28326875ee0595
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Notes SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1734
+        width: 279
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500cf38454e417c45a597f9fa8c212c9
+      internalID: -121834793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1350
+        width: 412
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd45be49c7105f94fbce5533eaa6fde5
+      internalID: 342191565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1350
+        width: 411
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e523408ebd2b740bb55e4412521271
+      internalID: 938437392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 1350
+        width: 412
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d37ea4928d4bb4e9527a8a9cfdafb7
+      internalID: -1816101455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 1350
+        width: 411
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158c71401a7713f478d865d0bd6a54f4
+      internalID: -2129428652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1497
+        width: 242
+        height: 165
+      alignment: 9
+      pivot: {x: 0.4874729, y: 0.49999937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83deb7a07e0d4a340a07360585711595
+      internalID: -1943275985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1257
+        width: 272
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875bd72fb1b9573499721a5565403121
+      internalID: -1197419664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1230
+        width: 250
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f921c924b70604db8e9c865942a0d9
+      internalID: 517466612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 980
+        width: 236
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eabae7330c98248b8592136532bd21
+      internalID: 2096486204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 962
+        width: 280
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677c362bd8e20ac4892f95d48569c53c
+      internalID: 1166850651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 652
+        width: 411
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b8776193ca6a845823a48bb07f6fd4
+      internalID: -1872980387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 652
+        width: 412
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976ea99699cff7046be5994a5dfbd43c
+      internalID: 1881419687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 652
+        width: 411
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0813f5eb5c401744cb9a023694725444
+      internalID: -356864176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 652
+        width: 411
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3429323e02928d48a93f14bb4d4966b
+      internalID: 1805183322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 682
+        width: 342
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708edbe81c17d844fb9c804fb628d4f0
+      internalID: 608755682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 592
+        width: 254
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d3a630be6c0c54083935a0a31a7a85
+      internalID: 1821561873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 482
+        width: 322
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74323f88e060bd247841ddc86db12b85
+      internalID: 65073864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 415
+        width: 101
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359657eb5d7f2cc41a4ad46af9ee0c4d
+      internalID: -1929834368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 421
+        width: 80
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabe4bb26c4b760409cc764c9cd74b13
+      internalID: 2096111859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 405
+        width: 64
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47eee53b9a68fbb48903b40318401571
+      internalID: -409029828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 414
+        width: 104
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74c07727c3b60b4d88033cff68e2c80
+      internalID: 224428670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 430
+        width: 71
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facc8b0dfce8f764ea141dbfe71b7e32
+      internalID: -836186988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 432
+        width: 114
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca19d13be79694b49852c9e3c26276c8
+      internalID: 963755419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 427
+        width: 85
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b3d76fc17ead74fabe90f10edcc3c3
+      internalID: -308924061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 446
+        width: 78
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93501673dc50bd4f806274e9fd30553
+      internalID: 427318064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 396
+        width: 73
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d67b79c8b53a24ba41b40537064e67
+      internalID: 2119120211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 427
+        width: 81
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be88b23967b319f49ab8c49559d6146e
+      internalID: -243340055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 432
+        width: 88
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c703e4ddd10e4e4dbb383b692ccd2d7
+      internalID: -1957534943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 337
+        width: 302
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427d00430618aca43a46fd20c4c274d9
+      internalID: -393941225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 298
+        width: 330
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91a690e6e9841b4f95d467795f5a5b5
+      internalID: 1463014479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 320
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c79c6b3b94a8d49af373b43b2fe396
+      internalID: -896014976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 325
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90907d91eada03442b3b7787c0721e25
+      internalID: -2053188539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 342
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02783a05333506547a97cd1357e71c40
+      internalID: -2074738331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 337
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfa0e067b910894ea900f5f54940126
+      internalID: -823153519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 322
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e3cd98166dc7940aba5e7d79dd64e3
+      internalID: 1900249280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 325
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8de572bd8fe1b4ca649dc8d1882706
+      internalID: 380386216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 328
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a048c6725108543890880a83f1e777
+      internalID: -1970710735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 331
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016a3da749f864b41826d9ff1b2c23c0
+      internalID: 276907328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 336
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a48a8e73c46494da16ecf6ecf61aaf
+      internalID: -137948502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 339
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b908b97bc059bd141abcc97e14d03ad1
+      internalID: -286815905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 334
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a6739d6ec4a354ca442ca752b56566
+      internalID: 160548577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 186
+        width: 57
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c063eed15dc1434bb0a2d3e8ffaef19
+      internalID: -1789702274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 192
+        width: 87
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbed3d72cdf4454dabc7ac83bc76630
+      internalID: -724347723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 201
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eeceafbe56122428c8f867200a2c16
+      internalID: -1765769563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 172
+        width: 85
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8999f58b22a36084192e7a51886cf4df
+      internalID: -1179576465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 191
+        width: 72
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74470c729df8604bb2673e83f3f5253
+      internalID: -1462211552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 171
+        width: 65
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ba232e672f8344f90867ac5ba0025e
+      internalID: -2101324067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 182
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6160332cf1ac7e342a2fed1035d64d09
+      internalID: -1413662544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 198
+        width: 69
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b1955a1b9f64a488c5490fb3d26d17
+      internalID: 388294754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 201
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faeacf2f88bd7424d9eb9e9244727fe2
+      internalID: -1733585906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 2377
+        y: 191
+        width: 77
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3918819472022642a26e29f0016cf62
+      internalID: 482492489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 144
+        width: 110
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f4a93fde8cbbf4996d0f09b11a0c03
+      internalID: 1438442278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 160
+        width: 82
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d7d8ace20cb0947b315a7e394f4489
+      internalID: 403331572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 188
+        width: 80
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdc4d5968c7f36499a818ae25108ebb
+      internalID: 1335292939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 160
+        width: 108
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36dae5de21c510b47b897d01ee4efc16
+      internalID: 492402304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 185
+        width: 79
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78b51967ecc6084f93125e348657108
+      internalID: -904819265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 58
+        width: 309
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b772f02a42fe4246a1901171b554d14
+      internalID: -663039500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 101
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b877593851f90d04d895c2fb5abf0dd2
+      internalID: -1293229322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 103
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2488d71cc2918e74c8d8b82a10601ce1
+      internalID: 1513482955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 99
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864078a0bb509cf44a5e7bab494d0edf
+      internalID: 1926229955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 87
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9ef9435d6af064dbfb462036567c62
+      internalID: 1153437336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 93
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bebe537bd3de54caa543e838f5b754
+      internalID: 276918020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 90
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a386b828d4f4094881218dda6fe8182
+      internalID: -1995063314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 99
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab25e8ccaa5a0540afd7d73cae8dbb6
+      internalID: -1557847520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 97
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2174821a0714e164f8c82777f44aba86
+      internalID: -143121034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 96
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d5532de177e9c449d41fa1c2751985
+      internalID: 724328292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 99
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d312ebac68d36a47b9a9afa22f51b4b
+      internalID: 1530820411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 100
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec920a20872da614289917b323d68164
+      internalID: -1741787242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 106
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b4725a2abe0dc42a7304b66eade876
+      internalID: 944864524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 102
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590916de96bec344c98447f1ce15d100
+      internalID: 77722456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 100
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79c2d9598e2e6c40bb1f17a8c9f3bca
+      internalID: 923900242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 2377
+        y: 100
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c402926af9fca44ab63084997da338d
+      internalID: 1150059237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Notes SpriteSheet_0: 581641490
+      Notes SpriteSheet_1: 1754548513
+      Notes SpriteSheet_10: 1666642585
+      Notes SpriteSheet_100: -2053188539
+      Notes SpriteSheet_101: -2074738331
+      Notes SpriteSheet_102: -823153519
+      Notes SpriteSheet_103: 1900249280
+      Notes SpriteSheet_104: 380386216
+      Notes SpriteSheet_105: -1970710735
+      Notes SpriteSheet_106: 119494357
+      Notes SpriteSheet_107: 276907328
+      Notes SpriteSheet_108: -137948502
+      Notes SpriteSheet_109: -286815905
+      Notes SpriteSheet_11: -1943275985
+      Notes SpriteSheet_110: 160548577
+      Notes SpriteSheet_111: 719150765
+      Notes SpriteSheet_112: 423303218
+      Notes SpriteSheet_113: 434005947
+      Notes SpriteSheet_114: 1614197070
+      Notes SpriteSheet_115: -1789702274
+      Notes SpriteSheet_116: -724347723
+      Notes SpriteSheet_117: -1765769563
+      Notes SpriteSheet_118: -1179576465
+      Notes SpriteSheet_119: -1462211552
+      Notes SpriteSheet_12: 1382842370
+      Notes SpriteSheet_120: -2120260284
+      Notes SpriteSheet_121: -2101324067
+      Notes SpriteSheet_122: -1413662544
+      Notes SpriteSheet_123: 388294754
+      Notes SpriteSheet_124: -1733585906
+      Notes SpriteSheet_125: 482492489
+      Notes SpriteSheet_126: 1367295423
+      Notes SpriteSheet_127: -1204279696
+      Notes SpriteSheet_128: 1438442278
+      Notes SpriteSheet_129: 1092618743
+      Notes SpriteSheet_13: 90586372
+      Notes SpriteSheet_130: 403331572
+      Notes SpriteSheet_131: 1335292939
+      Notes SpriteSheet_132: 492402304
+      Notes SpriteSheet_133: -1260327705
+      Notes SpriteSheet_134: 763980650
+      Notes SpriteSheet_135: -904819265
+      Notes SpriteSheet_136: 87979556
+      Notes SpriteSheet_137: -125219177
+      Notes SpriteSheet_138: 511734692
+      Notes SpriteSheet_139: 679018524
+      Notes SpriteSheet_14: -168563247
+      Notes SpriteSheet_140: -1122441623
+      Notes SpriteSheet_141: 998938875
+      Notes SpriteSheet_142: -1486640876
+      Notes SpriteSheet_143: -663039500
+      Notes SpriteSheet_144: 1741220722
+      Notes SpriteSheet_145: -1293229322
+      Notes SpriteSheet_146: 1513482955
+      Notes SpriteSheet_147: 1926229955
+      Notes SpriteSheet_148: -2041088179
+      Notes SpriteSheet_149: 1153437336
+      Notes SpriteSheet_15: 1262556976
+      Notes SpriteSheet_150: 276918020
+      Notes SpriteSheet_151: -1995063314
+      Notes SpriteSheet_152: -1557847520
+      Notes SpriteSheet_153: -143121034
+      Notes SpriteSheet_154: 724328292
+      Notes SpriteSheet_155: 1530820411
+      Notes SpriteSheet_156: -1741787242
+      Notes SpriteSheet_157: 944864524
+      Notes SpriteSheet_158: 77722456
+      Notes SpriteSheet_159: 923900242
+      Notes SpriteSheet_16: -1197419664
+      Notes SpriteSheet_160: 1150059237
+      Notes SpriteSheet_17: 517466612
+      Notes SpriteSheet_18: 1818869959
+      Notes SpriteSheet_19: -1438510378
+      Notes SpriteSheet_2: 318425692
+      Notes SpriteSheet_20: -244683757
+      Notes SpriteSheet_21: -1209841515
+      Notes SpriteSheet_22: -46207689
+      Notes SpriteSheet_23: 2096486204
+      Notes SpriteSheet_24: 235089146
+      Notes SpriteSheet_25: -1286791228
+      Notes SpriteSheet_26: -37599587
+      Notes SpriteSheet_27: 1166850651
+      Notes SpriteSheet_28: -1872980387
+      Notes SpriteSheet_29: 1881419687
+      Notes SpriteSheet_3: -121834793
+      Notes SpriteSheet_30: -356864176
+      Notes SpriteSheet_31: 1805183322
+      Notes SpriteSheet_32: -1303324215
+      Notes SpriteSheet_33: 337620556
+      Notes SpriteSheet_34: 1817325235
+      Notes SpriteSheet_35: -683682831
+      Notes SpriteSheet_36: 1005160801
+      Notes SpriteSheet_37: 371276852
+      Notes SpriteSheet_38: 441503649
+      Notes SpriteSheet_39: -1698725123
+      Notes SpriteSheet_4: 317860777
+      Notes SpriteSheet_40: 886893701
+      Notes SpriteSheet_41: 327378864
+      Notes SpriteSheet_42: 608755682
+      Notes SpriteSheet_43: 1771476923
+      Notes SpriteSheet_44: 236085756
+      Notes SpriteSheet_45: -272246020
+      Notes SpriteSheet_46: -1950517018
+      Notes SpriteSheet_47: -1181681595
+      Notes SpriteSheet_48: 1821561873
+      Notes SpriteSheet_49: -1964975920
+      Notes SpriteSheet_5: 1386782601
+      Notes SpriteSheet_50: -1623357856
+      Notes SpriteSheet_51: -1255097893
+      Notes SpriteSheet_52: -165718285
+      Notes SpriteSheet_53: 539894770
+      Notes SpriteSheet_54: 616542863
+      Notes SpriteSheet_55: -21292997
+      Notes SpriteSheet_56: -886689279
+      Notes SpriteSheet_57: 2113782278
+      Notes SpriteSheet_58: -891226716
+      Notes SpriteSheet_59: 862609748
+      Notes SpriteSheet_6: 342191565
+      Notes SpriteSheet_60: 65073864
+      Notes SpriteSheet_61: -1270833414
+      Notes SpriteSheet_62: -1929834368
+      Notes SpriteSheet_63: 2096111859
+      Notes SpriteSheet_64: -409029828
+      Notes SpriteSheet_65: 224428670
+      Notes SpriteSheet_66: 1537865218
+      Notes SpriteSheet_67: 1684967825
+      Notes SpriteSheet_68: -836186988
+      Notes SpriteSheet_69: 1028644632
+      Notes SpriteSheet_7: 938437392
+      Notes SpriteSheet_70: -1806603203
+      Notes SpriteSheet_71: 646926915
+      Notes SpriteSheet_72: 963755419
+      Notes SpriteSheet_73: -308924061
+      Notes SpriteSheet_74: 427318064
+      Notes SpriteSheet_75: 2119120211
+      Notes SpriteSheet_76: -1105609620
+      Notes SpriteSheet_77: -243340055
+      Notes SpriteSheet_78: 2135220516
+      Notes SpriteSheet_79: 652052709
+      Notes SpriteSheet_8: -1816101455
+      Notes SpriteSheet_80: -799677950
+      Notes SpriteSheet_81: -1068446533
+      Notes SpriteSheet_82: -1957534943
+      Notes SpriteSheet_83: -393941225
+      Notes SpriteSheet_84: -1359200032
+      Notes SpriteSheet_85: 82778771
+      Notes SpriteSheet_86: 1806466717
+      Notes SpriteSheet_87: 143486587
+      Notes SpriteSheet_88: -1049161119
+      Notes SpriteSheet_89: -1040283371
+      Notes SpriteSheet_9: -2129428652
+      Notes SpriteSheet_90: 1285077939
+      Notes SpriteSheet_91: -2028007421
+      Notes SpriteSheet_92: -152054118
+      Notes SpriteSheet_93: 204074065
+      Notes SpriteSheet_94: -1369038436
+      Notes SpriteSheet_95: 1463014479
+      Notes SpriteSheet_96: -1670139824
+      Notes SpriteSheet_97: -1432082723
+      Notes SpriteSheet_98: 135667564
+      Notes SpriteSheet_99: -896014976
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
