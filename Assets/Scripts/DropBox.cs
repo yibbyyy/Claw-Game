@@ -29,6 +29,7 @@ public class DropBox : MonoBehaviour
             simonSays.SetActive(true);
             Debug.Log("Dropped bomb");
         }
+           
         Destroy(collision.gameObject);
         //Debug.Log("total Score  = " + totalScore);
 

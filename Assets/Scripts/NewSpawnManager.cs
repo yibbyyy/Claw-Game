@@ -14,6 +14,7 @@ public class NewSpawnManager : MonoBehaviour
 
     public ObjectPooling pooling;
     public Transform spawner;
+
     /*
     private string yCoin = "YellowCoin";
     private int yCoinWeight = 1;
@@ -45,6 +46,8 @@ public class NewSpawnManager : MonoBehaviour
     private int keyWeight = 1;
     private string clock = "Clock";
     private int clockWeight = 1;
+    private string ufo = "UFO";
+    private int ufoWeight= 1;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();
     private IList<string> allSpawnables = new List<string>();
@@ -86,6 +89,7 @@ public class NewSpawnManager : MonoBehaviour
         spawnables.Add(chest, chestWeight);
         spawnables.Add(key, keyWeight);
         spawnables.Add(clock, clockWeight);
+        spawnables.Add(ufo, ufoWeight);
 
         allSpawnables.AddRange(spawnables.Keys);
 
@@ -94,10 +98,10 @@ public class NewSpawnManager : MonoBehaviour
         lootSpawnables.Add(chest);
         lootSpawnables.Add(key);
         lootSpawnables.Add(clock);
+        lootSpawnables.Add(ufo);
 
         coinSpawnables.Add(yCoin);
         coinSpawnables.Add(gCoin);
-
 
         for (int i = 0; i < this.transform.childCount; i++) 
         {
@@ -160,7 +164,7 @@ public class NewSpawnManager : MonoBehaviour
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(-90, 0, 0));
             }
-            else
+            else if (spawnable != aBomb) 
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(0, 0, 90));
             }
@@ -172,7 +176,6 @@ public class NewSpawnManager : MonoBehaviour
     {
         while (refill < refillCounts)
         {
-            Debug.Log("refill = " + refill + " | refillCounts = " + refillCounts);
             spawnCoins();
             yield return new WaitForSeconds(waitBetweenRefills);
             refill++;
