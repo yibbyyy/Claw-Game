@@ -47,15 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InnerExplosion: {fileID: 0}
   OuterExplosion: {fileID: 0}
-  BombImage: {fileID: 6044153067659547122}
+  BombCanvas: {fileID: 0}
   bombTimerUI: {fileID: 6863137343553748142}
   exploded: 0
   bombTimerDuration: 5
   smallExplosionDelay: 0.15
   largeExplosionDelay: 0.2
+  SucessText: {fileID: 0}
   startDelay: 1
   timerDuration: 5
   delayBetweenbuttons: 0.5
+  disposeDelay: 0.5
   gameObjectList:
   - {fileID: 8989262795937033656}
   - {fileID: 4930389424501501513}
@@ -64,6 +66,7 @@ MonoBehaviour:
   userList: []
   pressedSprite: {fileID: -1163353182, guid: 3a71f1ec935d4cf40a3cd862db5a0d62, type: 3}
   buttonPressNum: 0
+  win: 0
 --- !u!1 &570203407455593961
 GameObject:
   m_ObjectHideFlags: 0
