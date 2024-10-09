@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -78,8 +79,15 @@ public class GameTimer : MonoBehaviour
     {
         while (timerLengthInSec > 0)
         {
+            float elapsedTime = 0;
             IntToSprite();
-            yield return new WaitForSeconds(1);
+            while (elapsedTime <= 1)
+            {
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            
             timerLengthInSec -= 1;
             
         }
