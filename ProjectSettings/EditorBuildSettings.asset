@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/AlienGame.unity
     guid: 3dd487c70e4fd6d4ca8c7e0bf39e05d0
   - enabled: 1
-    path: Assets/Assets Title screen/OptionsMenu.unity
+    path: Assets/Assets Title screen/MenuScenes/OptionsMenu.unity
     guid: 9433a65ef9e5a6a4490a1c4589a414f0
   - enabled: 1
-    path: Assets/Assets Title screen/CreditsMenu.unity
+    path: Assets/Assets Title screen/MenuScenes/CreditsMenu.unity
     guid: ce1671525658a294082de3fa6e98d93c
   - enabled: 1
     path: Assets/Scenes/Jaxon Scene.unity
     guid: b8edc4a3714e23d4196e0ad3b45e2a6b
+  - enabled: 1
+    path: Assets/Scenes/JasperScene.unity
+    guid: 4c18618cf3d4c5b419b547f4150b97e3
   m_configObjects: {}

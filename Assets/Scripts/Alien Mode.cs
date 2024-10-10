@@ -33,6 +33,11 @@ public class AlienMode : MonoBehaviour
     {
         alienGooHome = alienGoo.transform.position.y;
     }
+
+    private void Start()
+    {
+        GameController.Setup += SetupAlien;
+    }
     void Update()
     {
         ufoBonus = dropBox.alienValue;
@@ -70,24 +75,14 @@ public class AlienMode : MonoBehaviour
         }
 
 
-        //testing reset function
-        if (Input.GetKeyDown("h"))
-        {
-            state = State.resetting;
-        }
 
-
-        if (state == State.resetting)
-        {
-            StartCoroutine(ResetGoo());
-
-        }
     }
 
     IEnumerator ResetGoo()
     {
         while (alienGoo.transform.position.y >= alienGooHome)
         {
+            state = State.resetting;
             alienGoo.transform.Translate(Vector3.down * alienShrinkage * Time.deltaTime);
             alienAGoGo = 0;
             yield return null;
@@ -100,5 +95,9 @@ public class AlienMode : MonoBehaviour
 
     }
 
-
+    void SetupAlien() 
+    {
+        ResetGoo();
+        GameController.Setup -= SetupAlien;
+    }
 }

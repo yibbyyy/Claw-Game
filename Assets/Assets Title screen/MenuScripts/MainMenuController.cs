@@ -17,7 +17,7 @@ public class MainMenuController : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene("GameScene"); 
+        SceneManager.LoadScene("JasperScene"); 
     }
 
 

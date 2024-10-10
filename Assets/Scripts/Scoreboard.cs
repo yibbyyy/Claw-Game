@@ -19,6 +19,11 @@ public class Scoreboard : MonoBehaviour
         digits = GetComponentsInChildren<Transform>().Skip(1).ToList();
     }
 
+    private void Start()
+    {
+        GameController.Setup += SetupScore;
+    }
+
     void Update()
     {
         //Gets totalScore from dropBox
@@ -102,5 +107,12 @@ public class Scoreboard : MonoBehaviour
     {
         score = 0;
         IntToSprite();
+    }
+
+    private void SetupScore()
+    {
+        score = 0;
+        IntToSprite();
+        GameController.Setup -= SetupScore;
     }
 }

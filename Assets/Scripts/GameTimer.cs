@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,9 @@ public class GameTimer : MonoBehaviour
     public DropBox dropBox;
     
 
+    public static event Action timedOut;
+
+
 
     public State currentState = State.stopped;
     private State lastState;
@@ -42,14 +46,16 @@ public class GameTimer : MonoBehaviour
     }
     private void Start()
     {
-        //ClawManager.StartClawTimer += StartTimerCoroutine;
+        ClawManager.StartClawTimer += StartGameTimer;
+        GameController.Setup += SetupTimer;
+        //ClawTimer.ClawTimerEnded += PauseGameTimer;
     }
 
     void Update()
     {
         //lastState = currentState;
 
-        
+        //Updates if clock is dropped in dropBox
         if (dropBox.timeValue != 0)
         {
             timerLengthInSec += dropBox.timeValue;
@@ -87,6 +93,23 @@ public class GameTimer : MonoBehaviour
         }
 
     }
+    void StartGameTimer()
+    {
+        currentState = State.running;
+        StartCoroutine("Timer");
+        
+        ClawManager.StartClawTimer -= StartGameTimer;
+    }
+
+    /*
+    void PauseGameTimer()
+    {
+        currentState = State.paused;
+        
+        StopCoroutine("Timer");
+        ClawTimer.ClawTimerEnded -= PauseGameTimer;
+    }
+    */
 
     IEnumerator Timer()
     {
@@ -94,18 +117,20 @@ public class GameTimer : MonoBehaviour
         {
             float elapsedTime = 0;
             IntToSprite();
-            while (elapsedTime <= 1)
+            while (elapsedTime < 1)
             {
                 elapsedTime += Time.deltaTime;
+                Debug.Log(elapsedTime);
                 yield return null;
             }
-
+            
             
             timerLengthInSec -= 1;
             
         }
         if (timerLengthInSec == 0)
         {
+            timedOut?.Invoke();
             IntToSprite();
         }
 
@@ -133,7 +158,11 @@ public class GameTimer : MonoBehaviour
         }
     }
 
-
+    private void SetupTimer()
+    {
+        IntToSprite();
+        GameController.Setup -= SetupTimer;
+    }
 
     private IEnumerator ResetTimer()
     {

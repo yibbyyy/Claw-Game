@@ -7,22 +7,24 @@ using UnityEngine.UI;
 public class ClawTimer : MonoBehaviour
 {
     public GameObject clawTimerDisplay;
-    Transform digit;
+    SpriteRenderer spriteRenderer;
+    public Sprite[] sprites = new Sprite[10];
+    public Sprite empty;
+
 
     public float clawTimerDuration;
     public float clawTimer;
     private int clawTimerInt;
     public bool clawTimerRunning = false;
     
-    public TMP_Text clawTimerUI;
+    //public TMP_Text clawTimerUI;
 
     public static event Action ClawTimerEnded;
 
 
     private void Awake()
     {
-        digit = clawTimerDisplay.GetComponentInChildren<Transform>();
-        Debug.Log("transform = " + digit.name);
+        spriteRenderer = clawTimerDisplay.GetComponentInChildren<SpriteRenderer>();
     }
     private void Start()
     {
@@ -35,22 +37,24 @@ public class ClawTimer : MonoBehaviour
     }
     public void clawTimerStart()
     {
+        clawTimer = clawTimerDuration;
         clawTimerRunning = true;
-        UpdateTimerUI();
+        IntToSprite();
     }
 
+    /*
     private void UpdateTimerUI()
     {
         int seconds = Mathf.CeilToInt(clawTimer);
         clawTimerUI.text = seconds.ToString();
     }
-
+    */
     private void Update()
     {
         if (clawTimerRunning)
         {
             clawTimer -= Time.deltaTime;
-            UpdateTimerUI();
+            IntToSprite();
 
             if (clawTimer <= 0)
             {
@@ -59,8 +63,8 @@ public class ClawTimer : MonoBehaviour
                 Debug.Log("Claw Timer Finished");
                 ClawTimerEnded?.Invoke();
 
-                clawTimer = clawTimerDuration;
-                UpdateTimerUI();
+                //clawTimer = clawTimerDuration;
+                IntToSprite();
             }
         }
     }
@@ -69,30 +73,20 @@ public class ClawTimer : MonoBehaviour
     {
         clawTimerRunning = false;
 
-        clawTimer = clawTimerDuration;
-        UpdateTimerUI();
+        //clawTimer = clawTimerDuration;
+        IntToSprite();
     }
 
     private void IntToSprite()
     {
-        clawTimerInt = Mathf.RoundToInt(clawTimer);
+        clawTimerInt = Mathf.CeilToInt(clawTimer);
 
+        Sprite newSprite = sprites[clawTimerInt];
+        spriteRenderer.sprite = newSprite;
+    }
 
-        /*
-        for (int i = 0; i < places.Count; i++)
-        {
-            //If the string is shorter than the expected length, adds a 0 to the left
-            string tempString = timerCountString.PadLeft(places.Count, '0');
-            //Gets sprite renderer from the indexed child 
-            SpriteRenderer spriteRenderer = transform.GetChild(i).GetComponent<SpriteRenderer>();
-
-            //Takes passed string and indexes into it, returning the integer at that index
-            //Indexing into a string returns the character as unicode(ASCII)
-            //By subtracting the ASCII number for 0(48) from any int 0-9, the integer will be returned as an int
-            int dig = tempString[i] - '0';
-            Sprite newSprite = sprites[dig];
-            spriteRenderer.sprite = newSprite;
-        }
-        */
+    private void EmptyTimer()
+    {
+        spriteRenderer.sprite = empty;
     }
 }

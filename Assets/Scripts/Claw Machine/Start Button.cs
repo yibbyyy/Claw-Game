@@ -1,10 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
+using UnityEditor;
 using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
     public bool clickable = false;
+    public static event Action click;
     void Start()
     {
             
@@ -33,6 +35,7 @@ public class StartButton : MonoBehaviour
 
     IEnumerator DiageticClick()
     {
+        click?.Invoke();
         clickable = false;
         gameObject.transform.Translate(Vector3.down * .03125f);
         yield return new WaitForSeconds(.5f);

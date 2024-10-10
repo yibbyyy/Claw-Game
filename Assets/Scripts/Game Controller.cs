@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
     public static event Action Setup;
     public static event Action FirstRound;
 
-    public static event Action GameOver;
 
-    
+    public State state = State.idle;
+
     public enum State
     {
         idle,
@@ -21,14 +21,26 @@ public class GameController : MonoBehaviour
         gameOver
     }
 
-    void Start()
+    private void Awake()
     {
         
+    }
+
+    void Start()
+    {
+        GameTimer.timedOut += GameOver;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void GameOver()
+    {
+        Debug.Log("GameOver");
+        state = State.gameOver;
+
     }
 }

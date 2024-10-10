@@ -70,7 +70,7 @@ public class ClawManager : MonoBehaviour
         {
             if (!isSubscribedToButton)
             {
-                clawMachineStartButton.onClick.AddListener(OnStartButtonClicked);
+                StartButton.click += OnStartButtonClicked;
             }
         }
 
@@ -172,7 +172,7 @@ public class ClawManager : MonoBehaviour
         StartClawTimer?.Invoke();
 
         // Unsub from the button
-        clawMachineStartButton.onClick.RemoveListener(OnStartButtonClicked);
+        StartButton.click -= OnStartButtonClicked;
 
         // Set State to Wait for Input
         currentState = State.waitingForInput;
