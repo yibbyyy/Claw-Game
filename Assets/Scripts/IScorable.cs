@@ -5,6 +5,8 @@ using UnityEngine;
 public class IScorable : MonoBehaviour
 {
     public int pointValue;
+    public float timeValue;
+    public float alienValue;
 
  
     Rigidbody rb;
