@@ -5,7 +5,7 @@ using UnityEngine;
 public class IScorable : MonoBehaviour
 {
     public int pointValue;
-    public float timeValue;
+    public int timeValue;
     public float alienValue;
 
  

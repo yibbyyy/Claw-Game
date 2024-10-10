@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 9147165405321137606}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1483,6 +1483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 5
+  timeValue: 0
+  alienValue: 0
 --- !u!114 &9147165405321137606
 MonoBehaviour:
   m_ObjectHideFlags: 0

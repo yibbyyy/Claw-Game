@@ -8,9 +8,19 @@ public class DropBox : MonoBehaviour
     public GameObject dropBox;
     private Collider boxCollider;
 
+    public ObjectPooling pooling;
     public IScorable scorable;
     public int score;
     public int totalScore = 0;
+
+
+    public AlienMode AlienMode;
+    public float alienValue;
+
+    public GameTimer gameTimer;
+    public int timeValue;
+
+
     public GameObject simonSays, wireCut, pushAndPull;
 
     private List<GameObject> miniGameList = new();
@@ -60,6 +70,23 @@ public class DropBox : MonoBehaviour
         totalScore += score;
         score = 0;
 
+
+        if (collision.gameObject.GetComponent<IScorable>().alienValue > 0) 
+        {
+            alienValue = collision.gameObject.GetComponent<IScorable>().alienValue;
+            Debug.Log("alienValue = " + alienValue);
+            
+        }
+        
+        if (collision.gameObject.GetComponent<IScorable>().timeValue != 0) 
+        {
+            timeValue = collision.gameObject.GetComponent<IScorable>().timeValue;
+        }
+
+
+        timeValue = collision.gameObject.GetComponent <IScorable>().timeValue;
+
+
         // Check if a chest or bomb fell
         if (collision.gameObject.tag == "Bomb" || collision.gameObject.tag == "Chest")
         {
@@ -74,6 +101,7 @@ public class DropBox : MonoBehaviour
         }
         // Send the game object back to object pool
 
+        collision.gameObject.SetActive(false);
         //Destroy(collision.gameObject);
         //Debug.Log("total Score  = " + totalScore);
 

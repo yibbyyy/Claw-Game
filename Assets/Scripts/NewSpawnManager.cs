@@ -112,7 +112,7 @@ public class NewSpawnManager : MonoBehaviour
         maxLowerDisplacement = dropBoxWalls.transform.position.y - 2.5f;
         maxUpperDisplacement = dropBoxWalls.transform.position.y;
 
-
+        GameController.Setup += FirstFill;
 
     }
 

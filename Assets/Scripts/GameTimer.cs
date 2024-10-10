@@ -18,6 +18,10 @@ public class GameTimer : MonoBehaviour
     public Sprite empty;
 
 
+    public DropBox dropBox;
+    
+
+
     public State currentState = State.stopped;
     private State lastState;
     public enum State
@@ -43,7 +47,16 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        lastState = currentState;
+        //lastState = currentState;
+
+        
+        if (dropBox.timeValue != 0)
+        {
+            timerLengthInSec += dropBox.timeValue;
+            IntToSprite();
+            dropBox.timeValue = 0;  
+        }
+
 
         //starts
         if (Input.GetKeyDown("q") && currentState == State.stopped)
