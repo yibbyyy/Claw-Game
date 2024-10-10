@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     public bool paused = false;
 

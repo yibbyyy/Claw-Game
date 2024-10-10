@@ -89,6 +89,7 @@ public class AlienMode : MonoBehaviour
         while (alienGoo.transform.position.y >= alienGooHome)
         {
             alienGoo.transform.Translate(Vector3.down * alienShrinkage * Time.deltaTime);
+            alienAGoGo = 0;
             yield return null;
         }
 

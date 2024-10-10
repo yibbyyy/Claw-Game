@@ -5,10 +5,21 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     
-    public void PlayGame()
+    public void tutorial()
     {
-        SceneManager.LoadScene("Jaxon Scene"); 
+        SceneManager.LoadScene("Tutorial1"); 
     }
+
+     public void Next()
+    {
+        SceneManager.LoadScene("TutorialScene2"); 
+    }
+
+    public void play()
+    {
+        SceneManager.LoadScene("GameScene"); 
+    }
+
 
     
     public void OpenOptions()
@@ -26,10 +37,20 @@ public class MainMenuController : MonoBehaviour
         Application.Quit(); 
     
     }
-    
-    public void GoBack()
+
+    public void ReturnButton()
     {
-        SceneManager.LoadScene("MainMenu"); 
+        
+        if (GameManager.instance.isPausedFromGame)
+        {
+            SceneManager.LoadScene("GameScene");  //Insert Game Scene name!!!
+            GameManager.instance.SetPausedFromGame(false);  
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");  
+        }
     }
 
 }
+
