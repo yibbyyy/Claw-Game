@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JasperScene.unity
     guid: 4c18618cf3d4c5b419b547f4150b97e3
+  - enabled: 1
+    path: Assets/Assets Title screen/MenuScenes/Loading.unity
+    guid: 161e178e04e4781488440e6ed8e75a25
   m_configObjects: {}

@@ -17,7 +17,7 @@ public class MainMenuController : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene("JasperScene"); 
+        SceneManager.LoadScene("Loading");
     }
 
 
@@ -43,12 +43,12 @@ public class MainMenuController : MonoBehaviour
         
         if (GameManager.instance.isPausedFromGame)
         {
-            SceneManager.LoadScene("GameScene");  //Insert Game Scene name!!!
+            SceneManager.LoadScene("JasperScene");  //Insert Game Scene name!!!
             GameManager.instance.SetPausedFromGame(false);  
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");  
+            SceneManager.LoadScene("AlienGame");  
         }
     }
 

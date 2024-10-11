@@ -89,4 +89,6 @@ public class ClawTimer : MonoBehaviour
     {
         spriteRenderer.sprite = empty;
     }
+
+    
 }
