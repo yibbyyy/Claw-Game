@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DemoMat4
+  m_Shader: {fileID: 4800000, guid: 128c5f1edaefa4c4fb3f9f7a4615edb2, type: 3}
+  m_Parent: {fileID: 2100000, guid: 455d9beda8a1a4fddb5c283861efccb0, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _CELPRIMARYMODE_NONE
+  - _RIMOVERLAP_ON
+  - _SEGMENTED_ON
+  - _SPCOVERLP_ON
+  - _TEXTUREBLENDINGMODE_MULTIPLY
+  - _UNITYSHADOWMODE_NONE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 5.33, y: 5.08}
+        m_Offset: {x: 1.14, y: -2.74}
+    m_Ints: []
+    m_Floats:
+    - _Glossiness: 1.39
+    - _MaxAtten: 0
+    - _MaxLight: 1
+    - _MinLight: 0
+    - _Offset: 1.1
+    - _OtlWidth: 1
+    - _PostAtten: 0.376
+    - _RimIntense: 0
+    - _RimLimit: 0
+    - _RimSmooth: 0
+    - _RimTolerc: 0.35
+    - _ShnIntense: 0
+    - _ShnRange: 0.491
+    - _SpcOverlap: 0
+    - _SpcTolerc: 0.105
+    - _Steps: 23.3
+    - _StpSmooth: 0
+    m_Colors:
+    - _Color: {r: 0.4666667, g: 1, b: 0.59295946, a: 1}
+    - _MaxColor: {r: 1, g: 0.9205481, b: 0.2688679, a: 1}
+    - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 289.11557, g: 0, b: 581.2745, a: 1}
+    - _ShnColor: {r: 1, g: 1, b: 0, a: 1}
+  m_BuildTextureStacks: []

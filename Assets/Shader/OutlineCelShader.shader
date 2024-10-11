@@ -8,7 +8,7 @@
 		_Antialiasing("Band Smoothing", Float) = 5.0
 		_Glossiness("Glossiness/Shininess", Float) = 400
 		_Fresnel("Fresnel/Rim Amount", Range(0, 1)) = 0.5
-		_OutlineSize("Outline Size", Float) = 0.05
+		_OutlineSize("Outline Size", Float) = 0.01
 		_OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
     }
 
@@ -77,10 +77,8 @@
 
         ENDCG
 
-		
 		Pass
 		{
-			Tags { "RenderType"="Opaque" }
 			Cull Front
 			ZWrite OFF
 			ZTest ON
