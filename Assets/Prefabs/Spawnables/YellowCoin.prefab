@@ -695,6 +695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 1000
+  timeValue: 0
+  alienValue: 0
 --- !u!114 &554198899408994584
 MonoBehaviour:
   m_ObjectHideFlags: 0

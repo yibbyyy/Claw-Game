@@ -6,7 +6,7 @@ using UnityEngine;
 public class DropBox : MonoBehaviour
 {
     public GameObject dropBox;
-    private Collider boxCollider;
+    
 
     public ObjectPooling pooling;
     public IScorable scorable;
@@ -27,12 +27,14 @@ public class DropBox : MonoBehaviour
 
     public Queue<GameObject> dropBoxQueue = new();
     public HashSet<int> gameObjectInstances = new HashSet<int>();
+
+    
     private void Awake()
     {
         miniGameList.Add(simonSays);
         miniGameList.Add(wireCut);
         miniGameList.Add(pushAndPull);
-        boxCollider = dropBox.GetComponent<Collider>();
+        
     }
 
 
@@ -53,12 +55,20 @@ public class DropBox : MonoBehaviour
                     miniGameList[miniGameIndex].SetActive(true);
                     break;
 
+                case "ABomb":
+                    Debug.Log("Abomb lgoic");
+                    break;
                 case "Chest":
                     Debug.Log("Chest logic");
                     break;
 
+                case "Key":
+                    Debug.Log("Key Logic");
+                    break;
+
+
                 default:
-                    Debug.Log(currentObject.tag + " Is not a bomb or chest");
+                    Debug.Log(currentObject.tag + " Is not an item with a tag");
                     break;
 
             }
@@ -88,7 +98,7 @@ public class DropBox : MonoBehaviour
 
 
         // Check if a chest or bomb fell
-        if (collision.gameObject.tag == "Bomb" || collision.gameObject.tag == "Chest")
+        if (collision.gameObject.tag == "Bomb" || collision.gameObject.tag == "Chest" || collision.gameObject.tag == "ABomb" || collision.gameObject.tag == "Key")
         {
             // Check if the current collision is already in queue using hashset
             int tmp = collision.gameObject.GetInstanceID();
