@@ -8223,14 +8223,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1045675901}
-    - target: {fileID: 7512812220197395218, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512812220197395218, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c36a57e577ad1419ca9f179fa166c5ac, type: 2}
     - target: {fileID: 8557069179998463393, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: empty
       value: 

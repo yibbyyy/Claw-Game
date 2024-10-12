@@ -31248,7 +31248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921329422141739965, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 5.994507
       objectReference: {fileID: 0}
     - target: {fileID: 3921329422141739965, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31297,8 +31297,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3371166300456249406, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1180948638}
   m_SourcePrefab: {fileID: 100100000, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
+--- !u!1 &1180948637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3371166300456249406, guid: ac5d66c9d151cca41b6644c2283e9ac1, type: 3}
+  m_PrefabInstance: {fileID: 1180948636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1180948638
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180948637}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!43 &1193506885
 Mesh:
   m_ObjectHideFlags: 0
