@@ -1344,7 +1344,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1396
+  m_VersionIndex: 1399
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1455,8 +1455,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957322355467024268}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.11250001, z: 0.53125}
-  m_LocalScale: {x: 0.6666667, y: 1, z: 1.1}
+  m_LocalPosition: {x: 0, y: 0.020566655, z: 1.0726901}
+  m_LocalScale: {x: 0.6666666, y: 1, z: 1.1000003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8193383200156873245}
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1284
+  m_VersionIndex: 1287
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1784,7 +1784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673195884589327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0625, z: 0}
+  m_LocalPosition: {x: 0, y: 0.070566654, z: 0.54144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1396
+  m_VersionIndex: 1399
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2862,6 +2862,7 @@ GameObject:
   - component: {fileID: 8724519959672641033}
   - component: {fileID: 8420993486068633807}
   - component: {fileID: 8667719051153586270}
+  - component: {fileID: 993810775216787013}
   m_Layer: 0
   m_Name: Metal Box
   m_TagString: Chest
@@ -2884,7 +2885,7 @@ Transform:
   - {fileID: 3246151919620996122}
   - {fileID: 8193383200156873245}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &528607933331439999
 BoxCollider:
@@ -2947,6 +2948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 20
+  timeValue: 0
+  alienValue: 0
 --- !u!114 &8667719051153586270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,6 +2965,22 @@ MonoBehaviour:
   MagnetForce: 1
   MagneticPole: 1
   RigidBody: {fileID: 8724519959672641033}
+--- !u!111 &993810775216787013
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371166300456249406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7c27dd49016689a4db69631ae33b23ba, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7c27dd49016689a4db69631ae33b23ba, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7780507011086650100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8479276698097038089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1171875, z: 0}
+  m_LocalPosition: {x: 0, y: 0.086, z: -0.1269}
   m_LocalScale: {x: 0.3515625, y: 0.234375, z: 0.234375}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3026,4 +3045,4 @@ Transform:
   - {fileID: 140576810684860291}
   m_Father: {fileID: 3921329422141739965}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -76.54499, y: 0, z: 0}
