@@ -43,11 +43,13 @@ public class GameTimer : MonoBehaviour
 
         //store time to reset clock
         setTime = timerLengthInSec;
+
+        GameController.Setup += SetupTimer;
     }
     private void Start()
     {
         ClawManager.StartClawTimer += StartGameTimer;
-        GameController.Setup += SetupTimer;
+        
         //ClawTimer.ClawTimerEnded += PauseGameTimer;
     }
 
@@ -158,8 +160,9 @@ public class GameTimer : MonoBehaviour
         }
     }
 
-    private void SetupTimer()
+    public void SetupTimer()
     {
+        Debug.Log("Setup Timer");
         IntToSprite();
         GameController.Setup -= SetupTimer;
     }

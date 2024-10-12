@@ -40,7 +40,7 @@ public class StartButton : MonoBehaviour
         gameObject.transform.Translate(Vector3.down * .03125f);
         yield return new WaitForSeconds(.5f);
         gameObject.transform.Translate(Vector3.up * .03125f);
-        clickable = true;
+        
     }
 
 }

@@ -16,12 +16,13 @@ public class Scoreboard : MonoBehaviour
     public Sprite emptyDigit;
     private void Awake()
     {
+        GameController.Setup += SetupScore;
         digits = GetComponentsInChildren<Transform>().Skip(1).ToList();
     }
 
     private void Start()
     {
-        GameController.Setup += SetupScore;
+        
     }
 
     void Update()
@@ -109,8 +110,9 @@ public class Scoreboard : MonoBehaviour
         IntToSprite();
     }
 
-    private void SetupScore()
+    public void SetupScore()
     {
+        Debug.Log("Score Setup");
         score = 0;
         IntToSprite();
         GameController.Setup -= SetupScore;

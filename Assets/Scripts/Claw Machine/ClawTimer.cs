@@ -55,6 +55,7 @@ public class ClawTimer : MonoBehaviour
         {
             clawTimer -= Time.deltaTime;
             IntToSprite();
+            Debug.Log("clawTimer = " + clawTimer);
 
             if (clawTimer <= 0)
             {
@@ -85,10 +86,6 @@ public class ClawTimer : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    private void EmptyTimer()
-    {
-        spriteRenderer.sprite = empty;
-    }
 
     
 }

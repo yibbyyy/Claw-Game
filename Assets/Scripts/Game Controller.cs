@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        Setup += SetUpGame;
         Setup?.Invoke();
         GameTimer.timedOut += GameOver;
     }
@@ -43,5 +44,10 @@ public class GameController : MonoBehaviour
         Debug.Log("GameOver");
         state = State.gameOver;
 
+    }
+
+    void SetUpGame()
+    {
+        Debug.Log("Setting up");
     }
 }
