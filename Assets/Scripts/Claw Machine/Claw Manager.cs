@@ -12,6 +12,9 @@ public class ClawManager : MonoBehaviour
     public GameObject Bar, Cable, Magnet, dropoff, center, cableCenter;
     public MagnetWorld World;
 
+    public ClawTimer clawTimer;
+    public StartButton startButton;
+
     public Button clawMachineStartButton;
     public bool isSubscribedToButton = false;
     public float moveSpeed = 7;
@@ -175,7 +178,7 @@ public class ClawManager : MonoBehaviour
         StartButton.click -= OnStartButtonClicked;
 
         // Set State to Wait for Input
-        currentState = State.waitingForInput;
+        StartCoroutine(ExitStateDelay());
     }
 
     public void ClawTimerEnded()
@@ -289,5 +292,18 @@ public class ClawManager : MonoBehaviour
 
         Debug.Log("fully reset");
         currentState = State.idle;
+        startButton.clickable = true;
+    }
+
+    IEnumerator ExitStateDelay()
+    {
+        float duration = 0;
+        while (duration < .1)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
+
+        currentState = State.waitingForInput;
     }
 }

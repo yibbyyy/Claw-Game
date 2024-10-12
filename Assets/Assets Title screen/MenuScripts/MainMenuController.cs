@@ -10,14 +10,16 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Tutorial1"); 
     }
 
-     public void Next()
+    public void Next()
     {
-        SceneManager.LoadScene("TutorialScene2"); 
+        SceneManager.LoadScene("TutorialScene2");
+
     }
 
     public void play()
     {
         SceneManager.LoadScene("Loading");
+        
     }
 
 
