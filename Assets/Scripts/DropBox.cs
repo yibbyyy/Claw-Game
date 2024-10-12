@@ -22,6 +22,7 @@ public class DropBox : MonoBehaviour
 
 
     public GameObject simonSays, wireCut, pushAndPull;
+    public Sprite humanBomb, alienBomb;
 
     private List<GameObject> miniGameList = new();
 
@@ -47,16 +48,19 @@ public class DropBox : MonoBehaviour
             GameObject currentObject = dropBoxQueue.Dequeue();
             int id = currentObject.GetInstanceID();
             gameObjectInstances.Remove(id);
-
+            int miniGameIndex;
             switch (currentObject.tag)
             {
                 case "Bomb":
-                    int miniGameIndex = Random.Range(0, miniGameList.Count);
+                    miniGameIndex = Random.Range(0, miniGameList.Count);
                     miniGameList[miniGameIndex].SetActive(true);
+                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchBombSprite(humanBomb);
                     break;
 
                 case "ABomb":
-                    Debug.Log("Abomb lgoic");
+                    miniGameIndex = Random.Range(0, miniGameList.Count);
+                    miniGameList[miniGameIndex].SetActive(true);
+                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchBombSprite(alienBomb);
                     break;
                 case "Chest":
                     Debug.Log("Chest logic");

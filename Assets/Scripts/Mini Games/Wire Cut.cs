@@ -59,7 +59,7 @@ public class WireCut : GenericBomb
                 wireCutSprites.Add(gameObjectList[i], wireCutSpriteList[i]);
         }
         win = false;
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        bombTimerUI.text = bombTimerDuration.ToString("F0");
         audioSource = GetComponent<AudioSource>();
 
 
@@ -241,7 +241,7 @@ public class WireCut : GenericBomb
     // Call dispose from othe r file
     public override void Dispose()
     {
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        bombTimerUI.text = bombTimerDuration.ToString("F0");
         ToggleInteractibility(false);
         ToggleButtonSubscription(false);
         ToggleStars(false);
