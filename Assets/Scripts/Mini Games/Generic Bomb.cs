@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class GenericBomb : MonoBehaviour, IDisposable
 {
-    public GameObject InnerExplosion, OuterExplosion, BombCanvas;
+    public GameObject InnerExplosion, OuterExplosion, BombCanvas, humanStickyNote, alienStickyNote;
     public UnityEngine.UI.Image bombImage;
 
     public Sprite bomb, alienBomb;
@@ -92,9 +92,20 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
     }
 
-    public void SwitchBombSprite(Sprite bombSprite)
+    public void SwitchToHBombSprite(Sprite bombSprite)
     {
         bombImage.sprite = bombSprite;
+        humanStickyNote.SetActive(true);
+        alienStickyNote.SetActive(false);
+
+        
+    }
+
+    public void SwitchToABombSprite(Sprite bombSprite)
+    {
+        bombImage.sprite = bombSprite;
+        humanStickyNote.SetActive(false);
+        alienStickyNote.SetActive(true);
     }
 
     public virtual void Dispose()

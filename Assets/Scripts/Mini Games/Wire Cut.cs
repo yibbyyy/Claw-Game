@@ -28,11 +28,13 @@ public class WireCut : GenericBomb
     public int wireCutNum = 0;
     private AudioSource audioSource;
     public bool win = false;
+    public bool isAlienBomb = false;
     Color yellow = new(1, 1, 0, 1);
 
     int wiresNeedCutLen;
 
-
+    Dictionary<Color, GameObject> ColorToAlienStars;
+        
 
 
     private void OnEnable()
@@ -44,6 +46,14 @@ public class WireCut : GenericBomb
             {Color.blue, stickyNoteStars[1]},
             {Color.green, stickyNoteStars[2]},
             {yellow, stickyNoteStars[3]}
+        };
+
+        ColorToAlienStars = new()
+        {
+            {Color.red, stickyNoteStars[4]},
+            {Color.blue, stickyNoteStars[5]},
+            {Color.green, stickyNoteStars[6]},
+            {yellow, stickyNoteStars[7]}
         };
 
         /*
@@ -90,10 +100,15 @@ public class WireCut : GenericBomb
         
 
         // Also set the sticky note star sprites to the right sequence
-        foreach( Color color in colorSet)
+        if (!isAlienBomb)
         {
-            ColorToStars[color].SetActive(true);
+            foreach (Color color in colorSet)
+            {
+                ColorToStars[color].SetActive(true);
+            }
         }
+       
+        
 
         StartCoroutine(Timer(timerDuration));
         ToggleInteractibility(true);
@@ -116,7 +131,16 @@ public class WireCut : GenericBomb
     
         
     
-
+    public void drawAlienStars()
+    {
+        
+        foreach (Color color in colorSet)
+        {
+            ColorToAlienStars[color].SetActive(true);
+            Debug.Log($"Color: {color} was selected");
+        }
+        
+    }
     
     public void ClickedButton()
     {
@@ -134,6 +158,7 @@ public class WireCut : GenericBomb
             // Check if the color of wire is in the color sequence
             if (colorSet.Contains(clickedButton.GetComponent<Image>().color))
             {
+                
                 userSet.Add(clickedButton.GetComponent<Image>().color);
                 if (userSet.SetEquals(colorSet))
                 {
@@ -150,6 +175,7 @@ public class WireCut : GenericBomb
             }
             else
             {
+                Debug.Log($"ColorSet doesn't contain {clickedButton}'s color of {clickedButton.GetComponent<Image>().color}");
                 if (!exploded)
                 {
                     //Debug.Log("Bomb blows up");
@@ -168,7 +194,9 @@ public class WireCut : GenericBomb
             }
        
     }
+
     
+
     private void ToggleButtonSubscription(bool toggle)
     {
         if (toggle)

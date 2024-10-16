@@ -54,13 +54,19 @@ public class DropBox : MonoBehaviour
                 case "Bomb":
                     miniGameIndex = Random.Range(0, miniGameList.Count);
                     miniGameList[miniGameIndex].SetActive(true);
-                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchBombSprite(humanBomb);
+                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToHBombSprite(humanBomb);
                     break;
 
                 case "ABomb":
                     miniGameIndex = Random.Range(0, miniGameList.Count);
                     miniGameList[miniGameIndex].SetActive(true);
-                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchBombSprite(alienBomb);
+                    if (miniGameIndex == 1)
+                    {
+                        miniGameList[miniGameIndex].GetComponent<WireCut>().drawAlienStars();
+                    }
+
+                    
+                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToABombSprite(alienBomb);
                     break;
                 case "Chest":
                     Debug.Log("Chest logic");
