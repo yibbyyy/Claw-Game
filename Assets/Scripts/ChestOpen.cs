@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChestOpen : MonoBehaviour
 {
-
+    DropBox dropBox;
     public Animation chestAnimation;
     public GameObject coinSystem;
 
@@ -19,18 +19,15 @@ public class ChestOpen : MonoBehaviour
     private void Start()
     {
         // Start the animation sequence
+        dropBox = GameObject.FindAnyObjectByType<DropBox>();
+        chestAnimation = GetComponent<Animation>();
+        StartCoroutine(PlayAnimationsAndActivateParticles());
 
-        
+
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown("m"))
-        {
-            StartCoroutine(PlayAnimationsAndActivateParticles());
-        }
-    }
+   
     private IEnumerator PlayAnimationsAndActivateParticles()
     {
         // Play the first animation
@@ -45,6 +42,18 @@ public class ChestOpen : MonoBehaviour
 
         // Activate the particle system
         coinSystem.SetActive(true);
+
+        // wait for 5
+        float duration = 0f;
+        while (duration  < 2.5f)
+        {
+            duration += Time.deltaTime;
+            yield return null;
+        }
+        // Then set state variable in dropbox
+        dropBox.chestOpening = false;
+        // Then destroy
+        Destroy(gameObject);
     }
 
 
