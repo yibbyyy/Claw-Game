@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 
@@ -33,6 +35,11 @@ public class DropBox : MonoBehaviour
     public Queue<GameObject> dropBoxQueue = new();
     public HashSet<int> gameObjectInstances = new HashSet<int>();
 
+
+    public GameObject chestDisplay;
+    public GameObject keyDisplay;
+    public List<Sprite> sprites = new List<Sprite>();
+    public Sprite emptySprite;
     
     private void Awake()
     {
@@ -74,7 +81,7 @@ public class DropBox : MonoBehaviour
                     break;
                 case "Chest":
                     Debug.Log("Chest logic");
-                    chestCount += 1;
+                    
                     if (chestCount > 0 && keyCount > 0)
                     {
                         Instantiate(chestOpenPrefab);
@@ -87,7 +94,7 @@ public class DropBox : MonoBehaviour
 
                 case "Key":
                     Debug.Log("Key Logic");
-                    keyCount += 1;
+                    
                     if (chestCount > 0 && keyCount > 0)
                     {
                         Instantiate(chestOpenPrefab);
@@ -139,7 +146,19 @@ public class DropBox : MonoBehaviour
                 gameObjectInstances.Add(tmp);
                 dropBoxQueue.Enqueue(collision.gameObject);
             }
-            
+
+            if (collision.gameObject.tag == "Chest" )
+            {
+                chestCount += 1;
+                UpdateCounter(chestCount, collision.gameObject);
+            }
+            if (collision.gameObject.tag == "Key")
+            {
+                keyCount += 1;
+                UpdateCounter(keyCount, collision.gameObject);
+;            }
+
+
         }
         // Send the game object back to object pool
 
@@ -147,5 +166,26 @@ public class DropBox : MonoBehaviour
         //Destroy(collision.gameObject);
         //Debug.Log("total Score  = " + totalScore);
 
+    }
+
+
+
+    private void UpdateCounter(int counter, GameObject gameObject)
+    {
+
+        GameObject display = new GameObject();
+        if (gameObject.tag == "Chest")
+        {
+            display = chestDisplay; 
+        }
+        if (gameObject.tag == "Key")
+        {
+            display = keyDisplay;
+        }
+
+        SpriteRenderer spriteRenderer = display.GetComponentInChildren<SpriteRenderer>();
+        Sprite newSprite = sprites[counter];
+        spriteRenderer.sprite = newSprite;
+        
     }
 }
