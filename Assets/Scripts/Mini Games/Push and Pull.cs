@@ -32,7 +32,7 @@ public class PushandPull : GenericBomb
 
        // General Setup
         win = false;
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        bombTimerUI.text = bombTimerDuration.ToString("F0");
         audioSource = GetComponent<AudioSource>();
         Pin.GetComponent<RectTransform>().anchoredPosition = new Vector2(ogX, pinY);
 
@@ -182,7 +182,7 @@ public class PushandPull : GenericBomb
     public override void Dispose()
     {
         
-        bombTimerUI.text = bombTimerDuration.ToString("F2");
+        bombTimerUI.text = bombTimerDuration.ToString("F0");
         ToggleInteractibility(false);
         ToggleButtonSubscription(false);
         

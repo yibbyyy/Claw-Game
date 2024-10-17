@@ -4,10 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class GenericBomb : MonoBehaviour, IDisposable
 {
-    public GameObject InnerExplosion, OuterExplosion, BombCanvas;
+    public GameObject InnerExplosion, OuterExplosion, BombCanvas, humanStickyNote, alienStickyNote;
+    public UnityEngine.UI.Image bombImage;
 
+    public Sprite bomb, alienBomb;
     public TMP_Text bombTimerUI;
 
 
@@ -71,11 +75,11 @@ public class GenericBomb : MonoBehaviour, IDisposable
         
         while (timeremaining > 0)
         {
-            bombTimerUI.text = timeremaining.ToString("F2");
+            bombTimerUI.text = timeremaining.ToString("F0");
             timeremaining -= Time.deltaTime;
             yield return null;
         }
-        bombTimerUI.text = "0.00";
+        bombTimerUI.text = "0";
         if (!exploded)
         {
             // Play event that bomb blew up
@@ -87,6 +91,23 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
 
     }
+
+    public void SwitchToHBombSprite(Sprite bombSprite)
+    {
+        bombImage.sprite = bombSprite;
+        humanStickyNote.SetActive(true);
+        alienStickyNote.SetActive(false);
+
+        
+    }
+
+    public void SwitchToABombSprite(Sprite bombSprite)
+    {
+        bombImage.sprite = bombSprite;
+        humanStickyNote.SetActive(false);
+        alienStickyNote.SetActive(true);
+    }
+
     public virtual void Dispose()
     {
         BombCanvas.gameObject.SetActive(true);
