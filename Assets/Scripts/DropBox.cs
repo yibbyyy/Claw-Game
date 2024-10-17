@@ -6,7 +6,8 @@ using UnityEngine;
 public class DropBox : MonoBehaviour
 {
     public GameObject dropBox;
-    
+    public GameObject chestOpenPrefab;
+    public bool chestOpening = false;
 
     public ObjectPooling pooling;
     public IScorable scorable;
@@ -20,6 +21,9 @@ public class DropBox : MonoBehaviour
     public GameTimer gameTimer;
     public int timeValue;
 
+
+    public int keyCount = 0;
+    public int chestCount = 0;
 
     public GameObject simonSays, wireCut, pushAndPull;
     public Sprite humanBomb, alienBomb;
@@ -43,7 +47,7 @@ public class DropBox : MonoBehaviour
     {
         // TODO add check to see if chest logic is playing
         // TODO add logic to stop the game timer while playing mingames and chest animations
-        if (dropBoxQueue.Count > 0 && !simonSays.activeSelf && !wireCut.activeSelf && !pushAndPull.activeSelf)
+        if (dropBoxQueue.Count > 0 && !simonSays.activeSelf && !wireCut.activeSelf && !pushAndPull.activeSelf && !chestOpening)
         {
             GameObject currentObject = dropBoxQueue.Dequeue();
             int id = currentObject.GetInstanceID();
@@ -70,10 +74,28 @@ public class DropBox : MonoBehaviour
                     break;
                 case "Chest":
                     Debug.Log("Chest logic");
+                    chestCount += 1;
+                    if (chestCount > 0 && keyCount > 0)
+                    {
+                        Instantiate(chestOpenPrefab);
+                        chestOpening = true;
+                        // play chest animation
+                        chestCount--;
+                        keyCount--;
+                    }
                     break;
 
                 case "Key":
                     Debug.Log("Key Logic");
+                    keyCount += 1;
+                    if (chestCount > 0 && keyCount > 0)
+                    {
+                        Instantiate(chestOpenPrefab);
+                        chestOpening = true;
+                        // play chest animation
+                        chestCount--;
+                        keyCount--;
+                    }
                     break;
 
 
