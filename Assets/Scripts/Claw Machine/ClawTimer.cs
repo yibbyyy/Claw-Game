@@ -63,8 +63,7 @@ public class ClawTimer : MonoBehaviour
                 clawTimerRunning = false;
                 Debug.Log("Claw Timer Finished");
                 ClawTimerEnded?.Invoke();
-
-                //clawTimer = clawTimerDuration;
+                
                 IntToSprite();
             }
         }
@@ -74,7 +73,6 @@ public class ClawTimer : MonoBehaviour
     {
         clawTimerRunning = false;
 
-        //clawTimer = clawTimerDuration;
         IntToSprite();
     }
 
