@@ -20,7 +20,8 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
     public float smallExplosionDelay = .15f;
     public float largeExplosionDelay = .2f;
-    //public static event Action BombExploded;
+    public static event Action BombExploded;
+    
    public IEnumerator BombExplosion()
     {
         // Set exploded var to true in order for others to not call this function
@@ -52,6 +53,8 @@ public class GenericBomb : MonoBehaviour, IDisposable
             yield return null;
         }
         OuterExplosion.SetActive(false);
+        BombExploded.Invoke();
+
         // Deactivate this game object
         // Inheriting class is responsible for performing cleanup
         Dispose();
