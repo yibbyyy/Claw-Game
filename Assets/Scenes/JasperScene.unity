@@ -7476,6 +7476,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1611264991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
+  m_PrefabInstance: {fileID: 2051796791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb27bb4cf37ce6498663d1913486901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1696927250
 Mesh:
   m_ObjectHideFlags: 0
@@ -9635,6 +9646,10 @@ PrefabInstance:
       propertyPath: empty
       value: 
       objectReference: {fileID: 21300000, guid: 7e90b2f872c07474eae89b78be62bfa9, type: 3}
+    - target: {fileID: 8557069179998463393, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1611264991}
     - target: {fileID: 8557069179998463393, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: clawTimerDisplay
       value: 

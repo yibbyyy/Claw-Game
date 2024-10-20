@@ -40,10 +40,12 @@ public class GameController : MonoBehaviour
 
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
+
+        Setup += SetUpGame;
+        Setup?.Invoke();
     }
     void Start()
     {
-
     }
 
     // Update is called once per frame
