@@ -11,9 +11,10 @@ public class ClawTimer : MonoBehaviour
     public Sprite[] sprites = new Sprite[10];
     public Sprite empty;
 
+    public ClawManager manager;
 
     public float clawTimerDuration;
-    public float clawTimer;
+    public float clawTimerCount;
     private int clawTimerInt;
     public bool clawTimerRunning = false;
     
@@ -28,7 +29,7 @@ public class ClawTimer : MonoBehaviour
     }
     private void Start()
     {
-        clawTimer = clawTimerDuration;
+        clawTimerCount = clawTimerDuration;
         // sub to StartClawTimer event
         ClawManager.StartClawTimer += clawTimerStart;
 
@@ -37,7 +38,7 @@ public class ClawTimer : MonoBehaviour
     }
     public void clawTimerStart()
     {
-        clawTimer = clawTimerDuration;
+        clawTimerCount = clawTimerDuration;
         clawTimerRunning = true;
         IntToSprite();
     }
@@ -53,13 +54,13 @@ public class ClawTimer : MonoBehaviour
     {
         if (clawTimerRunning)
         {
-            clawTimer -= Time.deltaTime;
+            clawTimerCount -= Time.deltaTime;
             IntToSprite();
-            Debug.Log("clawTimer = " + clawTimer);
+            Debug.Log("clawTimer = " + clawTimerCount);
 
-            if (clawTimer <= 0)
+            if (clawTimerCount <= 0)
             {
-                clawTimer = 0;
+                clawTimerCount = 0;
                 clawTimerRunning = false;
                 Debug.Log("Claw Timer Finished");
                 ClawTimerEnded?.Invoke();
@@ -67,6 +68,12 @@ public class ClawTimer : MonoBehaviour
                 //clawTimer = clawTimerDuration;
                 IntToSprite();
             }
+        }
+
+        if (manager.resettingClawTimer == true)
+        {
+            clawTimerCount = clawTimerDuration;
+            IntToSprite();
         }
     }
 
@@ -80,7 +87,7 @@ public class ClawTimer : MonoBehaviour
 
     private void IntToSprite()
     {
-        clawTimerInt = Mathf.CeilToInt(clawTimer);
+        clawTimerInt = Mathf.CeilToInt(clawTimerCount);
 
         Sprite newSprite = sprites[clawTimerInt];
         spriteRenderer.sprite = newSprite;

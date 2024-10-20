@@ -13,6 +13,7 @@ public class ClawManager : MonoBehaviour
     public MagnetWorld World;
 
     public ClawTimer clawTimer;
+    public bool resettingClawTimer = false;
     public StartButton startButton;
 
     public Button clawMachineStartButton;
@@ -261,6 +262,8 @@ public class ClawManager : MonoBehaviour
 
     IEnumerator DropOffToCenter()
     {
+        resettingClawTimer = true;
+        
         // Wait for items to fall
         float duration = 0;
         while (duration < dropOffTime)

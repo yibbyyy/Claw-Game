@@ -37,11 +37,13 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
+
+        Setup += SetUpGame;
+        Setup?.Invoke();
     }
     void Start()
     {
-        //Setup += SetUpGame;
-        //Setup?.Invoke();
+        
         //GameTimer.timedOut += GameOver;
     }
 
