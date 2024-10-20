@@ -34,7 +34,10 @@ public class GameTimer : MonoBehaviour
         paused,
         stopped
     }
-
+    public void MinusTenSeconds()
+    {
+        timerLengthInSec -= 10;
+    }
 
     private void Awake()
     {
@@ -45,6 +48,7 @@ public class GameTimer : MonoBehaviour
         setTime = timerLengthInSec;
 
         GameController.Setup += SetupTimer;
+        GenericBomb.BombExploded += MinusTenSeconds;
     }
     private void Start()
     {
