@@ -35,6 +35,9 @@ public class GameController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Setup += SetUpGame;
+        Setup?.Invoke();
+
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
 
@@ -43,8 +46,6 @@ public class GameController : MonoBehaviour
     }
     void Start()
     {
-        
-        //GameTimer.timedOut += GameOver;
     }
 
     // Update is called once per frame
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
     void GameOver()
     {
         Debug.Log("GameOver");
-        state = State.gameOver;
+        //state = State.gameOver;
 
     }
 

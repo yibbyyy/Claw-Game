@@ -63,6 +63,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientCol: 0
+    - _Antialiasing: 5
     - _BumpScale: 1
     - _Clipped: 0
     - _ColBright: 0
@@ -70,6 +71,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Fresnel: 0.5
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
