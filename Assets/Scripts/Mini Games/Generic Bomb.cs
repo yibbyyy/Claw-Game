@@ -11,7 +11,7 @@ public class GenericBomb : MonoBehaviour, IDisposable
     public GameObject InnerExplosion, OuterExplosion, BombCanvas, humanStickyNote, alienStickyNote;
     public UnityEngine.UI.Image bombImage;
 
-    public Sprite bomb, alienBomb;
+    
     public TMP_Text bombTimerUI;
 
 

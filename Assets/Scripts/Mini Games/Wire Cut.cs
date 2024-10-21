@@ -133,7 +133,7 @@ public class WireCut : GenericBomb
     
     public void drawAlienStars()
     {
-        
+        Debug.Log($"Drew alien stars:");
         foreach (Color color in colorSet)
         {
             ColorToAlienStars[color].SetActive(true);
@@ -196,6 +196,14 @@ public class WireCut : GenericBomb
     }
 
     
+    private void ToggleAlienStars(bool toggle)
+    {
+        foreach( GameObject v in ColorToAlienStars.Values)
+        {
+            v.SetActive(toggle);
+        }
+       
+    }
 
     private void ToggleButtonSubscription(bool toggle)
     {
@@ -273,6 +281,7 @@ public class WireCut : GenericBomb
         ToggleInteractibility(false);
         ToggleButtonSubscription(false);
         ToggleStars(false);
+        ToggleAlienStars(false);
         StartCoroutine(DisposeDelay());
 
     }
