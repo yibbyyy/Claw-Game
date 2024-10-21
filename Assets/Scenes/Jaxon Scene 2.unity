@@ -2967,67 +2967,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &621007829
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8509132888285752016, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_Name
-      value: Alien Bomb (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.037
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.415
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
 --- !u!1001 &631288297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,67 +3744,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &741063924
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8509132888285752016, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_Name
-      value: Alien Bomb (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_RootOrder
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.324
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.415
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
 --- !u!1001 &801735345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8004,67 +7882,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &1728179694
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8509132888285752016, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_Name
-      value: Alien Bomb (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_RootOrder
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.507
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.415
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
 --- !u!1 &1732188388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8869209142509289791, guid: 60f6fb28d53d6eb488030526268c0dde, type: 3}
@@ -8445,6 +8262,18 @@ PrefabInstance:
       propertyPath: Volume
       value: 
       objectReference: {fileID: 663957399}
+    - target: {fileID: 7644143262661209205, guid: caebc3e50a41a8142addaf8251898c06, type: 3}
+      propertyPath: maxHue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644143262661209205, guid: caebc3e50a41a8142addaf8251898c06, type: 3}
+      propertyPath: minHue
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644143262661209205, guid: caebc3e50a41a8142addaf8251898c06, type: 3}
+      propertyPath: duration
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10023,6 +9852,10 @@ PrefabInstance:
     - target: {fileID: 8509132888285752016, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
       propertyPath: m_Name
       value: Alien Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509132888285752016, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9033468699753705578, guid: 211e39b5fc7a90a4fa4bc8c2afb1f14c, type: 3}
       propertyPath: m_RootOrder

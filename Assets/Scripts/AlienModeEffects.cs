@@ -6,13 +6,14 @@ using static UnityEditor.PlayerSettings;
 
 public class AlienModeEffects : MonoBehaviour
 {
-    public float hueRange;
-    public float hueShiftSpeed;
+    public float minHue, maxHue, duration;
+    private bool increasing = true;
     public bool alienMode = false;
     public bool startAlienMode = false;
     public PostProcessVolume Volume;
     private ColorGrading grading;
     private AmbientOcclusion occlusion;
+    private float t = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +44,26 @@ public class AlienModeEffects : MonoBehaviour
         {
             
             // lerp between min and max hue
-            // Use Mathf.PingPong to alternate hue shift between hueMin and hueMax over the specified duration
-            float hueShiftValue = Mathf.Sin(Time.time * hueShiftSpeed) * hueRange;
-
-            // Set the hue shift value in the Color Grading effect
-            grading.hueShift.value = hueShiftValue;
+            grading.hueShift.value = Mathf.Lerp(minHue, maxHue, t);
+            if (increasing)
+            {
+                t += Time.deltaTime / duration;
+                if (t >= 1f)
+                {
+                    t = 1f;
+                    increasing = false;
+                }
+            }
+            else
+            {
+                t -= Time.deltaTime / duration;
+                if (t <= 0f)
+                {
+                    t = 0f;
+                    increasing = true;
+                }
+            }
+           
         }
     }
 }
