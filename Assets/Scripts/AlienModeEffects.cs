@@ -65,5 +65,16 @@ public class AlienModeEffects : MonoBehaviour
             }
            
         }
+
+       
     }
+
+    public void ExitAlienMode()
+    {
+        grading.enabled.value = false;
+        occlusion.enabled.value = false;
+
+        alienMode = false;
+        startAlienMode = false;
+    } 
 }

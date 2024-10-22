@@ -9,6 +9,7 @@ public class AlienMode : MonoBehaviour
     public float alienGrowin;
     public float alienShrinkage;
     
+    public AlienModeEffects alienEffect;
     public DropBox dropBox;
     public float ufoBonus;
 
@@ -42,7 +43,7 @@ public class AlienMode : MonoBehaviour
     {
         ufoBonus = dropBox.alienValue;
 
-        if (gameTimer.currentState == GameTimer.State.running)
+        if (gameTimer.currentState == GameTimer.State.running && (state == State.stalled || state == State.empty))
         {
             state = State.running;
         }
@@ -72,6 +73,14 @@ public class AlienMode : MonoBehaviour
         {
             Debug.Log("alien A GO TO 100!!!");
             state = State.full;
+            // call alienmode effect\
+            alienEffect.startAlienMode = true;
+            // time needs to go faster
+            Time.timeScale = 2f;
+            // start minusing alien goo
+            StartCoroutine(ResetGoo());
+            // still have ufo add to alien goo
+
         }
 
 
@@ -90,6 +99,8 @@ public class AlienMode : MonoBehaviour
 
         if (alienGoo.transform.position.y <= alienGooHome)
         {
+            Time.timeScale = 1f;
+            alienEffect.ExitAlienMode();
             state = State.empty;
         }
 
