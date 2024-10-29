@@ -22,6 +22,10 @@ public class StartButton : MonoBehaviour
         {
             if (clickable && hit.collider == gameObject.GetComponent<Collider>() && Input.GetMouseButtonDown(0))
             {
+                // May start coroutine multiple times before clickable is set to false
+                Debug.Log("If statement of clicked");
+                clickable = false;
+                click?.Invoke();
                 StartCoroutine(DiageticClick());
             }
         } 
@@ -35,8 +39,9 @@ public class StartButton : MonoBehaviour
 
     IEnumerator DiageticClick()
     {
-        click?.Invoke();
-        clickable = false;
+        
+        // TODO potentially set clickable to equal false before coroutine is called to avoid race conditions with claw manager
+       
         gameObject.transform.Translate(Vector3.down * .03125f);
         yield return new WaitForSeconds(.5f);
         gameObject.transform.Translate(Vector3.up * .03125f);

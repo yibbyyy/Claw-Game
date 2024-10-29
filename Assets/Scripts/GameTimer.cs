@@ -126,7 +126,7 @@ public class GameTimer : MonoBehaviour
             while (elapsedTime < 1)
             {
                 elapsedTime += Time.deltaTime;
-                Debug.Log(elapsedTime);
+                //Debug.Log(elapsedTime);
                 yield return null;
             }
             
