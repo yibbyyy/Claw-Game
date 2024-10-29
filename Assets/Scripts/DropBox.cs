@@ -89,6 +89,8 @@ public class DropBox : MonoBehaviour
                         // play chest animation
                         chestCount--;
                         keyCount--;
+                        UpdateCounter(chestCount, chestDisplay);
+                        UpdateCounter(keyCount, keyDisplay);
                     }
                     break;
 
@@ -102,6 +104,8 @@ public class DropBox : MonoBehaviour
                         // play chest animation
                         chestCount--;
                         keyCount--;
+                        UpdateCounter(chestCount, chestDisplay);
+                        UpdateCounter(keyCount, keyDisplay);
                     }
                     break;
 
@@ -172,7 +176,7 @@ public class DropBox : MonoBehaviour
 
     private void UpdateCounter(int counter, GameObject gameObject)
     {
-
+        Debug.Log($"{gameObject} Counter = {counter}");
         GameObject display = new GameObject();
         if (gameObject.tag == "Chest")
         {
@@ -185,7 +189,12 @@ public class DropBox : MonoBehaviour
 
         SpriteRenderer spriteRenderer = display.GetComponentInChildren<SpriteRenderer>();
         Sprite newSprite = sprites[counter];
+        
+       
+        
         spriteRenderer.sprite = newSprite;
+        
+        
         
     }
 }

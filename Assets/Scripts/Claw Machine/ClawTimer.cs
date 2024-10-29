@@ -54,6 +54,7 @@ public class ClawTimer : MonoBehaviour
     {
         if (clawTimerRunning)
         {
+            Debug.Log($"claw timer deltatime {Time.deltaTime}");
             clawTimerCount -= Time.deltaTime;
             IntToSprite();
             Debug.Log("clawTimer = " + clawTimerCount);
@@ -69,11 +70,14 @@ public class ClawTimer : MonoBehaviour
             }
         }
 
+        
         if (manager.resettingClawTimer == true)
         {
+            manager.resettingClawTimer = false;
             clawTimerCount = clawTimerDuration;
             IntToSprite();
         }
+        
     }
 
     public void ResetTimer()

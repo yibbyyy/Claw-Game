@@ -75,6 +75,7 @@ public class ClawManager : MonoBehaviour
             if (!isSubscribedToButton)
             {
                 StartButton.click += OnStartButtonClicked;
+                isSubscribedToButton = true;
             }
         }
 
@@ -172,12 +173,13 @@ public class ClawManager : MonoBehaviour
     }
     public void OnStartButtonClicked()
     {
+        Debug.Log($"StartButton Clicked!");
         // invoke event to start timer
         StartClawTimer?.Invoke();
 
         // Unsub from the button
         StartButton.click -= OnStartButtonClicked;
-
+        isSubscribedToButton = false;
         // Set State to Wait for Input
         StartCoroutine(ExitStateDelay());
     }

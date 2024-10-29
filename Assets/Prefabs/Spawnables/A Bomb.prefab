@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8914858593934827525}
   m_Layer: 7
   m_Name: PM3D_Sphere3D
-  m_TagString: Bomb
+  m_TagString: ABomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
+  timeValue: 0
+  alienValue: 0
 --- !u!114 &8914858593934827525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +176,7 @@ GameObject:
   - component: {fileID: 4837346569691463535}
   m_Layer: 0
   m_Name: A Bomb
-  m_TagString: Untagged
+  m_TagString: ABomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,5 +195,5 @@ Transform:
   m_Children:
   - {fileID: 7104676787454289312}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
