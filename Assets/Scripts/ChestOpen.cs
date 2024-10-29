@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestOpen : MonoBehaviour
 {
     DropBox dropBox;
+
     public Animation chestAnimation;
     public GameObject coinSystem;
 
@@ -42,11 +43,12 @@ public class ChestOpen : MonoBehaviour
 
         // Activate the particle system
         coinSystem.SetActive(true);
-
+        
         // wait for 5
         float duration = 0f;
         while (duration  < 2.5f)
         {
+            dropBox.totalScore += 11;
             duration += Time.deltaTime;
             yield return null;
         }
