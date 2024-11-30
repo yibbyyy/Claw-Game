@@ -134,7 +134,7 @@ public class GameTimer : MonoBehaviour
             timerLengthInSec -= 1;
             
         }
-        if (timerLengthInSec == 0)
+        if (timerLengthInSec <= 0)
         {
             timedOut?.Invoke();
             IntToSprite();
