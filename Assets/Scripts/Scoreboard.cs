@@ -6,7 +6,7 @@ using UnityEngine;
 public class Scoreboard : MonoBehaviour
 {
     public DropBox dropBox;
-    int score = 0;
+    public int score = 0;
     int lastScore = 0;
     int finalScore;
     public float waitTime;
