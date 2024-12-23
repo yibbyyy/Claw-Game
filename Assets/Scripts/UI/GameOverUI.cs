@@ -156,6 +156,8 @@ public class GameOverUI : MonoBehaviour
             leftPressed = false;
         }
 
+        // TODO ADD BUTTON GREYING ---------------------------------------------------------------------------------------------------------------
+
         // When you move up or down, it recurses across the letters, clicks the arrow buttons and plays a sound effect
         if (vertical > 0f && !upPressed)
         {
