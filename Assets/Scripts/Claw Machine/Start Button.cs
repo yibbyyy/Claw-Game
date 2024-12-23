@@ -32,9 +32,14 @@ public class StartButton : MonoBehaviour
         
     }
 
-    public void ClickButton()
+    public void GameEnded()
     {
+        clickable = false;
+    }
 
+    public void GameStarted()
+    {
+        clickable = true;
     }
 
     IEnumerator DiageticClick()

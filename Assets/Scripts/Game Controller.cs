@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public static event Action Setup;
     public static event Action FirstRound;
-
+    public GameObject GameOverUI;
 
     public State state = State.idle;
 
@@ -54,9 +54,10 @@ public class GameController : MonoBehaviour
         
     }
 
-    void GameOver()
+    public void GameOver()
     {
         Debug.Log("GameOver");
+        GameOverUI.SetActive(true);
         //state = State.gameOver;
 
     }
