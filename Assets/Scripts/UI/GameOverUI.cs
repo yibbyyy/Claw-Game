@@ -3,10 +3,33 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.WSA;
+
 
 public class GameOverUI : MonoBehaviour
 {
+    [System.Serializable]
+    public struct HighScoreEntry
+    {
+        public string Name;
+        public int Score; 
+
+
+        // Constructor
+        public HighScoreEntry(string name, int score)
+        {
+            this.Name = name;
+            this.Score = score;
+        }
+
+        // Implement CompareTo for IComparable
+        public int CompareTo(HighScoreEntry other)
+        {
+            // Sort in descending order (highest score first)
+            return other.Score.CompareTo(this.Score);
+        }
+    }
+
+    [SerializeField] public List<HighScoreEntry> StarterHighScores = new();
     public Scoreboard scoreboard;
     public float fadeDuration = .5f;
     public float GameOverDuration = 5.0f, scoreShownDuration = 4.0f;
@@ -15,7 +38,8 @@ public class GameOverUI : MonoBehaviour
     public TMP_Text scoreText, scoreNum, enterNameText;
     public GameObject enterNameGameObject;
     public GameObject[] letterGameObjects;
-    
+
+    public TMP_Text DebugName;
     AudioSource audioSource;
     private int score;
     private bool enterName = false;
@@ -56,7 +80,13 @@ public class GameOverUI : MonoBehaviour
         yield return new WaitWhile(() =>  enterName);
         // Then fade out
         yield return StartCoroutine(FadeImagesAndTextInParent(enterNameGameObject, 1f, 0f, fadeDuration));
+
+        // Make HighScore entry and save it to list
+        HighScoreEntry playerEntry = new HighScoreEntry(submittedName, score);
+
         // Display their highscore and name among other entries with fade
+        SetText(DebugName, submittedName);
+        yield return StartCoroutine(FadeText(0f, 1f, fadeDuration, DebugName));
         // With very short delay, fade in Play Again and Main Menu button
 
     }
@@ -77,6 +107,12 @@ public class GameOverUI : MonoBehaviour
             letterPosX[i] = letterGameObjects[i].GetComponent<RectTransform>().anchoredPosition.x;
         }
         audioSource = GetComponent<AudioSource>();
+
+        // Load HighScores from Player Prefs
+        LoadHighScores();
+
+        // Merge and order HighScores hardcoded
+        highScores = OrderHighScores(savedScores, StarterHighScores);
     }
 
     private void Update()
@@ -85,6 +121,45 @@ public class GameOverUI : MonoBehaviour
         if (enterName)
             HandleInput();
         
+    }
+
+    // High Score Stuff
+    private const string HighScoresKey = "HighScores";
+    public List<HighScoreEntry> savedScores = new List<HighScoreEntry>();
+    public List<HighScoreEntry> highScores= new List<HighScoreEntry>();
+
+    void AddHighScore(HighScoreEntry hScore, List<HighScoreEntry> hList)
+    {
+        // Run a fucking bin search
+        int idx = hList.BinarySearch(hScore);
+
+        // Searches for score of highscore provided
+        // If same score is found, the idx becomes that index
+        // If not found, it finds the index where it should go and make it negative and add 1
+        // So we use the bitwise NOT operator to flip all the bits which makes it positive and -1 lol
+        if (idx < 0) idx = ~idx;
+
+        hList.Insert(idx, hScore);
+    }
+    void LoadHighScores()
+    {
+        if (PlayerPrefs.HasKey(HighScoresKey))
+        {
+            string json = PlayerPrefs.GetString(HighScoresKey);
+            savedScores = JsonUtility.FromJson<List<HighScoreEntry>>(json);
+        }
+        else
+        {
+            Debug.Log("No HighScores Saved");
+        }
+    }
+
+    List<HighScoreEntry> OrderHighScores(List<HighScoreEntry> lstA, List<HighScoreEntry> lstB)
+    {
+        List<HighScoreEntry> res = new List<HighScoreEntry>(lstA);
+        res.AddRange(lstB);
+        res.Sort();
+        return res;
     }
 
     // table for arrow positions
@@ -221,6 +296,10 @@ public class GameOverUI : MonoBehaviour
         }
     }
 
+    private void SetText(TMP_Text text, string message)
+    {
+        text.text = message;
+    }
 
     private void StartButtonColorTransition(Image buttonImage)
     {

@@ -8343,6 +8343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e62d98dec6fc7e4fb691862ff38fd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StarterHighScores: []
   scoreboard: {fileID: 1390201948}
   fadeDuration: 1
   GameOverDuration: 3
@@ -8358,6 +8359,9 @@ MonoBehaviour:
   - {fileID: 1166179298}
   - {fileID: 685276750}
   - {fileID: 1374100440}
+  DebugName: {fileID: 834857343}
+  savedScores: []
+  highScores: []
   currentArrowPos: 0
   letterTexts: []
   upArrow: {fileID: 563069703}
