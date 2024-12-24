@@ -13,7 +13,7 @@ public class GameOverUI : MonoBehaviour
     public Image GameOverImg, BorderImg;
     public RawImage BackGround;
     public TMP_Text scoreText, scoreNum, enterNameText;
-
+    public GameObject enterNameGameObject;
     public GameObject[] letterGameObjects;
     
     AudioSource audioSource;
@@ -47,15 +47,15 @@ public class GameOverUI : MonoBehaviour
         StartCoroutine(FadeText(1f, 0f, fadeDuration, scoreText));
         yield return StartCoroutine(FadeText(1f, 0f, fadeDuration, scoreNum));
 
-        // Fade in "Enter Name"
-        yield return StartCoroutine(FadeText(0f, 1f, fadeDuration, enterNameText));
+        // Fade in "Enter Name" and all children UI
+        yield return StartCoroutine(FadeImagesAndTextInParent(enterNameGameObject, 0f, 1f, fadeDuration));
         // Take in 3 Letters, Uppercase and Lowercase
         // enter moves selected digit
         // if selected digit is the far right, register name
         enterName = true;
         yield return new WaitWhile(() =>  enterName);
         // Then fade out
-
+        yield return StartCoroutine(FadeImagesAndTextInParent(enterNameGameObject, 1f, 0f, fadeDuration));
         // Display their highscore and name among other entries with fade
         // With very short delay, fade in Play Again and Main Menu button
 
@@ -63,6 +63,7 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
+        enterNameText = enterNameGameObject.GetComponent<TMP_Text>();
         upArrowTransform = upArrow.GetComponent<RectTransform>();
         downArrowTransform = downArrow.GetComponent<RectTransform>();
         downArrowImg = downArrow.GetComponent<Image>();
@@ -104,6 +105,8 @@ public class GameOverUI : MonoBehaviour
     float targetPosX;
     bool leftPressed = false, rightPressed = false, upPressed = false, downPressed = false;
     public AudioClip letterSwitchSFX, arrowMoveSFX, submitSFX;
+
+    public string submittedName;
     private void HandleInput()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -112,17 +115,20 @@ public class GameOverUI : MonoBehaviour
         submit = Input.GetAxis("Submit");
         // When you move left or right it moves the arrows over and plays a sound effect
 
-        // When you click enter it moves the letters to the right (use axisName "submit")
-        if ((horizontal > 0f || submit != 0f) && !rightPressed)
+        
+        if ((horizontal > 0f) && !rightPressed)
         {
             // Move over to right:
             // change current arrow pos to next one
             rightPressed = true;
             currentArrowPos++;
+            
+           
             if (currentArrowPos >= 2)
             {
                 currentArrowPos = 2;
-                // submit name break out of function
+
+               
 
             }
             // play sfx
@@ -157,7 +163,7 @@ public class GameOverUI : MonoBehaviour
         }
 
         // reset button pressed vars if no horizontal input
-        if (horizontal == 0f && submit == 0f)
+        if (horizontal == 0f)
         {
             rightPressed = false;
             leftPressed = false;
@@ -201,6 +207,17 @@ public class GameOverUI : MonoBehaviour
         {
             upPressed = false;
             downPressed = false;
+        }
+
+        if (submit != 0f)
+        {
+            // save name
+            for (int i = 0; i < letters.Length; i++)
+            {
+                submittedName += letters[i];
+            }
+            // submit name break out of function
+            enterName = false;
         }
     }
 
@@ -247,6 +264,29 @@ public class GameOverUI : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
     }
+
+    //--------------------------------------------------------------FADES--------------------------------------------------------
+    private IEnumerator FadeImagesAndTextInParent(GameObject parentObject, float startAlpha, float endAlpha, float duration)
+    {
+        // Get all Image components in children of the parentObject
+        Image[] images = parentObject.GetComponentsInChildren<Image>();
+        TMP_Text[] texts = parentObject.GetComponentsInChildren<TMP_Text>();
+
+        if (images.Length == 0 && texts.Length == 0) yield break; // Exit if there are no images or texts
+
+        for (int i = 0; i < images.Length; i++)
+        {
+            StartCoroutine(Fade(startAlpha, endAlpha, duration, images[i]));
+        }
+
+
+        for (int i = 0; i < texts.Length; i++)
+        {
+            StartCoroutine(FadeText(startAlpha, endAlpha, duration, texts[i]));
+        }
+
+    }
+
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration, Image image)
     {
         float elapsedTime = 0f;
