@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.WSA;
 
 public class GameOverUI : MonoBehaviour
 {
@@ -64,6 +65,8 @@ public class GameOverUI : MonoBehaviour
     {
         upArrowTransform = upArrow.GetComponent<RectTransform>();
         downArrowTransform = downArrow.GetComponent<RectTransform>();
+        downArrowImg = downArrow.GetComponent<Image>();
+        upArrowImg = upArrow.GetComponent<Image>();
         letterTexts = new TMP_Text[3];
         letterPosX = new float[3];
         for (int i = 0; i < 3; i++)
@@ -93,6 +96,10 @@ public class GameOverUI : MonoBehaviour
     public GameObject upArrow, downArrow;
     public float arrowSpeed = 2;
     private RectTransform upArrowTransform, downArrowTransform;
+    private Image upArrowImg, downArrowImg;
+    private Color activatedButtonColor = new Color(0.75f, 0.75f, 0.75f);
+    private Color ogButtonColor = Color.white;
+    private Coroutine buttonTransitionCoroutine = null;
     float horizontal = 0f, vertical = 0f, submit = 0f;
     float targetPosX;
     bool leftPressed = false, rightPressed = false, upPressed = false, downPressed = false;
@@ -156,7 +163,7 @@ public class GameOverUI : MonoBehaviour
             leftPressed = false;
         }
 
-        // TODO ADD BUTTON GREYING ---------------------------------------------------------------------------------------------------------------
+       
 
         // When you move up or down, it recurses across the letters, clicks the arrow buttons and plays a sound effect
         if (vertical > 0f && !upPressed)
@@ -164,6 +171,8 @@ public class GameOverUI : MonoBehaviour
             // move letter up
             upPressed = true;
 
+            // Play button clicked animation
+            StartButtonColorTransition(upArrowImg);
             // play sfx
             PlayAudioClip(letterSwitchSFX);
             // Use Ascii to change to next letter in alphabet, if 'Z' go back to 'A'
@@ -180,6 +189,9 @@ public class GameOverUI : MonoBehaviour
             downPressed = true;
             // play sfx
             PlayAudioClip(letterSwitchSFX);
+
+            // Play button clicked animation
+            StartButtonColorTransition(downArrowImg);
             // Use Ascii to change to next letter in alphabet, if 'Z' go back to 'A'
             letters[currentArrowPos] = letters[currentArrowPos] == lastChar ? firstChar : (char)(letters[currentArrowPos] + 1);
             letterTexts[currentArrowPos].text = letters[currentArrowPos].ToString();
@@ -192,6 +204,44 @@ public class GameOverUI : MonoBehaviour
         }
     }
 
+
+    private void StartButtonColorTransition(Image buttonImage)
+    {
+
+        // Stop already existing coroutine
+        if (buttonTransitionCoroutine != null)
+        {
+            StopCoroutine(buttonTransitionCoroutine);
+        }
+
+        buttonTransitionCoroutine = StartCoroutine(PlayButtonClickAnimation(ogButtonColor, activatedButtonColor, buttonImage));
+    }
+    // May need to add a duration param if needed to extend for other funcs
+    private IEnumerator PlayButtonClickAnimation(Color ogColor, Color clickedColor, Image buttonImage)
+    {
+        float elapsedTime = 0f;
+        float fadeDuration = 0.1f;
+        // Greying of button
+        while (elapsedTime < fadeDuration)
+        {
+            buttonImage.color = Color.Lerp(ogColor, clickedColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        // ensure it changed
+        buttonImage.color = clickedColor;
+
+        // Transition back to og color
+        elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            buttonImage.color = Color.Lerp(clickedColor, ogColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        // ensure it changed
+        buttonImage.color = ogColor;
+    }
     private void PlayAudioClip(AudioClip clip)
     {
         audioSource.clip = clip;
