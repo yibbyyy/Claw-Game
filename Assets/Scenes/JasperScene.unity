@@ -1095,6 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0126775490630ed4a8990cd79c8270a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverUI: {fileID: 0}
   state: 0
 --- !u!1 &271913068 stripped
 GameObject:
