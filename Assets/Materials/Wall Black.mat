@@ -71,11 +71,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.21
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _Lumin: 0
     - _MaxLight: 1
-    - _Metallic: 0.45
+    - _Metallic: 0.76
     - _MinLight: 0
     - _Mode: 0
     - _OcclusionStrength: 1

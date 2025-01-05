@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1663406926809119759}
   - {fileID: 2651903495991895159}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3127171897431065291
 MonoBehaviour:
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1494
+  m_VersionIndex: 1497
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1499,8 +1499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bd0692658d18f4d8825cf5c13c42c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerLengthInSec: 115
-  sprites2:
+  timerLengthInSec: 100
+  sprites:
   - {fileID: 21300000, guid: 4c645520f75cef840b948e010b7274f7, type: 3}
   - {fileID: 21300000, guid: 6fb0b3ea22129f44789bf06ee898a571, type: 3}
   - {fileID: 21300000, guid: 037f6adcaf7b5bc4d945f2fa0c174f8e, type: 3}
@@ -1511,6 +1511,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a74774335ed38ad48b726d0e59fe8323, type: 3}
   - {fileID: 21300000, guid: 6cdbede73f1ba1d4fa1331d5a52ef6e3, type: 3}
   - {fileID: 21300000, guid: f78365273b80cfa4f8a94ae898e6cd39, type: 3}
+  empty: {fileID: 21300000, guid: 7e90b2f872c07474eae89b78be62bfa9, type: 3}
+  dropBox: {fileID: 0}
+  currentState: 2
 --- !u!1 &6311208905721231882
 GameObject:
   m_ObjectHideFlags: 0

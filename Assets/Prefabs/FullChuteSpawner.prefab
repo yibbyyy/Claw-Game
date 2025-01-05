@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7170081340733410485}
   - component: {fileID: 5099614006254663861}
   - component: {fileID: 8800853310909508794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FullChuteSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 772376941889949745}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5191223430071414213
 MonoBehaviour:
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1283
+  m_VersionIndex: 1286
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1192,12 +1192,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -1383,10 +1379,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1406,12 +1398,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -1597,10 +1585,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1620,12 +1604,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -1811,10 +1791,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1836,6 +1812,10 @@ PrefabInstance:
     - target: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
       propertyPath: m_Name
       value: SpawnContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2300,9 +2280,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1397806485966379263}
-    - targetCorrespondingSourceObject: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2793800622537640082}
   m_SourcePrefab: {fileID: 100100000, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
 --- !u!4 &772376941889949745 stripped
@@ -2315,22 +2292,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 939473813650717811, guid: bdfd38e7bb354bf4fbbf80d70b036cd7, type: 3}
   m_PrefabInstance: {fileID: 5470748517873328843}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1397806485966379263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108681483744911032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a770ccb6f364147aa8e34aba7021b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooling: {fileID: 0}
-  spawner: {fileID: 0}
-  refillCounts: 0
-  moveSpeed: 1
 --- !u!114 &2793800622537640082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,9 +2308,9 @@ MonoBehaviour:
   moveSpeed: 1
   pooling: {fileID: 0}
   spawner: {fileID: 772376941889949745}
-  refillCounts: 1000
+  refillCounts: 20
   waitBetweenRefills: 0.01
-  lootRefillCount: 1
+  lootRefillCount: 5
   waitBetweenLootRefills: 1
   lootSpawnDirection: {x: 0, y: 0, z: 90}
   currentState: 0
@@ -2362,12 +2323,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -2553,10 +2510,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2576,12 +2529,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -2767,10 +2716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2790,12 +2735,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -2981,10 +2922,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3004,12 +2941,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -3195,10 +3128,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Spawner Prefap (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3218,12 +3147,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 772376941889949745}
     m_Modifications:
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3690
+      value: 3693
       objectReference: {fileID: 0}
     - target: {fileID: 3038805930845161921, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Tangents.Array.data[1677].x
@@ -3408,10 +3333,6 @@ PrefabInstance:
     - target: {fileID: 6092982576413714180, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
       propertyPath: m_Name
       value: New Spawner Prefap (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435411058142905151, guid: 46c88b3f9702a994296be7264063cb5d, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

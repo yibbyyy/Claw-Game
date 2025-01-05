@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 2074798645095695283}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8780919022307707063
 MonoBehaviour:
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 975
+  m_VersionIndex: 981
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
