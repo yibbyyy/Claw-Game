@@ -29,7 +29,7 @@ public class MenuSelector : MonoBehaviour
         Vector3 targetPosition = currentButton.position + (Vector3)offset;
         if (icon.position != targetPosition)
         {
-            icon.position = Vector3.Lerp(icon.position, targetPosition, Time.deltaTime * moveSpeed);
+            icon.position = Vector3.Lerp(icon.position, targetPosition, Time.unscaledDeltaTime * moveSpeed);
         }
     }
     
