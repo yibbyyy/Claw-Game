@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseController : MonoBehaviour
 {
     public Pause pause;
+    public GameObject optionsUI;
+
 
     public void ResumeGame()
     {
@@ -22,14 +24,15 @@ public class PauseController : MonoBehaviour
 
     public void OpenOptions()
     {
-
+        gameObject.SetActive(false);
+        optionsUI.SetActive(true);
     }
 
 
     public void ReturnToTitle()
     {
         pause.paused = pause.togglePause();
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
 

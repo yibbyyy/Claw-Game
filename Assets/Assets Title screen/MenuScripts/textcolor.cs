@@ -10,12 +10,15 @@ public class ButtonTextColorChangerTMP : MonoBehaviour
     public Color pressedColor = Color.red;
 
     private Button button;
-
     void Start()
     {
         button = GetComponent<Button>();
-
         button.onClick.AddListener(OnPressed);
+    }
+
+    private void OnEnable()
+    {
+        buttonText.color = normalColor;
     }
 
     void OnPressed()
