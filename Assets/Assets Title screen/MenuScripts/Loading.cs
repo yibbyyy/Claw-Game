@@ -8,20 +8,23 @@ public class Loading : MonoBehaviour
     public string sceneToLoad; // The name of the game scene to load
     public float loadTime;
 
-    void Start()
+    void Awake()
     {
+
+        Debug.Log("Gothere");
         // Start loading the scene asynchronously
         StartCoroutine(LoadSceneAsync());
     }
 
     IEnumerator LoadSceneAsync()
     {
-        // Start loading the scene
-        yield return new WaitForSeconds(loadTime);
-        SceneManager.LoadSceneAsync(sceneToLoad);
         Debug.Log("loading scene");
 
+        // Start loading the scene
+        yield return new WaitForSeconds(loadTime);
 
-
+        SceneManager.LoadSceneAsync(sceneToLoad);
+        
+        StopCoroutine(LoadSceneAsync());
     }
 }

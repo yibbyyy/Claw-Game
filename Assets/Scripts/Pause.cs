@@ -23,7 +23,7 @@ public class Pause : MonoBehaviour
         }
     }
 
-    bool togglePause()
+    public bool togglePause()
     {
         if (Time.timeScale == 0f)
         {
