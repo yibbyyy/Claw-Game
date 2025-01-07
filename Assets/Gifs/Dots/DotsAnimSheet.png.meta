@@ -1,0 +1,1271 @@
+fileFormatVersion: 2
+guid: 3434af326ecaf9c4883cd36097e8226e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DotsAnimSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1b16a673844984082e18413097c1b3
+      internalID: -1920338162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2e83f892abfd5499873947e3a9f68a
+      internalID: 671585742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8fa87202c579c4591a4c9db2953806
+      internalID: 2061594605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca514b2ea7bc9f4cb57ddbccc97aae5
+      internalID: -1637666229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37270f50636a9ea4aaf70e76c53e291c
+      internalID: -2039317305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f04ffc59a8c61a4b8e2d9018fad098d
+      internalID: 1172434735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2acfb6cdfd2b6b4d8ada40e7da2c322
+      internalID: -1994490643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59188ca87850084cb8a0861e38016f4
+      internalID: -860817591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5ed087d3bbb3c429088dcf88ac5b34
+      internalID: -1877639317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b97f010d00cc346b9a9bab1e50e50d
+      internalID: 1838650902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44ad5cebe61ab74fb35424d06979930
+      internalID: 2021732097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ca10538ed833f4a94e1551b6204a7d
+      internalID: -1274525759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0640c1863dc7b7b49afa1c400381aa17
+      internalID: 932530838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b15e890c241cd45b33d3c54d7053c4
+      internalID: -1032967629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b88a3e5b2067e478205216582c0835
+      internalID: 1142980282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4d80a9274f66d43b1ecd7bbc476ebc
+      internalID: -402352989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3ff845418783a43a38cc339372d1ad
+      internalID: -1109598312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2563a0a8ef3c2294b9239442a39dcbc4
+      internalID: 539305577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4280cbed4d8234e4897e0fb585ad9f26
+      internalID: -1778450976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386a35baf65215448978ee209a623c1d
+      internalID: 860147929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3fb4fa37df05344b288f1e44d03245
+      internalID: 1068039551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c7b8b86ff5cdb40ad81237c8e59c99
+      internalID: -1388323741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf1eb98581640d45a8368b051c06317
+      internalID: -144248290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e760e2244adcca4e87622379675d9e5
+      internalID: 1402506940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a46ad78081ddd244a63d4f5c0b51063
+      internalID: 1683660549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b142e64af9cbc84da15269c1219e98c
+      internalID: 884862986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac29b6696548ebe4c89d4b09634c211d
+      internalID: 689339870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccf3edf776df214593c55bca5530e7a
+      internalID: -1159881304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac2ad9ebb1fac246890edd46295d507
+      internalID: -2099357124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a8aaff2a7406d429bdf04d082359e6
+      internalID: 1879265866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0f2f79e1d278c40b8c36d43bc7423a
+      internalID: -1762117735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74691f1a0ed857479326b15504235dd
+      internalID: 674319653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac68a54dc69c8e24aaee854343b31e06
+      internalID: 130090744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb005b6af975b04d9987650d5752ce0
+      internalID: 158689900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9d56eedc4aed940aafbaed222b2674
+      internalID: -181055384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9b5a0e3f5beae4eae7aa4677a6e33f
+      internalID: -1497931187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29391c5d66d6cc14298d64f75029a7eb
+      internalID: -1990870605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d805493684b8a474f858f41d3955245a
+      internalID: 869672553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25237c658fb99ac4681f73185c567460
+      internalID: -925798407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f30814923834a342b2c25bc334893d6
+      internalID: -1133560488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac810d563ae7ba4ea170b91a97d95db
+      internalID: 1722796661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7f1bf6a85ace74fac42b11e8fffce1
+      internalID: 1861549173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac7bdf4f7541984ca95182efb07dc04
+      internalID: 495046535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889d3c13fd4989741ac5d099d7f8e0db
+      internalID: 986531231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4190443ee5bb78649ada21029d128467
+      internalID: -1391828058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8211859c25a8a5d46a98dd69ba286cd4
+      internalID: -353419505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320fbb3eb43351d4c9a4cfeebdf51b03
+      internalID: 1943947995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8396425e4ea6143904c0553fd2bf76
+      internalID: -1270315274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127be4f03caf3224a99ef276ba1d494d
+      internalID: -158833481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3b05aa2b6798f42a113e2118c30c88
+      internalID: 1605791633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165897628682e8b47919c78eba6b6124
+      internalID: -1322106123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DotsAnimSheet_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccfd014428090cf40a2e8b7cfeebbaab
+      internalID: -1946228927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DotsAnimSheet_0: -1920338162
+      DotsAnimSheet_1: 671585742
+      DotsAnimSheet_10: 2021732097
+      DotsAnimSheet_11: -1274525759
+      DotsAnimSheet_12: 932530838
+      DotsAnimSheet_13: -1032967629
+      DotsAnimSheet_14: 1142980282
+      DotsAnimSheet_15: -402352989
+      DotsAnimSheet_16: -1109598312
+      DotsAnimSheet_17: 539305577
+      DotsAnimSheet_18: -1778450976
+      DotsAnimSheet_19: 860147929
+      DotsAnimSheet_2: 2061594605
+      DotsAnimSheet_20: 1068039551
+      DotsAnimSheet_21: -1388323741
+      DotsAnimSheet_22: -144248290
+      DotsAnimSheet_23: 1402506940
+      DotsAnimSheet_24: 1683660549
+      DotsAnimSheet_25: 884862986
+      DotsAnimSheet_26: 689339870
+      DotsAnimSheet_27: -1159881304
+      DotsAnimSheet_28: -2099357124
+      DotsAnimSheet_29: 1879265866
+      DotsAnimSheet_3: -1637666229
+      DotsAnimSheet_30: -1762117735
+      DotsAnimSheet_31: 674319653
+      DotsAnimSheet_32: 130090744
+      DotsAnimSheet_33: 158689900
+      DotsAnimSheet_34: -181055384
+      DotsAnimSheet_35: -1497931187
+      DotsAnimSheet_36: -1990870605
+      DotsAnimSheet_37: 869672553
+      DotsAnimSheet_38: -925798407
+      DotsAnimSheet_39: -1133560488
+      DotsAnimSheet_4: -2039317305
+      DotsAnimSheet_40: 1722796661
+      DotsAnimSheet_41: 1861549173
+      DotsAnimSheet_42: 495046535
+      DotsAnimSheet_43: 986531231
+      DotsAnimSheet_44: -1391828058
+      DotsAnimSheet_45: -353419505
+      DotsAnimSheet_46: 1943947995
+      DotsAnimSheet_47: -1270315274
+      DotsAnimSheet_48: -158833481
+      DotsAnimSheet_49: 1605791633
+      DotsAnimSheet_5: 1172434735
+      DotsAnimSheet_50: -1322106123
+      DotsAnimSheet_51: -1946228927
+      DotsAnimSheet_6: -1994490643
+      DotsAnimSheet_7: -860817591
+      DotsAnimSheet_8: -1877639317
+      DotsAnimSheet_9: 1838650902
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

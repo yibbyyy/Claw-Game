@@ -1,0 +1,1359 @@
+fileFormatVersion: 2
+guid: 157c5c024b529e547a4f898fbd815651
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShmupAnimsheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3960
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff3799a4493d4244a50916bd109e3a8
+      internalID: 715374220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_1
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3960
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6992c082917f6448cfe70553f249bf
+      internalID: 1223342651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_2
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 3960
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f22a65210bd6464499dde02ac9186f9
+      internalID: -274919928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_3
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 3960
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebdeda64dcd89b4185342414de80a2d
+      internalID: -1539100472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_4
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 3960
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce7a3c2563cf1949836d5066a68ab88
+      internalID: -303595593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434caaba89245b5418688a613a5cd25f
+      internalID: 1877960202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_6
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3600
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90aecfd87c63a9e4eac2296b2d21b6b8
+      internalID: -1594159354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_7
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 3600
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68d97e80162f4a46892038ad3d8e34a
+      internalID: -136917044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_8
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 3600
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f29e200ac8148e4e8566543888056de
+      internalID: 2080759791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_9
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 3600
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3df2dcf41d44e4897c2121f6be8359
+      internalID: 802385604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315eeb875d166664f892d4b86be288bf
+      internalID: 987430151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_11
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3240
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1303581f3a5ea49902c83651ce4d20
+      internalID: -527264270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_12
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 3240
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d361d7c4ac459dc4ab76ef5fffdab81c
+      internalID: -1622467882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_13
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 3240
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddbbbab81925904ea13b5e7b1eff575
+      internalID: 977173738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_14
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 3240
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78d7488ed741d14cb9faff701c3668c
+      internalID: -918264496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212c5a09b854ad04f84839ee5453508d
+      internalID: -1415426753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_16
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 2880
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36a613db76045e4e8118b2d3f8c53b8
+      internalID: -695779892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_17
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2880
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adc9be814802a642ad11fd2033ae822
+      internalID: -706144010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_18
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 2880
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ea162630d923446a6a4b05ff73d3f8
+      internalID: -402831038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_19
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2880
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f3157fd7fc6924b9c8fe14d45305ea
+      internalID: 2054898532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2520
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0187e9054316c44bd18b80801fd37c
+      internalID: -250582515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_21
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 2520
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e10b398e4902046b2155d9a0c705b9
+      internalID: -1130514381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_22
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2520
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7adc552138d50548b040152e1259001
+      internalID: 959807757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_23
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 2520
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a5bc36c3e61ce4b99ced4ef694211c
+      internalID: -496227139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_24
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2520
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4156f065393f1bd49b4e0694be4bbe53
+      internalID: -1780893823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f91c371be402904eb4a692eb40f67bd
+      internalID: 1877024867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_26
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 2160
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8dc41af14ccb24e853761877bcfcb7
+      internalID: -1697228506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_27
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2160
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ba75984b5c6a84cbf9fb7156a07a9e
+      internalID: -1443685922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_28
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 2160
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ff9acf3a90cc742bd5091432637a63
+      internalID: -669022342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_29
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2160
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bc90d06593bb947b553b66ca7b5b8c
+      internalID: 2061202156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6375d0eea2e553b4780f4775b111e48e
+      internalID: -1614666564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_31
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1800
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3dc8f567c8e3d4294f48052c154d3c
+      internalID: -1180819032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_32
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1800
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8da7f891dbaab44fa31e9e85ffbf5aa
+      internalID: 1166583419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_33
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1800
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6f5dd3da9ff304c804abefacb93d91
+      internalID: 1369370113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_34
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1800
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8afd740f79e74f41a4af845a7f74777
+      internalID: 306474919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629c3fefb935a4d40841ed0274b8a54c
+      internalID: 541707770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_36
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1440
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983659633489a284db7ab9e1ab505df7
+      internalID: -1415972835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_37
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1440
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77d623bbe9f1f64c985e6ce2b7563f8
+      internalID: -1768207642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_38
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1440
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20615449b1d17d45ad395569296ff74
+      internalID: -994665625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_39
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1440
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e2214ebbf8e4e449e135bc6bcca510
+      internalID: -303729209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7722f3ea88eb33744a15737f7383ad05
+      internalID: 361904528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_41
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1080
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0939e9f034a474596dc3367a14c238
+      internalID: 293966806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_42
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1080
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151038fd01b0ef84bb2cee5cd2b2dec0
+      internalID: -288630841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_43
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1080
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3af439f68a1bc4d8a620e5d303dc66
+      internalID: 1382531250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_44
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1080
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260a9456a0f48b44194b54411a7445d9
+      internalID: 2057836044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7edd905b734b148b76f784a88e35f7
+      internalID: -937478272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_46
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 720
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea63e261f4fcbd84480e90004e438509
+      internalID: 13454505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_47
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 720
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d821c0f759e5e664c901d316c39c58e5
+      internalID: -1072211092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_48
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 720
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a4cc51317d60143909f610fdfd6095
+      internalID: -501464721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_49
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 720
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0da5c1727ba8ab42a645cdd9877ef8b
+      internalID: -415958640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37512457f8725cd4aa896cd2b92bdff2
+      internalID: -1111129167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_51
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 360
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ff82d5235a7be4baf1518dab661e51
+      internalID: -1516186450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_52
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 360
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb0ed851b17b7e49b19dd329b4d8fe9
+      internalID: -1149745650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_53
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 360
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642bf4ec63e27084abde0d194768b31d
+      internalID: 244051982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_54
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 360
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa5ff7280882f149ab841902add054a
+      internalID: -104230151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShmupAnimsheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 316
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bc7682710d8854f8b5514af7cdb594
+      internalID: -1336004053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ShmupAnimsheet_0: 715374220
+      ShmupAnimsheet_1: 1223342651
+      ShmupAnimsheet_10: 987430151
+      ShmupAnimsheet_11: -527264270
+      ShmupAnimsheet_12: -1622467882
+      ShmupAnimsheet_13: 977173738
+      ShmupAnimsheet_14: -918264496
+      ShmupAnimsheet_15: -1415426753
+      ShmupAnimsheet_16: -695779892
+      ShmupAnimsheet_17: -706144010
+      ShmupAnimsheet_18: -402831038
+      ShmupAnimsheet_19: 2054898532
+      ShmupAnimsheet_2: -274919928
+      ShmupAnimsheet_20: -250582515
+      ShmupAnimsheet_21: -1130514381
+      ShmupAnimsheet_22: 959807757
+      ShmupAnimsheet_23: -496227139
+      ShmupAnimsheet_24: -1780893823
+      ShmupAnimsheet_25: 1877024867
+      ShmupAnimsheet_26: -1697228506
+      ShmupAnimsheet_27: -1443685922
+      ShmupAnimsheet_28: -669022342
+      ShmupAnimsheet_29: 2061202156
+      ShmupAnimsheet_3: -1539100472
+      ShmupAnimsheet_30: -1614666564
+      ShmupAnimsheet_31: -1180819032
+      ShmupAnimsheet_32: 1166583419
+      ShmupAnimsheet_33: 1369370113
+      ShmupAnimsheet_34: 306474919
+      ShmupAnimsheet_35: 541707770
+      ShmupAnimsheet_36: -1415972835
+      ShmupAnimsheet_37: -1768207642
+      ShmupAnimsheet_38: -994665625
+      ShmupAnimsheet_39: -303729209
+      ShmupAnimsheet_4: -303595593
+      ShmupAnimsheet_40: 361904528
+      ShmupAnimsheet_41: 293966806
+      ShmupAnimsheet_42: -288630841
+      ShmupAnimsheet_43: 1382531250
+      ShmupAnimsheet_44: 2057836044
+      ShmupAnimsheet_45: -937478272
+      ShmupAnimsheet_46: 13454505
+      ShmupAnimsheet_47: -1072211092
+      ShmupAnimsheet_48: -501464721
+      ShmupAnimsheet_49: -415958640
+      ShmupAnimsheet_5: 1877960202
+      ShmupAnimsheet_50: -1111129167
+      ShmupAnimsheet_51: -1516186450
+      ShmupAnimsheet_52: -1149745650
+      ShmupAnimsheet_53: 244051982
+      ShmupAnimsheet_54: -104230151
+      ShmupAnimsheet_55: -1336004053
+      ShmupAnimsheet_6: -1594159354
+      ShmupAnimsheet_7: -136917044
+      ShmupAnimsheet_8: 2080759791
+      ShmupAnimsheet_9: 802385604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

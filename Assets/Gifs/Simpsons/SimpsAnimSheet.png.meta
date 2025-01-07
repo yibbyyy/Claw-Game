@@ -1,0 +1,699 @@
+fileFormatVersion: 2
+guid: 04e6224b16b46a74ab41e4f9cfdf6bcd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SimpsAnimSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3375
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2a00a0311dae34faa9db53b24ac672
+      internalID: -1938977604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3375
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f03ee0808e29834793b823a4d6af8a0
+      internalID: 2040133356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3375
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b1e8994d12fb143bbd56d7328329d7
+      internalID: 984100883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_3
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3375
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cd1c3703bba9f45b7649c43f473f81
+      internalID: -989618336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_4
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3375
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c283e2df86c8a147899441ce06ae5e1
+      internalID: 1591211063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2700
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603dc3a7da0614545b41e176c9feaead
+      internalID: 1546516374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2700
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8e645e1db4d774fbfa614def467207
+      internalID: 457204002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2700
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03198327e7d79644bc9fadb4806b6d7
+      internalID: 1434869521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_8
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2700
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7a59111286e3e44a0f12c7b8fdad03
+      internalID: -1870967789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_9
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2700
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5120c484fbe484ca5f307d7d3ed775
+      internalID: 1047633725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2025
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99369a94e902b043991f5f21c017c31
+      internalID: -863562348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2025
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e36aadcbaa8ae4ba23010091eeab85
+      internalID: 292211120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_12
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2025
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c685f82cd949a045afc92c77acc02cb
+      internalID: -653124124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_13
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2025
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2733c443e30607943848b468260d1664
+      internalID: 1340011353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_14
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2025
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a887f68697091a74f9c86e9b81d76b67
+      internalID: 489997496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d25ca5817ce0f7479fc6f14a4eb3f64
+      internalID: 248903311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1350
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aade4c7b746a654083205e876720acd
+      internalID: -378806879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1350
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6781d529ac9fc6d45b44c229f516d2c8
+      internalID: 1192766466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1350
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2553c4f93a2f044a6844764c1ba99b
+      internalID: -1290909087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_19
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1350
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ec11d0425c3a6438569496b320e5fc
+      internalID: 1382150804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 675
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bda1358cd33e542aef99ab85cff35e
+      internalID: 217273844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 675
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a0987c2ffb0474aa58204ee44e5f36
+      internalID: -1601306640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_22
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 675
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35a8813b956fd84bbed957a1915facb
+      internalID: 1011872114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_23
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 675
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8c01c25f1eaf94ab955b60ca094be4
+      internalID: -1162671505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_24
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 675
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c52c74a8415f1347b6ef7c382ceda68
+      internalID: -1448375475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpsAnimSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44648b684bae1f1408d933dec23f87ea
+      internalID: -1008966292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SimpsAnimSheet_0: -1938977604
+      SimpsAnimSheet_1: 2040133356
+      SimpsAnimSheet_10: -863562348
+      SimpsAnimSheet_11: 292211120
+      SimpsAnimSheet_12: -653124124
+      SimpsAnimSheet_13: 1340011353
+      SimpsAnimSheet_14: 489997496
+      SimpsAnimSheet_15: 248903311
+      SimpsAnimSheet_16: -378806879
+      SimpsAnimSheet_17: 1192766466
+      SimpsAnimSheet_18: -1290909087
+      SimpsAnimSheet_19: 1382150804
+      SimpsAnimSheet_2: 984100883
+      SimpsAnimSheet_20: 217273844
+      SimpsAnimSheet_21: -1601306640
+      SimpsAnimSheet_22: 1011872114
+      SimpsAnimSheet_23: -1162671505
+      SimpsAnimSheet_24: -1448375475
+      SimpsAnimSheet_25: -1008966292
+      SimpsAnimSheet_3: -989618336
+      SimpsAnimSheet_4: 1591211063
+      SimpsAnimSheet_5: 1546516374
+      SimpsAnimSheet_6: 457204002
+      SimpsAnimSheet_7: 1434869521
+      SimpsAnimSheet_8: -1870967789
+      SimpsAnimSheet_9: 1047633725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
