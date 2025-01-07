@@ -22,7 +22,7 @@ public class Loading : MonoBehaviour
 
         // Start loading the scene
         yield return new WaitForSeconds(loadTime);
-
+        Debug.Log("GotThroughWaitLoading");
         SceneManager.LoadSceneAsync(sceneToLoad);
         
         StopCoroutine(LoadSceneAsync());
