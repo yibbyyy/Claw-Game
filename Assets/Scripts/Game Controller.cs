@@ -36,13 +36,11 @@ public class GameController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Setup += SetUpGame;
-        Setup?.Invoke();
 
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
 
-        Setup += SetUpGame;
-        Setup?.Invoke();
+
     }
     void Start()
     {
@@ -51,8 +49,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
     public void GameOver()
     {

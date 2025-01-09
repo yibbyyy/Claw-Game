@@ -52,6 +52,7 @@ public class SpawnManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(2))
         {
+            Debug.Log("Starting FUll");
             firstStep = true;
             StartCoroutine(FillBasin());
         }

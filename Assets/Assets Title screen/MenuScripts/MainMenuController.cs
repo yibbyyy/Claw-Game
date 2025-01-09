@@ -16,10 +16,15 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void play()
+    public void load()
     {
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadSceneAsync("Loading");
         
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("JasperScene");
     }
 
 

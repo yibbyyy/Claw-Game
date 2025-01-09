@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
-    public string sceneToLoad = "JasperScene"; // The name of the game scene to load
+    public string sceneToLoad; // The name of the game scene to load
+    public float loadTime;
 
     void Start()
     {
@@ -16,14 +17,11 @@ public class Loading : MonoBehaviour
     IEnumerator LoadSceneAsync()
     {
         // Start loading the scene
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+        yield return new WaitForSeconds(loadTime);
+        SceneManager.LoadSceneAsync(sceneToLoad);
         Debug.Log("loading scene");
-        // Optionally, you can display a loading progress
-        while (!asyncLoad.isDone)
-        {
-            Debug.Log("done!");
-            // You can update a loading bar or display progress here
-            yield return null; // Wait until the next frame
-        }
+
+
+
     }
 }
