@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class GameOverUI : MonoBehaviour
 {
     [System.Serializable]
-    public struct HighScoreEntry
+    public struct HighScoreEntry : IComparable<HighScoreEntry>
     {
         public string Name;
         public int Score; 
@@ -43,6 +44,7 @@ public class GameOverUI : MonoBehaviour
     AudioSource audioSource;
     private int score;
     private bool enterName = false;
+    public CanvasGroup HighScoreParent;
     private void OnEnable()
     {
         score = scoreboard.score;
@@ -83,14 +85,33 @@ public class GameOverUI : MonoBehaviour
 
         // Make HighScore entry and save it to list
         HighScoreEntry playerEntry = new HighScoreEntry(submittedName, score);
+        AddHighScore(playerEntry, highScores);
+        DisplayScores();
+
 
         // Display their highscore and name among other entries with fade
-        SetText(DebugName, submittedName);
-        yield return StartCoroutine(FadeText(0f, 1f, fadeDuration, DebugName));
+        LeanTweenFadeGroup(0f, 1f, HighScoreParent);
+        
         // With very short delay, fade in Play Again and Main Menu button
-
+        
     }
 
+    void LeanTweenFadeGroup(float start, float end, CanvasGroup parent)
+    {
+        if (parent == null)
+        {
+            Debug.LogError("CanvasGroup is not assigned!");
+            return;
+        }
+
+        
+        parent.alpha = start;
+
+        // Fade in the entire CanvasGroup (parent and children)
+        LeanTween.value(gameObject, start, end, 5f)
+            .setOnUpdate((float alpha) => parent.alpha = alpha)
+            .setEase(LeanTweenType.easeInOutQuad); // Optional easing
+    }
     private void Start()
     {
         enterNameText = enterNameGameObject.GetComponent<TMP_Text>();
@@ -128,6 +149,7 @@ public class GameOverUI : MonoBehaviour
     public List<HighScoreEntry> savedScores = new List<HighScoreEntry>();
     public List<HighScoreEntry> highScores= new List<HighScoreEntry>();
 
+
     void AddHighScore(HighScoreEntry hScore, List<HighScoreEntry> hList)
     {
         // Run a fucking bin search
@@ -140,6 +162,24 @@ public class GameOverUI : MonoBehaviour
         if (idx < 0) idx = ~idx;
 
         hList.Insert(idx, hScore);
+    }
+    public GameObject highScoreEntryPrefab;
+    public Transform highScoresParent;
+    void DisplayScores()
+    {
+        // Clear children
+        foreach (Transform child in highScoresParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // populate parent
+        foreach (HighScoreEntry hScore in highScores)
+        {
+            GameObject entry = Instantiate(highScoreEntryPrefab, highScoresParent);
+            entry.transform.Find("Name").GetComponent<TMP_Text>().text = hScore.Name;
+            entry.transform.Find("Score").GetComponent<TMP_Text>().text = hScore.Score.ToString();
+        }
     }
     void LoadHighScores()
     {
