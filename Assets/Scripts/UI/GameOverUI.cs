@@ -166,13 +166,14 @@ public class GameOverUI : MonoBehaviour
     void SaveHighScore(HighScoreEntry score)
     {
         int newIndex = GetCurrentScoreIndex();
-        newIndex++;
+        
         string key = $"HighScore_{newIndex}"; // Generate a unique key
         string json = JsonUtility.ToJson(score);
         // Set highscore
         PlayerPrefs.SetString(key, json);
 
         // Set new index
+        newIndex++;
         PlayerPrefs.SetInt(IndexKey, newIndex);
         PlayerPrefs.Save();
 
@@ -214,6 +215,11 @@ public class GameOverUI : MonoBehaviour
 
 
         }
+    }
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("All PlayerPrefs data has been cleared.");
     }
     void LoadHighScores()
     {
