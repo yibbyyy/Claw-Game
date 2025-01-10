@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3531004625556721375}
   - component: {fileID: 5021116491272480653}
   - component: {fileID: 2251810855081324008}
+  - component: {fileID: 1446306973762632041}
+  - component: {fileID: 2164571863853686916}
   m_Layer: 6
   m_Name: Arm
   m_TagString: Untagged
@@ -1564,7 +1566,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2850
+  m_VersionIndex: 2853
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1673,6 +1675,116 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.25, z: 0}
+--- !u!114 &1446306973762632041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040171476284592139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f655d55b307fe0d4ebcacbcd95afdfe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run: {fileID: 8300000, guid: bd630f69df8b56747aa9d08b8abb3e0f, type: 3}
+  stop: {fileID: 8300000, guid: 87ddc1741f4ee57459e01687491ba421, type: 3}
+--- !u!82 &2164571863853686916
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040171476284592139}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4701195373006030598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,7 +1822,7 @@ Transform:
   m_Children:
   - {fileID: 4488314167459984818}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4815629660066497190
 MonoBehaviour:
@@ -1924,7 +2036,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2089
+  m_VersionIndex: 2092
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2046,6 +2158,9 @@ MonoBehaviour:
   center: {fileID: 0}
   cableCenter: {fileID: 7581120952091018228}
   World: {fileID: 0}
+  clawTimer: {fileID: 8557069179998463393}
+  resettingClawTimer: 0
+  startButton: {fileID: 0}
   clawMachineStartButton: {fileID: 0}
   isSubscribedToButton: 0
   moveSpeed: 7
@@ -2068,10 +2183,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3342f18e465dad24fb643fafcf3a057b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clawTimerDisplay: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 4c645520f75cef840b948e010b7274f7, type: 3}
+  - {fileID: 21300000, guid: 6fb0b3ea22129f44789bf06ee898a571, type: 3}
+  - {fileID: 21300000, guid: 037f6adcaf7b5bc4d945f2fa0c174f8e, type: 3}
+  - {fileID: 21300000, guid: d6ab72e037dea144280e24c1fe251e66, type: 3}
+  - {fileID: 21300000, guid: ea5619cd9d1405e48a71edd73a1ab989, type: 3}
+  - {fileID: 21300000, guid: da33f9d479e3fe74783b66d2ec02f250, type: 3}
+  - {fileID: 21300000, guid: 795dbc016e8e03c4aa3a94304b60d187, type: 3}
+  - {fileID: 21300000, guid: a74774335ed38ad48b726d0e59fe8323, type: 3}
+  - {fileID: 21300000, guid: 6cdbede73f1ba1d4fa1331d5a52ef6e3, type: 3}
+  - {fileID: 21300000, guid: f78365273b80cfa4f8a94ae898e6cd39, type: 3}
+  empty: {fileID: 21300000, guid: 7e90b2f872c07474eae89b78be62bfa9, type: 3}
+  manager: {fileID: 1601285312430577258}
   clawTimerDuration: 5
-  clawTimer: 0
+  clawTimerCount: 0
   clawTimerRunning: 0
-  clawTimerUI: {fileID: 0}
 --- !u!1 &7581120952091018228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2243,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 935520981937783132, guid: aa649a1e4c531464dbc179be2c236ba2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36a57e577ad1419ca9f179fa166c5ac, type: 2}
     - target: {fileID: 1728079405810196617, guid: aa649a1e4c531464dbc179be2c236ba2, type: 3}
       propertyPath: m_Name
       value: Magnet

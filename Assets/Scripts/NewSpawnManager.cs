@@ -60,6 +60,7 @@ public class NewSpawnManager : MonoBehaviour
     public float waitBetweenRefills;
     private int refill = 0;
 
+
     public int lootRefillCount;
     public float waitBetweenLootRefills;
     private int lootRefill = 0;
@@ -78,6 +79,7 @@ public class NewSpawnManager : MonoBehaviour
         lowerWalls,
         generalFill
     }
+
 
     private void Awake()
     {
@@ -115,10 +117,13 @@ public class NewSpawnManager : MonoBehaviour
 
         GameController.Setup += FirstFill;
     }
+
+
     private void Start()
     {
         
     }
+
 
     void Update()
     {
@@ -141,7 +146,7 @@ public class NewSpawnManager : MonoBehaviour
 
     public void FirstFill()
     {
-        StartCoroutine(FillLoot());
+        StartCoroutine(FirstFillCoins());
         GameController.Setup -= FirstFill;
     }
 
@@ -155,6 +160,7 @@ public class NewSpawnManager : MonoBehaviour
             pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(randomRotation));
         }
     }
+
 
     void spawnLoot()
     {
@@ -194,6 +200,7 @@ public class NewSpawnManager : MonoBehaviour
         }
     }
 
+
     IEnumerator FillLoot()
     {
         while (lootRefill < lootRefillCount)
@@ -211,13 +218,34 @@ public class NewSpawnManager : MonoBehaviour
         }
     }
 
+
     void raiseDropBoxWalls()
     {
         dropBoxWalls.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
     }
 
+
     void lowerDropBoxWalls()
     {
         dropBoxWalls.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
     }
-}   
+
+
+    IEnumerator FirstFillCoins()
+    {
+        while (refill < refillCounts)
+        {
+            spawnCoins();
+            yield return new WaitForSeconds(waitBetweenRefills);
+            refill++;
+        }
+
+        if (refill >= refillCounts)
+        {
+            yield return new WaitForSeconds(waitBetweenLootRefills);
+            refill = 0;
+            currentState = State.treasureFill;
+            StartCoroutine(FillLoot());
+        }
+    }
+}

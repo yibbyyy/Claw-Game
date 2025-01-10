@@ -8,6 +8,7 @@ TagManager:
   - Chest
   - Key
   - ABomb
+  - Coin
   layers:
   - Default
   - TransparentFX

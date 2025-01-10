@@ -10,11 +10,14 @@ public class IScorable : MonoBehaviour
 
  
     Rigidbody rb;
+    AudioSource audioSource;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
+
 
 }
 
