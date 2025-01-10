@@ -24,11 +24,12 @@ public class HeavySFX : MonoBehaviour
             //update volume
             source.volume = source.volume * adjustedSpeed;
 
-            Debug.Log($"speed is {adjustedSpeed} & volume is {source.volume}");
+            //Debug.Log($"speed is {adjustedSpeed} & volume is {source.volume}");
             source.Play();
 
             //reset volue
             source.volume = defaultVolume;
         }
     }
+
 }

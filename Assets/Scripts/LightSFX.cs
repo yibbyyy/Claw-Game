@@ -32,8 +32,8 @@ public class LightSFX : MonoBehaviour
             source.volume = source.volume * adjustedSpeed;
             source.pitch = UnityEngine.Random.Range(0f, 2f);
 
-            Debug.Log($"tag = {tag} and speed is {adjustedSpeed} & volume is {source.volume}");
-            Debug.Log($"pitch is {source.pitch}");
+            //Debug.Log($"tag = {tag} and speed is {adjustedSpeed} & volume is {source.volume}");
+            //Debug.Log($"pitch is {source.pitch}");
             source.Play();
 
             //reset volue and pitch

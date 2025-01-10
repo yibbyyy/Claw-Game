@@ -166,7 +166,7 @@ public class DropBox : MonoBehaviour
         }
         // Send the game object back to object pool
 
-        collision.gameObject.SetActive(false);
+        StartCoroutine(WaitASec(collision));
         //Destroy(collision.gameObject);
         //Debug.Log("total Score  = " + totalScore);
 
@@ -192,9 +192,14 @@ public class DropBox : MonoBehaviour
         
        
         
-        spriteRenderer.sprite = newSprite;
-        
-        
-        
+        spriteRenderer.sprite = newSprite;  
+    }
+
+    IEnumerator WaitASec(Collider collision)
+    {
+        Debug.Log("waitStarted");
+        yield return new WaitForSeconds(0.2f);
+        collision.gameObject.SetActive(false);
+        Debug.Log("waitFinished");
     }
 }

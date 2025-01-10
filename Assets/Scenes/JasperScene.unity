@@ -11336,6 +11336,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1864409669}
+    - target: {fileID: 1817577161043916695, guid: 82ae870b7cd9c03488e5dbccfbbc4c97, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2036807279}
     - target: {fileID: 2268095554507482936, guid: 82ae870b7cd9c03488e5dbccfbbc4c97, type: 3}
       propertyPath: m_RootOrder
       value: 11

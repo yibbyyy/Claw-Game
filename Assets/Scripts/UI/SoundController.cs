@@ -16,7 +16,7 @@ public class SoundController : MonoBehaviour
 
             volume = 0.5f;
             PlayerPrefs.SetFloat(sVolume, volume);
-            Debug.Log("Stored default volume = " + volume);
+            //Debug.Log("Stored default volume = " + volume);
         }
         //else update audio listener to match playerPrefs
         else    
@@ -24,7 +24,7 @@ public class SoundController : MonoBehaviour
             volume = PlayerPrefs.GetFloat(sVolume);
             AudioListener.volume = volume;
             volumeSlider.value = volume;
-            Debug.Log("PlayerPref volume set = " + volume);
+            //Debug.Log("PlayerPref volume set = " + volume);
         }
 
     }
@@ -33,10 +33,10 @@ public class SoundController : MonoBehaviour
     //Update volume to match slider changes
     public void OnSliderValueChanged()
     {
-        Debug.Log("Slider changed  to = " +  volumeSlider.value);
+        //Debug.Log("Slider changed  to = " +  volumeSlider.value);
         volume = volumeSlider.value;
         AudioListener.volume = volume;
-        Debug.Log("volume = " + volume);
+        //Debug.Log("volume = " + volume);
     }
 
 

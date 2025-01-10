@@ -2,11 +2,15 @@ using System.Collections;
 using System;
 using UnityEditor;
 using UnityEngine;
+using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class StartButton : MonoBehaviour
 {
     public bool clickable = false;
     public static event Action click;
+    public GameObject pauseMenu;
+    bool paused = false;
     void Start()
     {
             
@@ -31,6 +35,17 @@ public class StartButton : MonoBehaviour
         } 
         
     }
+
+    void LateUpdate()
+    {
+
+        if (pauseMenu.activeSelf && !paused) { clickable = false; paused = true;}
+        else if (!pauseMenu.activeSelf && paused) { clickable = true; paused = false;}
+
+        //Debug.Log($"OnAppPause called, clickable button = {clickable}");
+    }
+
+    
 
     public void GameEnded()
     {
