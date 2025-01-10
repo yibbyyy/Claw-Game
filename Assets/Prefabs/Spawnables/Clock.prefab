@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5126140826173763567}
   - component: {fileID: 3508436335376837719}
   - component: {fileID: 2837947415795703749}
+  - component: {fileID: 4329563356752609690}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -211,6 +212,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4329563356752609690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710051168135549444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59e907b8ebd7524fa1702a3e07ced45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultVolume: 0.5
 --- !u!1 &8899109063591271990
 GameObject:
   m_ObjectHideFlags: 0

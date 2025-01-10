@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class HeavySFX : MonoBehaviour
 {
-    AudioSource source; 
+    AudioSource source;
+    public float defaultVolume;
     // Start is called before the first frame update
-
-    AudioClip clip;
-
 
     void Start()
     {
@@ -17,17 +15,20 @@ public class HeavySFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!source.isPlaying)
+        float speed = collision.relativeVelocity.magnitude;
+        if (!source.isPlaying && speed > 3f)
         {
-            float speed = Mathf.Sqrt(Mathf.Pow(collision.relativeVelocity.x, 2f) + Mathf.Pow(collision.relativeVelocity.y, 2f) + Mathf.Pow(collision.relativeVelocity.z, 2f)) / 2f;
-            //Debug.Log("speed = " + speed);
-            if (speed > 0.05)
-            {
-                source.volume = source.volume * speed;
-                source.Play();
-            }
+            //adjust speed to suit as a volume multiplier
+            float adjustedSpeed = Mathf.Clamp(Mathf.Log(speed - 1.5f, 2f) / 3f, 0.01f, 1f);
 
+            //update volume
+            source.volume = source.volume * adjustedSpeed;
+
+            Debug.Log($"speed is {adjustedSpeed} & volume is {source.volume}");
+            source.Play();
+
+            //reset volue
+            source.volume = defaultVolume;
         }
-
     }
 }

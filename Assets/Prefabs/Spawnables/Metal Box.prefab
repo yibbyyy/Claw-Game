@@ -7691,6 +7691,7 @@ GameObject:
   - component: {fileID: 8420993486068633807}
   - component: {fileID: 8667719051153586270}
   - component: {fileID: 5804790682572935545}
+  - component: {fileID: -2275259144768407946}
   m_Layer: 0
   m_Name: Metal Box
   m_TagString: Chest
@@ -7889,6 +7890,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2275259144768407946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371166300456249406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59e907b8ebd7524fa1702a3e07ced45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultVolume: 0.5
 --- !u!1 &7780507011086650100
 GameObject:
   m_ObjectHideFlags: 0
