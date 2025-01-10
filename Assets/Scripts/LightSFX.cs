@@ -19,14 +19,20 @@ public class LightSFX : MonoBehaviour
         float speed = collision.relativeVelocity.magnitude; 
         if (!source.isPlaying && speed > 3f)
         {
+
+            if(tag == "ABomb" || tag == "Bomb" || tag == "Chest" || tag == "Untagged")
+            {
+                source.volume = source.volume / 4f;
+            } 
+                
             //Debug.Log($"speed is {speed}");
-            float adjustedSpeed = Mathf.Clamp(Mathf.Log(speed - 1.5f, 2f) / 3f, 0.1f, 1f);
+            float adjustedSpeed = Mathf.Clamp(Mathf.Log(speed - 1.5f, 2f) / 3f, 0.01f, 1f);
             
 
             source.volume = source.volume * adjustedSpeed;
             source.pitch = UnityEngine.Random.Range(0f, 2f);
 
-            Debug.Log($" speed is {adjustedSpeed} & volume is {source.volume}");
+            Debug.Log($"tag = {tag} and speed is {adjustedSpeed} & volume is {source.volume}");
             Debug.Log($"pitch is {source.pitch}");
             source.Play();
 
