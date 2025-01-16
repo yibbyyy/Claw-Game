@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static GameOverUI;
+using UnityEngine.SceneManagement;
 
 
 public class GameOverUI : MonoBehaviour
@@ -36,7 +34,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] public List<HighScoreEntry> StarterHighScores = new();
     public Scoreboard scoreboard;
     public float fadeDuration = .5f;
-    public float GameOverDuration = 5.0f, scoreShownDuration = 4.0f;
+    public float GameOverDuration = 5.0f, scoreShownDuration = 4.0f, highScoresDuration = 3.0f;
     public Image GameOverImg, BorderImg;
     public RawImage BackGround;
     public TMP_Text scoreText, scoreNum, enterNameText;
@@ -47,7 +45,7 @@ public class GameOverUI : MonoBehaviour
     AudioSource audioSource;
     private int score;
     private bool enterName = false;
-    public CanvasGroup HighScoreParent;
+    public CanvasGroup HighScoreParent, PlayQuitParent;
     private void OnEnable()
     {
         score = scoreboard.score;
@@ -95,9 +93,20 @@ public class GameOverUI : MonoBehaviour
 
         // Display their highscore and name among other entries with fade
         LeanTweenFadeGroup(0f, 1f, HighScoreParent);
-        
+
         // With very short delay, fade in Play Again and Main Menu button
-        
+        // Delay
+        yield return StartCoroutine(Delay(highScoresDuration));
+
+        LeanTweenFadeGroup(0f, 1f, PlayQuitParent);
+
+        // Now just display forever
+    }
+    
+    public void LoadScene(int sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+
     }
 
     void LeanTweenFadeGroup(float start, float end, CanvasGroup parent)
