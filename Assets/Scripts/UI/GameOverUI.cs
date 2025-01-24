@@ -204,7 +204,7 @@ public class GameOverUI : MonoBehaviour
     }
     public GameObject highScoreTextScore, highScoreTextReg;
     public Transform rankParent, nameParent, scoreParent;
-    
+    /*
     void DisplayScores()
     {
         
@@ -221,6 +221,30 @@ public class GameOverUI : MonoBehaviour
 
             GameObject Score = Instantiate(highScoreTextScore, scoreParent);
             Score.GetComponent<TMP_Text>().text = hScore.Score.ToString();
+
+
+        }
+    }
+    */
+    public GameObject scrollParent;
+    void DisplayScores()
+    {
+
+        int rankctr = 0;
+        // populate parent
+        foreach (HighScoreEntry hScore in highScores)
+        {
+            rankctr++;
+            
+            
+            GameObject Rank = Instantiate(highScoreTextReg, rankParent);
+            Rank.GetComponentInChildren<TMP_Text>().text = rankctr.ToString();
+
+            GameObject Name = Instantiate(highScoreTextReg, nameParent);
+            Name.GetComponentInChildren<TMP_Text>().text = hScore.Name;
+
+            GameObject Score = Instantiate(highScoreTextScore, scoreParent);
+            Score.GetComponentInChildren<TMP_Text>().text = hScore.Score.ToString();
 
 
         }
