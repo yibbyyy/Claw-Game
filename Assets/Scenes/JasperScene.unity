@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1907,6 +1907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400703694}
   - component: {fileID: 400703693}
+  - component: {fileID: 400703695}
   m_Layer: 8
   m_Name: PostProcessingGo
   m_TagString: Untagged
@@ -1946,6 +1947,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400703695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400703692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde67829d47b9c54289b64b5dd2ed6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHue: -10
+  maxHue: 25
+  duration: 5
+  alienMode: 0
+  startAlienMode: 0
+  Volume: {fileID: 400703693}
 --- !u!114 &437084679 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8557069179998463393, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
@@ -11455,6 +11474,10 @@ PrefabInstance:
       propertyPath: gameTimer
       value: 
       objectReference: {fileID: 451780129}
+    - target: {fileID: 7466252405139921037, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
+      propertyPath: alienEffect
+      value: 
+      objectReference: {fileID: 400703695}
     - target: {fileID: 7724525012877598474, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
       propertyPath: m_RootOrder
       value: 13
