@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameOverUI : MonoBehaviour
@@ -33,7 +34,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] public List<HighScoreEntry> StarterHighScores = new();
     public Scoreboard scoreboard;
     public float fadeDuration = .5f;
-    public float GameOverDuration = 5.0f, scoreShownDuration = 4.0f;
+    public float GameOverDuration = 5.0f, scoreShownDuration = 4.0f, highScoresDuration = 3.0f;
     public Image GameOverImg, BorderImg;
     public RawImage BackGround;
     public TMP_Text scoreText, scoreNum, enterNameText;
@@ -44,7 +45,7 @@ public class GameOverUI : MonoBehaviour
     AudioSource audioSource;
     private int score;
     private bool enterName = false;
-    public CanvasGroup HighScoreParent;
+    public CanvasGroup HighScoreParent, PlayQuitParent;
     private void OnEnable()
     {
         score = scoreboard.score;
@@ -55,7 +56,7 @@ public class GameOverUI : MonoBehaviour
         Debug.Log("Starting gameove sequence");
         // Fade in Gameover UI
         StartCoroutine(FadeRaw(0f, 1f, fadeDuration, BackGround));
-        StartCoroutine(Fade(0f, 1f, fadeDuration, BorderImg));
+        //StartCoroutine(Fade(0f, 1f, fadeDuration, BorderImg));
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration, GameOverImg));
 
         // Delay for GameOver Delay
@@ -87,13 +88,25 @@ public class GameOverUI : MonoBehaviour
         HighScoreEntry playerEntry = new HighScoreEntry(submittedName, score);
         AddHighScore(playerEntry, highScores);
         DisplayScores();
+        SaveHighScore(playerEntry);
 
 
         // Display their highscore and name among other entries with fade
         LeanTweenFadeGroup(0f, 1f, HighScoreParent);
-        
+
         // With very short delay, fade in Play Again and Main Menu button
-        
+        // Delay
+        yield return StartCoroutine(Delay(highScoresDuration));
+
+        LeanTweenFadeGroup(0f, 1f, PlayQuitParent);
+
+        // Now just display forever
+    }
+    
+    public void LoadScene(int sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+
     }
 
     void LeanTweenFadeGroup(float start, float end, CanvasGroup parent)
@@ -145,10 +158,36 @@ public class GameOverUI : MonoBehaviour
     }
 
     // High Score Stuff
-    private const string HighScoresKey = "HighScores";
+    private const string IndexKey = "Index";
     public List<HighScoreEntry> savedScores = new List<HighScoreEntry>();
     public List<HighScoreEntry> highScores= new List<HighScoreEntry>();
 
+    int GetCurrentScoreIndex()
+    {
+        if (!PlayerPrefs.HasKey(IndexKey))
+        {
+            // No index key saved so make one
+            Debug.Log("no index key found");
+            PlayerPrefs.SetInt(IndexKey, 0);
+        }
+        return PlayerPrefs.GetInt(IndexKey);
+    }
+    void SaveHighScore(HighScoreEntry score)
+    {
+        int newIndex = GetCurrentScoreIndex();
+        
+        string key = $"HighScore_{newIndex}"; // Generate a unique key
+        string json = JsonUtility.ToJson(score);
+        // Set highscore
+        PlayerPrefs.SetString(key, json);
+
+        // Set new index
+        newIndex++;
+        PlayerPrefs.SetInt(IndexKey, newIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"High score saved with key {key}: {json}");
+    }
 
     void AddHighScore(HighScoreEntry hScore, List<HighScoreEntry> hList)
     {
@@ -163,35 +202,80 @@ public class GameOverUI : MonoBehaviour
 
         hList.Insert(idx, hScore);
     }
-    public GameObject highScoreEntryPrefab;
-    public Transform highScoresParent;
+    public GameObject highScoreTextScore, highScoreTextReg;
+    public Transform rankParent, nameParent, scoreParent;
+    /*
     void DisplayScores()
     {
-        // Clear children
-        foreach (Transform child in highScoresParent)
-        {
-            Destroy(child.gameObject);
-        }
-
+        
+        int rankctr = 0;
         // populate parent
         foreach (HighScoreEntry hScore in highScores)
         {
-            GameObject entry = Instantiate(highScoreEntryPrefab, highScoresParent);
-            entry.transform.Find("Name").GetComponent<TMP_Text>().text = hScore.Name;
-            entry.transform.Find("Score").GetComponent<TMP_Text>().text = hScore.Score.ToString();
+            rankctr++;
+            GameObject Rank = Instantiate(highScoreTextReg, rankParent);
+            Rank.GetComponent<TMP_Text>().text = rankctr.ToString();
+
+            GameObject Name = Instantiate(highScoreTextReg, nameParent);
+            Name.GetComponent<TMP_Text>().text = hScore.Name;
+
+            GameObject Score = Instantiate(highScoreTextScore, scoreParent);
+            Score.GetComponent<TMP_Text>().text = hScore.Score.ToString();
+
+
         }
+    }
+    */
+    public GameObject scrollParent;
+    void DisplayScores()
+    {
+
+        int rankctr = 0;
+        // populate parent
+        foreach (HighScoreEntry hScore in highScores)
+        {
+            rankctr++;
+            
+            
+            GameObject Rank = Instantiate(highScoreTextReg, rankParent);
+            Rank.GetComponentInChildren<TMP_Text>().text = rankctr.ToString();
+
+            GameObject Name = Instantiate(highScoreTextReg, nameParent);
+            Name.GetComponentInChildren<TMP_Text>().text = hScore.Name;
+
+            GameObject Score = Instantiate(highScoreTextScore, scoreParent);
+            Score.GetComponentInChildren<TMP_Text>().text = hScore.Score.ToString();
+
+
+        }
+    }
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("All PlayerPrefs data has been cleared.");
     }
     void LoadHighScores()
     {
-        if (PlayerPrefs.HasKey(HighScoresKey))
+        // do loop
+        int index = GetCurrentScoreIndex();
+        Debug.Log($"index is {index}");
+        for (int i = 0; i < index; i++)
         {
-            string json = PlayerPrefs.GetString(HighScoresKey);
-            savedScores = JsonUtility.FromJson<List<HighScoreEntry>>(json);
+            string key = $"HighScore_{i}";
+            if (PlayerPrefs.HasKey(key))
+            {
+                string json = PlayerPrefs.GetString(key);
+                HighScoreEntry newScore = JsonUtility.FromJson<HighScoreEntry>(json);
+                Debug.Log("Added score");
+                AddHighScore(newScore, savedScores);
+            }
+            else
+            {
+                Debug.Log($"No HighScores saved at key: {key}");
+            }
         }
-        else
-        {
-            Debug.Log("No HighScores Saved");
-        }
+
+        
     }
 
     List<HighScoreEntry> OrderHighScores(List<HighScoreEntry> lstA, List<HighScoreEntry> lstB)
