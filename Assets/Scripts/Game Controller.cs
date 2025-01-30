@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        
+        GameTimer.timedOut += GameOver;
     }
     private void OnEnable()
     {

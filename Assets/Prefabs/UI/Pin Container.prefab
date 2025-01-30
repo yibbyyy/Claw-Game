@@ -535,7 +535,7 @@ Transform:
   m_Children:
   - {fileID: 5513987370714086936}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1611085150231319458
 MonoBehaviour:
@@ -555,8 +555,6 @@ MonoBehaviour:
   humanStickyNote: {fileID: 5914314924745416094}
   alienStickyNote: {fileID: 3206568015367422903}
   bombImage: {fileID: 1200746270531041433}
-  bomb: {fileID: 0}
-  alienBomb: {fileID: 0}
   bombTimerUI: {fileID: 1799932403686903461}
   exploded: 0
   bombTimerDuration: 5
