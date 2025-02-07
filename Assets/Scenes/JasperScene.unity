@@ -10269,7 +10269,7 @@ PrefabInstance:
       objectReference: {fileID: 981904379}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: magnetizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: maxDistance
@@ -10281,7 +10281,7 @@ PrefabInstance:
       objectReference: {fileID: 1137236305}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: attractionStrength
-      value: 125
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: ignoredLayers.m_Bits
