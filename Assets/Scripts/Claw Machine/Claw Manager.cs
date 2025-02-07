@@ -89,13 +89,13 @@ public class ClawManager : MonoBehaviour
             // All coroutines are running in events
             if (magnetizing)
             {
-                Debug.Log("Called Magnetize");
+                //Debug.Log("Called Magnetize");
                 Magnetize();
             }
         }
         else if (magnetizing)
         {
-            Debug.Log("Called Magnetize");
+            //Debug.Log("Called Magnetize");
             Magnetize();
         }
     }
@@ -170,7 +170,7 @@ public class ClawManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SyncMagnetPos();
-            Debug.Log("Called sync mag");
+            //Debug.Log("Called sync mag");
             // This loop only happens if the player clicks before the timer
             // Stop the claw timer
             StopClawTimer?.Invoke();
@@ -187,7 +187,7 @@ public class ClawManager : MonoBehaviour
     }
     public void OnStartButtonClicked()
     {
-        Debug.Log($"StartButton Clicked!");
+       // Debug.Log($"StartButton Clicked!");
         // invoke event to start timer
         StartClawTimer?.Invoke();
 
@@ -225,7 +225,7 @@ public class ClawManager : MonoBehaviour
             if (hits[i].collider == null)
                 continue;
             */
-            Debug.Log("Hit a " + hits[i].collider.name);
+            //Debug.Log("Hit a " + hits[i].collider.name);
            
             Vector3 forcedDirection = magnetMid.position - hits[i].collider.transform.position;
             if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
@@ -307,7 +307,7 @@ public class ClawManager : MonoBehaviour
     
     private void ResetClaw()
     {
-        Debug.Log("Called resetClaw");
+        //Debug.Log("Called resetClaw");
         StartCoroutine(MoveToBin());
     }
 
@@ -346,7 +346,7 @@ public class ClawManager : MonoBehaviour
             duration += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Start drop");
+        //Debug.Log("Start drop");
         StopMagnet();
         StartCoroutine(DropOffToCenter());
 
@@ -385,7 +385,7 @@ public class ClawManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("fully reset");
+        //Debug.Log("fully reset");
         currentState = State.idle;
         startButton.clickable = true;
     }
