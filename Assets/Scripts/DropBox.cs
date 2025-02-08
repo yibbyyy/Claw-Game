@@ -178,6 +178,8 @@ public class DropBox : MonoBehaviour
     {
         Debug.Log($"{gameObject} Counter = {counter}");
         GameObject display = new GameObject();
+        
+       
         if (gameObject.tag == "Chest")
         {
             display = chestDisplay; 
@@ -189,9 +191,10 @@ public class DropBox : MonoBehaviour
 
         SpriteRenderer spriteRenderer = display.GetComponentInChildren<SpriteRenderer>();
         Sprite newSprite = sprites[counter];
-        
-       
-        
+
+
+        Debug.Log("Name of sprite is: " + newSprite);
+        Debug.Log("Changing display: " + display.name);
         spriteRenderer.sprite = newSprite;  
     }
 
