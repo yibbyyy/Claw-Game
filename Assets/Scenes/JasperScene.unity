@@ -7975,7 +7975,7 @@ MonoBehaviour:
   dropBox: {fileID: 1544996027}
   chestOpenPrefab: {fileID: 386960667308425607, guid: 9c7b8dbeae2d701419c4ba1d47f62aa5, type: 3}
   chestOpening: 0
-  pooling: {fileID: 0}
+  pooling: {fileID: 1734073710}
   scorable: {fileID: 0}
   score: 0
   totalScore: 0
@@ -8576,6 +8576,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
+      propertyPath: pools.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
+      propertyPath: pools.Array.data[2].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
+      propertyPath: pools.Array.data[8].size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900436242076046999, guid: fc7b729738a8686459ca4f3e1601c1db, type: 3}
+      propertyPath: pools.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 2790235100100428201, guid: cdd65c5874279f741b57fb854080440d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10281,7 +10297,7 @@ PrefabInstance:
       objectReference: {fileID: 1137236305}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: attractionStrength
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: ignoredLayers.m_Bits
@@ -10347,6 +10363,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3531004625556721375, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84bdea2eb752f1242bc3724eab0d3a67, type: 2}
     - target: {fileID: 3584204747684556930, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -10386,7 +10406,11 @@ PrefabInstance:
     - target: {fileID: 7512812220197395218, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c36a57e577ad1419ca9f179fa166c5ac, type: 2}
+      objectReference: {fileID: 2100000, guid: 84bdea2eb752f1242bc3724eab0d3a67, type: 2}
+    - target: {fileID: 7900981080454290143, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84bdea2eb752f1242bc3724eab0d3a67, type: 2}
     - target: {fileID: 8305238702674410183, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: m_Layer
       value: 6

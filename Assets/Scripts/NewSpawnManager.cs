@@ -38,6 +38,8 @@ public class NewSpawnManager : MonoBehaviour
     private int gCoinWeight = 1;
     private string aBomb = "A Bomb";
     private int aBombWeight = 1;
+    private string Bomb = "Bomb";
+    private int bombWeight = 2;
     private string gBar = "New Gold Bar";
     private int gBarWeight = 1;
     private string chest = "Metal Box";
@@ -87,6 +89,7 @@ public class NewSpawnManager : MonoBehaviour
         spawnables.Add(yCoin, yCoinWeight);
         spawnables.Add(gCoin, gCoinWeight);
         spawnables.Add(aBomb, aBombWeight);
+        spawnables.Add(Bomb, bombWeight);
         spawnables.Add(gBar, gBarWeight);
         spawnables.Add(chest, chestWeight);
         spawnables.Add(key, keyWeight);
@@ -96,6 +99,7 @@ public class NewSpawnManager : MonoBehaviour
         allSpawnables.AddRange(spawnables.Keys);
 
         lootSpawnables.Add(aBomb);
+        lootSpawnables.Add(Bomb);
         lootSpawnables.Add(gBar);
         lootSpawnables.Add(chest);
         lootSpawnables.Add(key);
@@ -167,15 +171,15 @@ public class NewSpawnManager : MonoBehaviour
         foreach (Transform t in spawnTransforms)
         {
             string spawnable = lootSpawnables[Random.Range(0, lootSpawnables.Count)];
-            if (spawnable == aBomb)
+            if (spawnable == aBomb || spawnable == Bomb)
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.identity);
             }
-            if (spawnable == clock)
+            else if (spawnable == clock)
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(-90, 0, 0));
             }
-            else if (spawnable != aBomb) 
+            else
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.Euler(0, 0, 90));
             }
