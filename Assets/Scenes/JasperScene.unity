@@ -10274,6 +10274,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 437084679}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
+      propertyPath: forceMode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: magnetMid
       value: 
       objectReference: {fileID: 855705077}
@@ -10299,7 +10303,7 @@ PrefabInstance:
       objectReference: {fileID: 1137236305}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: attractionStrength
-      value: 50
+      value: 1499
       objectReference: {fileID: 0}
     - target: {fileID: 1601285312430577258, guid: db81b157d89b0b44b9507cd546f35e14, type: 3}
       propertyPath: ignoredLayers.m_Bits
@@ -11999,6 +12003,10 @@ PrefabInstance:
       propertyPath: alienEffect
       value: 
       objectReference: {fileID: 400703695}
+    - target: {fileID: 7466252405139921037, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
+      propertyPath: alienShrinkage
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7724525012877598474, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
       propertyPath: m_RootOrder
       value: 13
