@@ -1733,6 +1733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 1603477482}
   state: 0
+  _dropBox: {fileID: 1544996030}
 --- !u!1 &271913068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1392040063497245780, guid: 9ecb0b3c8e3669b4fb9bec960c91ee24, type: 3}
@@ -7975,6 +7976,7 @@ MonoBehaviour:
   dropBox: {fileID: 1544996027}
   chestOpenPrefab: {fileID: 386960667308425607, guid: 9c7b8dbeae2d701419c4ba1d47f62aa5, type: 3}
   chestOpening: 0
+  collectingItems: 0
   pooling: {fileID: 1734073710}
   scorable: {fileID: 0}
   score: 0
