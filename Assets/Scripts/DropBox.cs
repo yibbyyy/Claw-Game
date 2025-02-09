@@ -10,6 +10,7 @@ public class DropBox : MonoBehaviour
     public GameObject dropBox;
     public GameObject chestOpenPrefab;
     public bool chestOpening = false;
+    public bool collectingItems = false;
 
     public ObjectPooling pooling;
     public IScorable scorable;
@@ -54,121 +55,130 @@ public class DropBox : MonoBehaviour
     {
         // TODO add check to see if chest logic is playing
         // TODO add logic to stop the game timer while playing mingames and chest animations
-        if (dropBoxQueue.Count > 0 && !simonSays.activeSelf && !wireCut.activeSelf && !pushAndPull.activeSelf && !chestOpening)
+        if (collectingItems)
         {
-            GameObject currentObject = dropBoxQueue.Dequeue();
-            int id = currentObject.GetInstanceID();
-            gameObjectInstances.Remove(id);
-            int miniGameIndex;
-            switch (currentObject.tag)
+            if (dropBoxQueue.Count > 0 && !simonSays.activeSelf && !wireCut.activeSelf && !pushAndPull.activeSelf && !chestOpening)
             {
-                case "Bomb":
-                    miniGameIndex = Random.Range(0, miniGameList.Count);
-                    miniGameList[miniGameIndex].SetActive(true);
-                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToHBombSprite(humanBomb);
-                    break;
+                GameObject currentObject = dropBoxQueue.Dequeue();
+                int id = currentObject.GetInstanceID();
+                gameObjectInstances.Remove(id);
+                int miniGameIndex;
+                switch (currentObject.tag)
+                {
+                    case "Bomb":
+                        miniGameIndex = Random.Range(0, miniGameList.Count);
+                        miniGameList[miniGameIndex].SetActive(true);
+                        miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToHBombSprite(humanBomb);
+                        break;
 
-                case "ABomb":
-                    miniGameIndex = Random.Range(0, miniGameList.Count);
-                    miniGameList[miniGameIndex].SetActive(true);
-                    if (miniGameIndex == 1)
-                    {
-                        miniGameList[miniGameIndex].GetComponent<WireCut>().drawAlienStars();
-                    }
-
-                    
-                    miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToABombSprite(alienBomb);
-                    break;
-                case "Chest":
-                    Debug.Log("Chest logic");
-                    
-                    if (chestCount > 0 && keyCount > 0)
-                    {
-                        Instantiate(chestOpenPrefab);
-                        chestOpening = true;
-                        // play chest animation
-                        chestCount--;
-                        keyCount--;
-                        UpdateCounter(chestCount, chestDisplay);
-                        UpdateCounter(keyCount, keyDisplay);
-                    }
-                    break;
-
-                case "Key":
-                    Debug.Log("Key Logic");
-                    
-                    if (chestCount > 0 && keyCount > 0)
-                    {
-                        Instantiate(chestOpenPrefab);
-                        chestOpening = true;
-                        // play chest animation
-                        chestCount--;
-                        keyCount--;
-                        UpdateCounter(chestCount, chestDisplay);
-                        UpdateCounter(keyCount, keyDisplay);
-                    }
-                    break;
+                    case "ABomb":
+                        miniGameIndex = Random.Range(0, miniGameList.Count);
+                        miniGameList[miniGameIndex].SetActive(true);
+                        if (miniGameIndex == 1)
+                        {
+                            miniGameList[miniGameIndex].GetComponent<WireCut>().drawAlienStars();
+                        }
 
 
-                default:
-                    Debug.Log(currentObject.tag + " Is not an item with a tag");
-                    break;
+                        miniGameList[miniGameIndex].GetComponent<GenericBomb>().SwitchToABombSprite(alienBomb);
+                        break;
+                    case "Chest":
+                        Debug.Log("Chest logic");
 
+                        if (chestCount > 0 && keyCount > 0)
+                        {
+                            Instantiate(chestOpenPrefab);
+                            chestOpening = true;
+                            // play chest animation
+                            chestCount--;
+                            keyCount--;
+                            UpdateCounter(chestCount, chestDisplay);
+                            UpdateCounter(keyCount, keyDisplay);
+                        }
+                        break;
+
+                    case "Key":
+                        Debug.Log("Key Logic");
+
+                        if (chestCount > 0 && keyCount > 0)
+                        {
+                            Instantiate(chestOpenPrefab);
+                            chestOpening = true;
+                            // play chest animation
+                            chestCount--;
+                            keyCount--;
+                            UpdateCounter(chestCount, chestDisplay);
+                            UpdateCounter(keyCount, keyDisplay);
+                        }
+                        break;
+
+
+                    default:
+                        Debug.Log(currentObject.tag + " Is not an item with a tag");
+                        break;
+
+                }
             }
         }
+        
     }
     public void OnTriggerEnter(Collider collision)
     {
-        score = collision.gameObject.GetComponent<IScorable>().pointValue;
-        totalScore += score;
-        score = 0;
+        if (collectingItems)
+        {
+            score = collision.gameObject.GetComponent<IScorable>().pointValue;
+            totalScore += score;
+            score = 0;
 
 
-        if (collision.gameObject.GetComponent<IScorable>().alienValue > 0) 
-        {
-            alienValue = collision.gameObject.GetComponent<IScorable>().alienValue;
-            Debug.Log("alienValue = " + alienValue);
-            
-        }
-        
-        if (collision.gameObject.GetComponent<IScorable>().timeValue != 0) 
-        {
+            if (collision.gameObject.GetComponent<IScorable>().alienValue > 0)
+            {
+                alienValue = collision.gameObject.GetComponent<IScorable>().alienValue;
+                Debug.Log("alienValue = " + alienValue);
+
+            }
+
+            if (collision.gameObject.GetComponent<IScorable>().timeValue != 0)
+            {
+                timeValue = collision.gameObject.GetComponent<IScorable>().timeValue;
+            }
+
+
             timeValue = collision.gameObject.GetComponent<IScorable>().timeValue;
+
+
+            // Check if a chest or bomb fell
+            if (collision.gameObject.tag == "Bomb" || collision.gameObject.tag == "Chest" || collision.gameObject.tag == "ABomb" || collision.gameObject.tag == "Key")
+            {
+                // Check if the current collision is already in queue using hashset
+                int tmp = collision.gameObject.GetInstanceID();
+                if (!gameObjectInstances.Contains(tmp))
+                {
+                    gameObjectInstances.Add(tmp);
+                    dropBoxQueue.Enqueue(collision.gameObject);
+                }
+
+                if (collision.gameObject.tag == "Chest")
+                {
+                    chestCount += 1;
+                    UpdateCounter(chestCount, collision.gameObject);
+                }
+                if (collision.gameObject.tag == "Key")
+                {
+                    keyCount += 1;
+                    UpdateCounter(keyCount, collision.gameObject);
+                    ;
+                }
+
+
+            }
+            // Send the game object back to object pool
+
+            StartCoroutine(WaitASec(collision));
+            //Destroy(collision.gameObject);
+            //Debug.Log("total Score  = " + totalScore);
         }
 
-
-        timeValue = collision.gameObject.GetComponent <IScorable>().timeValue;
-
-
-        // Check if a chest or bomb fell
-        if (collision.gameObject.tag == "Bomb" || collision.gameObject.tag == "Chest" || collision.gameObject.tag == "ABomb" || collision.gameObject.tag == "Key")
-        {
-            // Check if the current collision is already in queue using hashset
-            int tmp = collision.gameObject.GetInstanceID();
-            if (!gameObjectInstances.Contains(tmp))
-            {
-                gameObjectInstances.Add(tmp);
-                dropBoxQueue.Enqueue(collision.gameObject);
-            }
-
-            if (collision.gameObject.tag == "Chest" )
-            {
-                chestCount += 1;
-                UpdateCounter(chestCount, collision.gameObject);
-            }
-            if (collision.gameObject.tag == "Key")
-            {
-                keyCount += 1;
-                UpdateCounter(keyCount, collision.gameObject);
-;            }
-
-
-        }
-        // Send the game object back to object pool
-
-        StartCoroutine(WaitASec(collision));
-        //Destroy(collision.gameObject);
-        //Debug.Log("total Score  = " + totalScore);
 
     }
 

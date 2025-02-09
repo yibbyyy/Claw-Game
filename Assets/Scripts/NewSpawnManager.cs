@@ -150,8 +150,12 @@ public class NewSpawnManager : MonoBehaviour
 
     public void FirstFill()
     {
+        /* Hey we may need to yield return this coroutine
+         * so that executation will wait for it to continue before proceeding
+         */
         StartCoroutine(FirstFillCoins());
         GameController.Setup -= FirstFill;
+       
     }
 
 
