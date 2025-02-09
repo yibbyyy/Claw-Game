@@ -214,6 +214,7 @@ public class ClawManager : MonoBehaviour
     public RaycastHit[] hits = new RaycastHit[15];
     public bool magnetizing = false;
     public float attractionStrength;
+    public ForceMode forceMode;
     public void Magnetize()
     {
         Rigidbody hitBody;
@@ -230,7 +231,7 @@ public class ClawManager : MonoBehaviour
             Vector3 forcedDirection = magnetMid.position - hits[i].collider.transform.position;
             if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
             {
-                hitBody.AddForce(forcedDirection.normalized * attractionStrength);
+                hitBody.AddForce(forcedDirection.normalized * attractionStrength * Time.deltaTime, forceMode);
             }
             
             
