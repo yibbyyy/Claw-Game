@@ -213,13 +213,15 @@ public class ClawManager : MonoBehaviour
     public LayerMask ignoredLayers;
     public RaycastHit[] hits = new RaycastHit[15];
     public bool magnetizing = false;
-    public float attractionStrength;
     public ForceMode forceMode;
+    public float baseAttractionStrength = 2000f; // Base force
+    public AnimationCurve attractionCurve; // Curve for force scaling
     public void Magnetize()
     {
         Rigidbody hitBody;
-        int numHits = Physics.CapsuleCastNonAlloc(magnetLeft.position, magnetRight.position, radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
-
+        //int numHits = Physics.CapsuleCastNonAlloc(magnetLeft.position, magnetRight.position, radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
+        int numHits = Physics.SphereCastNonAlloc(magnetMid.position,  radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
+        float distance;
         for(int i = 0; i < numHits; i++)
         {
             /*
@@ -229,13 +231,22 @@ public class ClawManager : MonoBehaviour
             //Debug.Log("Hit a " + hits[i].collider.name);
            
             Vector3 forcedDirection = magnetMid.position - hits[i].collider.transform.position;
+            distance = forcedDirection.magnitude;
+
             if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
             {
-                hitBody.AddForce(forcedDirection.normalized * attractionStrength * Time.deltaTime, forceMode);
+                float forceMultiplier = attractionCurve.Evaluate(distance / maxDistance);
+                float force = baseAttractionStrength * forceMultiplier;
+
+                hitBody.AddForce(forcedDirection.normalized * force * Time.deltaTime, forceMode);
             }
             
             
         }
+        /*
+         * Keep firing capsule cast until it fills up list of 15, and have seperate function apply force at the same time.
+         * Capsule collider supplies the list and apply force applies it on fixed update.
+         */
         
     }
     private void OnDrawGizmos()
