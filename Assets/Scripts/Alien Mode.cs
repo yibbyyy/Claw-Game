@@ -17,8 +17,16 @@ public class AlienMode : MonoBehaviour
 
     public GameObject alienGoo;
     private float alienGooHome;
-    
-    
+
+    //Audio sources for switching between main and alien tracks
+    private AudioSource mainSource;
+    public AudioSource alienSource;
+
+    //variables for storing volume values during audio transition
+    float mainVolume, alienVolume, storedVolume;
+    public float deltaVolume;
+
+
     public State state = State.stalled;
     public enum State
     {
@@ -33,6 +41,10 @@ public class AlienMode : MonoBehaviour
     private void Awake()
     {
         alienGooHome = alienGoo.transform.position.y;
+
+        //get the main audio source
+        GameMusic music = FindAnyObjectByType<GameMusic>();
+        mainSource = music.GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -81,6 +93,9 @@ public class AlienMode : MonoBehaviour
             StartCoroutine(ResetGoo());
             // still have ufo add to alien goo
 
+            //changes tracks for alien mode 
+            ChangeTrack();
+
         }
 
 
@@ -110,5 +125,41 @@ public class AlienMode : MonoBehaviour
     {
         ResetGoo();
         GameController.Setup -= SetupAlien;
+    }
+
+    //function to switch between alien track and normal track
+    void ChangeTrack()
+    {
+        AudioSource sourceA = null;
+        AudioSource sourceB = null;
+        if (alienVolume > mainVolume)
+        {
+            sourceA = alienSource; sourceB = mainSource;
+        }
+        else
+        {
+            sourceA = mainSource; sourceB = mainSource;
+        }
+
+        storedVolume = sourceA.volume;
+        Debug.Log($"AlienMode ChangeTrack() called| sourceA = {sourceA}| sourceB = {sourceB}");
+        StartCoroutine(FadeSwap(sourceA, sourceB));
+    }
+
+    //coroutine to smooth the track transition
+    private IEnumerator FadeSwap(AudioSource sourceA, AudioSource sourceB)
+    {
+
+        Debug.Log($"AlienMode FadeSwap() called");
+        while (sourceA.volume > 0)
+        {
+            sourceA.volume -= deltaVolume; sourceB.volume += deltaVolume;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        if (sourceA.volume <= 0)
+        {
+            sourceB.volume = storedVolume; sourceA.volume = 0;
+            yield return null;
+        }
     }
 }
