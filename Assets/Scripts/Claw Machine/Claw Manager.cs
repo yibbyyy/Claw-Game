@@ -87,6 +87,16 @@ public class ClawManager : MonoBehaviour
         else if (currentState == State.resetting)
         {
             // All coroutines are running in events
+            if (magnetizing)
+            {
+                //Debug.Log("Called Magnetize");
+                Magnetize();
+            }
+        }
+        else if (magnetizing)
+        {
+            //Debug.Log("Called Magnetize");
+            Magnetize();
         }
     }
 
@@ -127,12 +137,13 @@ public class ClawManager : MonoBehaviour
 
         //Debug.Log(Cable.transform.position.x);
         //Debug.Log("Max x is: " + maxX);
+        
         if (Cable.transform.position.x >= maxX)
             {
             //Debug.Log("Got to MaxX");
                 if (cableMove.x > 0)
                 {
-                //Debug.Log("Got through both if statements x: " + cableMove.x);
+                //Debug.Log("Got through both if statements maxx: " + cableMove.x);
                     Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
                 }
             }
@@ -141,11 +152,14 @@ public class ClawManager : MonoBehaviour
             {
                 if (cableMove.x < 0)
                 {
-                    Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
+                //Debug.Log("Got through both if statements minx: " + cableMove.x);
+                Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
                 }
             }
-        if (Cable.transform.position.x < maxX && Cable.transform.position.x > minX)
+        if (Cable.transform.position.x < maxX && Cable.transform.position.x > minX && cableMove != Vector3.zero)
         {
+            //Debug.Log("Doing 3rd: " + cableMove.x);
+            
             Cable.transform.Translate(cableMove * moveSpeed * Time.deltaTime);
         }
         
@@ -156,7 +170,7 @@ public class ClawManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SyncMagnetPos();
-            Debug.Log("Called sync mag");
+            //Debug.Log("Called sync mag");
             // This loop only happens if the player clicks before the timer
             // Stop the claw timer
             StopClawTimer?.Invoke();
@@ -173,7 +187,7 @@ public class ClawManager : MonoBehaviour
     }
     public void OnStartButtonClicked()
     {
-        Debug.Log($"StartButton Clicked!");
+       // Debug.Log($"StartButton Clicked!");
         // invoke event to start timer
         StartClawTimer?.Invoke();
 
@@ -192,18 +206,106 @@ public class ClawManager : MonoBehaviour
         StartMagnet();
     }
 
+    public Transform magnetMid, magnetLeft, magnetRight;
+    
+   
+    public float radius, maxDistance;
+    public LayerMask ignoredLayers;
+    public RaycastHit[] hits = new RaycastHit[15];
+    public bool magnetizing = false;
+    public ForceMode forceMode;
+    public float baseAttractionStrength = 2000f; // Base force
+    public AnimationCurve attractionCurve; // Curve for force scaling
+    public void Magnetize()
+    {
+        Rigidbody hitBody;
+        //int numHits = Physics.CapsuleCastNonAlloc(magnetLeft.position, magnetRight.position, radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
+        int numHits = Physics.SphereCastNonAlloc(magnetMid.position,  radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
+        float distance;
+        for(int i = 0; i < numHits; i++)
+        {
+            /*
+            if (hits[i].collider == null)
+                continue;
+            */
+            //Debug.Log("Hit a " + hits[i].collider.name);
+           
+            Vector3 forcedDirection = magnetMid.position - hits[i].collider.transform.position;
+            distance = forcedDirection.magnitude;
+
+            if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
+            {
+                float forceMultiplier = attractionCurve.Evaluate(distance / maxDistance);
+                float force = baseAttractionStrength * forceMultiplier;
+
+                hitBody.AddForce(forcedDirection.normalized * force * Time.deltaTime, forceMode);
+            }
+            
+            
+        }
+        /*
+         * Keep firing capsule cast until it fills up list of 15, and have seperate function apply force at the same time.
+         * Capsule collider supplies the list and apply force applies it on fixed update.
+         */
+        
+    }
+    private void OnDrawGizmos()
+    {
+        // Set Gizmo color
+        Gizmos.color = Color.green;
+
+        if (magnetizing)
+        {
+            // Draw the starting and ending spheres
+            Gizmos.DrawWireSphere(magnetLeft.position, radius);
+            Gizmos.DrawWireSphere(magnetRight.position, radius);
+
+            // Draw the capsule's body (cylinder-like connection between spheres)
+            DrawCapsuleBetweenPoints(magnetLeft.position, magnetRight.position, radius);
+
+            // Draw the downward movement (cast direction is -Y)
+            Gizmos.color = Color.red;
+            Vector3 castEndStart = magnetLeft.position + Vector3.down * maxDistance;
+            Vector3 castEndEnd = magnetRight.position + Vector3.down * maxDistance;
+
+            Gizmos.DrawWireSphere(castEndStart, radius);
+            Gizmos.DrawWireSphere(castEndEnd, radius);
+            DrawCapsuleBetweenPoints(castEndStart, castEndEnd, radius);
+
+            // Draw a line representing the downward movement
+            Gizmos.DrawLine(magnetLeft.position, castEndStart);
+            Gizmos.DrawLine(magnetRight.position, castEndEnd);
+        }
+        
+    }
+
+    private void DrawCapsuleBetweenPoints(Vector3 p1, Vector3 p2, float radius)
+    {
+        Vector3 dir = (p2 - p1).normalized;
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, dir);
+        Matrix4x4 oldMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS((p1 + p2) / 2, rot, new Vector3(radius * 2, (p2 - p1).magnitude / 2, radius * 2));
+
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(1, 1, 1));
+        Gizmos.matrix = oldMatrix;
+    }
     private void StartMagnet()
     {
         SyncMagnetPos();
         // Turn Magnet On
         
+       
         ChangeMagnetColor(Color.red);
-        World.Permeability = startingPermiability;
+        
+        magnetizing = true;
+        
+        //World.Permeability = startingPermiability;
 
         startMagnetizing?.Invoke();
     }
     private void StopMagnet()
     {
+        magnetizing = false;
         ChangeMagnetColor(Color.white);
         World.Permeability = 0;
         // Can invoke a stop magnet event if needed
@@ -217,7 +319,7 @@ public class ClawManager : MonoBehaviour
     
     private void ResetClaw()
     {
-        Debug.Log("Called resetClaw");
+        //Debug.Log("Called resetClaw");
         StartCoroutine(MoveToBin());
     }
 
@@ -256,7 +358,7 @@ public class ClawManager : MonoBehaviour
             duration += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Start drop");
+        //Debug.Log("Start drop");
         StopMagnet();
         StartCoroutine(DropOffToCenter());
 
@@ -295,7 +397,7 @@ public class ClawManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("fully reset");
+        //Debug.Log("fully reset");
         currentState = State.idle;
         startButton.clickable = true;
     }

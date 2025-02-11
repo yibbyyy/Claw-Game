@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        
+        GameTimer.timedOut += GameOver;
     }
     private void OnEnable()
     {
@@ -56,13 +56,16 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GameOver");
+        _dropBox.collectingItems = false;
         GameOverUI.SetActive(true);
         //state = State.gameOver;
 
     }
 
+    public DropBox _dropBox;
     void SetUpGame()
     {
         Debug.Log("Setting up");
+        _dropBox.collectingItems = true;
     }
 }

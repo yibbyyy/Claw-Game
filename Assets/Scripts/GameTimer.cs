@@ -125,7 +125,8 @@ public class GameTimer : MonoBehaviour
             IntToSprite();
             while (elapsedTime < 1)
             {
-                elapsedTime += Time.deltaTime;
+                // edit had to change to unscaled deltatime when alien mode is on so its not affected by speed up
+                elapsedTime += Time.unscaledDeltaTime;
                 //Debug.Log(elapsedTime);
                 yield return null;
             }

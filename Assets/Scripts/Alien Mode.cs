@@ -76,7 +76,7 @@ public class AlienMode : MonoBehaviour
             // call alienmode effect\
             alienEffect.startAlienMode = true;
             // time needs to go faster
-            Time.timeScale = 2f;
+            Time.timeScale = 1.5f;
             // start minusing alien goo
             StartCoroutine(ResetGoo());
             // still have ufo add to alien goo
