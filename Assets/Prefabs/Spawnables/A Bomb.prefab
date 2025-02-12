@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8683431101006865980}
   - component: {fileID: 4236686415029077721}
   - component: {fileID: 8914858593934827525}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PM3D_Sphere3D
   m_TagString: ABomb
   m_Icon: {fileID: 0}
@@ -176,8 +176,6 @@ GameObject:
   - component: {fileID: 4837346569691463535}
   - component: {fileID: 4267350510860732796}
   - component: {fileID: -4124057817437981255}
-  - component: {fileID: 9216624484283417559}
-  - component: {fileID: 3352146562841445595}
   m_Layer: 0
   m_Name: A Bomb
   m_TagString: ABomb
@@ -310,51 +308,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultVolume: 0
---- !u!54 &9216624484283417559
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6476832614747696572}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &3352146562841445595
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6476832614747696572}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
