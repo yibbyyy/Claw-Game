@@ -216,13 +216,24 @@ public class ClawManager : MonoBehaviour
     public ForceMode forceMode;
     public float baseAttractionStrength = 2000f; // Base force
     public AnimationCurve attractionCurve; // Curve for force scaling
+    private HashSet<Rigidbody> magnetizedObjects = new HashSet<Rigidbody>();
     public void Magnetize()
     {
         Rigidbody hitBody;
         //int numHits = Physics.CapsuleCastNonAlloc(magnetLeft.position, magnetRight.position, radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
         int numHits = Physics.SphereCastNonAlloc(magnetMid.position,  radius, Vector3.down, hits, maxDistance, ~ignoredLayers);
         float distance;
-        for(int i = 0; i < numHits; i++)
+
+        // Add new objects to the magnetized list
+        for (int i = 0; i < numHits; i++)
+        {
+            if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
+            {
+                if (!magnetizedObjects.Contains(hitBody))
+                    magnetizedObjects.Add(hitBody);
+            }
+        }
+        foreach(Rigidbody obj in magnetizedObjects)
         {
             /*
             if (hits[i].collider == null)
@@ -230,24 +241,29 @@ public class ClawManager : MonoBehaviour
             */
             //Debug.Log("Hit a " + hits[i].collider.name);
            
-            Vector3 forcedDirection = magnetMid.position - hits[i].collider.transform.position;
-            distance = forcedDirection.magnitude;
-
-            if (hits[i].collider.TryGetComponent<Rigidbody>(out hitBody))
+            if (obj != null)
             {
+                Vector3 forcedDirection = magnetMid.position - obj.position;
+                distance = forcedDirection.magnitude;
+
+               
+                
                 float forceMultiplier = attractionCurve.Evaluate(distance / maxDistance);
                 float force = baseAttractionStrength * forceMultiplier;
 
-                hitBody.AddForce(forcedDirection.normalized * force * Time.deltaTime, forceMode);
+                obj.AddForce(forcedDirection.normalized * force * Time.deltaTime, forceMode);
+                
             }
+           
             
             
         }
+        magnetizedObjects.RemoveWhere(obj => obj == null || Vector3.Distance(obj.position, magnetMid.position) > maxDistance);
         /*
          * Keep firing capsule cast until it fills up list of 15, and have seperate function apply force at the same time.
          * Capsule collider supplies the list and apply force applies it on fixed update.
          */
-        
+
     }
     private void OnDrawGizmos()
     {
