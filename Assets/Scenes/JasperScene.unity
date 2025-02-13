@@ -1752,6 +1752,10 @@ PrefabInstance:
       value: Pin Container
       objectReference: {fileID: 0}
     - target: {fileID: 1611085150231319458, guid: f81a5484b566ac64fa6a24be2393b756, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 451780129}
+    - target: {fileID: 1611085150231319458, guid: f81a5484b566ac64fa6a24be2393b756, type: 3}
       propertyPath: InnerExplosion
       value: 
       objectReference: {fileID: 845897890}
@@ -7072,6 +7076,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3917537395353292786, guid: f96936f1f30067f4b9a60d1f74ebc4f8, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 451780129}
+    - target: {fileID: 3917537395353292786, guid: f96936f1f30067f4b9a60d1f74ebc4f8, type: 3}
       propertyPath: InnerExplosion
       value: 
       objectReference: {fileID: 845897890}
@@ -11055,6 +11063,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -175
       objectReference: {fileID: 0}
+    - target: {fileID: 4599241913072694863, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 451780129}
     - target: {fileID: 4599241913072694863, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
       propertyPath: InnerExplosion
       value: 

@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ff37527875eb6429a62707753a22d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 0
-  timeValue: 0
+  pointValue: 500
+  timeValue: 5
   alienValue: 0
 --- !u!114 &2055731610301654778
 MonoBehaviour:
