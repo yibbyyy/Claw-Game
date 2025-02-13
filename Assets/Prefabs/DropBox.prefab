@@ -67,9 +67,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 5629897037485045994}
+  chestOpenPrefab: {fileID: 386960667308425607, guid: 9c7b8dbeae2d701419c4ba1d47f62aa5, type: 3}
+  chestOpening: 0
+  collectingItems: 0
+  pooling: {fileID: 0}
   scorable: {fileID: 0}
   score: 0
   totalScore: 0
+  AlienMode: {fileID: 0}
+  alienValue: 0
+  gameTimer: {fileID: 0}
+  timeValue: 0
+  keyCount: 0
+  chestCount: 0
   simonSays: {fileID: 0}
   wireCut: {fileID: 0}
   pushAndPull: {fileID: 0}
+  humanBomb: {fileID: 0}
+  alienBomb: {fileID: 0}
+  chestDisplay: {fileID: 0}
+  keyDisplay: {fileID: 0}
+  sprites: []
+  emptySprite: {fileID: 0}

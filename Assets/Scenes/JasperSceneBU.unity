@@ -689,6 +689,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81a5484b566ac64fa6a24be2393b756, type: 3}
+--- !u!1 &155858113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1391140628940910675, guid: f81a5484b566ac64fa6a24be2393b756, type: 3}
+  m_PrefabInstance: {fileID: 155858112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &174484460
 Mesh:
   m_ObjectHideFlags: 0
@@ -2679,9 +2684,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
---- !u!1 &582216200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6289695702767705099, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
+--- !u!212 &582216200 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9197973651113443390, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
   m_PrefabInstance: {fileID: 582216199}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &602991127
@@ -3973,9 +3978,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
---- !u!1 &801735346 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6289695702767705099, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
+--- !u!212 &801735346 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9197973651113443390, guid: 0480206533c3d4f4496e6b63d97119cd, type: 3}
   m_PrefabInstance: {fileID: 801735345}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &821157746
@@ -6837,6 +6842,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f96936f1f30067f4b9a60d1f74ebc4f8, type: 3}
+--- !u!1 &1401826903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2843026488335319475, guid: f96936f1f30067f4b9a60d1f74ebc4f8, type: 3}
+  m_PrefabInstance: {fileID: 1401826902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1493607217
 Mesh:
   m_ObjectHideFlags: 0
@@ -7412,7 +7422,7 @@ MonoBehaviour:
   chestOpenPrefab: {fileID: 0}
   chestOpening: 0
   collectingItems: 0
-  pooling: {fileID: 0}
+  pooling: {fileID: 1734073710}
   scorable: {fileID: 0}
   score: 0
   totalScore: 0
@@ -7422,11 +7432,11 @@ MonoBehaviour:
   timeValue: 0
   keyCount: 0
   chestCount: 0
-  simonSays: {fileID: 0}
-  wireCut: {fileID: 0}
-  pushAndPull: {fileID: 0}
-  humanBomb: {fileID: 0}
-  alienBomb: {fileID: 0}
+  simonSays: {fileID: 127686165484386264}
+  wireCut: {fileID: 1401826903}
+  pushAndPull: {fileID: 155858113}
+  humanBomb: {fileID: 21300000, guid: a8740e86ed602994886cbb4788ac3385, type: 3}
+  alienBomb: {fileID: 21300000, guid: e43471903a5895a4f96ad56da2142027, type: 3}
   chestDisplay: {fileID: 582216200}
   keyDisplay: {fileID: 801735346}
   sprites:
@@ -10444,6 +10454,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
+--- !u!1 &127686165484386264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 44318801538208470, guid: 477d8c24cdc91c94698a0912f8fce3a6, type: 3}
+  m_PrefabInstance: {fileID: 127686165484386263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &140576809717414656
 Transform:
   m_ObjectHideFlags: 0
@@ -19738,10 +19753,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1864409669}
     - target: {fileID: 1817577161043916695, guid: 82ae870b7cd9c03488e5dbccfbbc4c97, type: 3}
-      propertyPath: clickable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1817577161043916695, guid: 82ae870b7cd9c03488e5dbccfbbc4c97, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 2036807279}
@@ -19968,10 +19979,6 @@ PrefabInstance:
       propertyPath: alienSource
       value: 
       objectReference: {fileID: 1053034035}
-    - target: {fileID: 7466252405139921037, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
-      propertyPath: deltaVolume
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 7724525012877598474, guid: 074fc2b323a29304bbcc549c0f689f02, type: 3}
       propertyPath: m_RootOrder
       value: 13
