@@ -37,8 +37,8 @@ public class DropBox : MonoBehaviour
     public HashSet<int> gameObjectInstances = new HashSet<int>();
 
 
-    public GameObject chestDisplay;
-    public GameObject keyDisplay;
+    public SpriteRenderer chestDisplay;
+    public SpriteRenderer keyDisplay;
     public List<Sprite> sprites = new List<Sprite>();
     public Sprite emptySprite;
     
@@ -92,8 +92,8 @@ public class DropBox : MonoBehaviour
                             // play chest animation
                             chestCount--;
                             keyCount--;
-                            UpdateCounter(chestCount, chestDisplay);
-                            UpdateCounter(keyCount, keyDisplay);
+                            UpdateChestCounter(chestCount);
+                            UpdateKeyCounter(keyCount);
                         }
                         break;
 
@@ -107,8 +107,8 @@ public class DropBox : MonoBehaviour
                             // play chest animation
                             chestCount--;
                             keyCount--;
-                            UpdateCounter(chestCount, chestDisplay);
-                            UpdateCounter(keyCount, keyDisplay);
+                            UpdateChestCounter(chestCount);
+                            UpdateKeyCounter(keyCount);
                         }
                         break;
 
@@ -161,12 +161,12 @@ public class DropBox : MonoBehaviour
                 if (collision.gameObject.tag == "Chest")
                 {
                     chestCount += 1;
-                    UpdateCounter(chestCount, collision.gameObject);
+                    UpdateChestCounter(chestCount);
                 }
                 if (collision.gameObject.tag == "Key")
                 {
                     keyCount += 1;
-                    UpdateCounter(keyCount, collision.gameObject);
+                    UpdateKeyCounter(keyCount);
                     ;
                 }
 
@@ -182,8 +182,20 @@ public class DropBox : MonoBehaviour
 
     }
 
+    // jesus christ this is really all that function did
+    private void UpdateChestCounter(int value)
+    {
+        chestDisplay.sprite = sprites[value];
+    }
+
+    private void UpdateKeyCounter(int value)
+    {
+        keyDisplay.sprite = sprites[value];
+    }
 
 
+
+    /* break this whole thang up
     private void UpdateCounter(int counter, GameObject gameObject)
     {
         Debug.Log($"{gameObject} Counter = {counter}");
@@ -202,11 +214,11 @@ public class DropBox : MonoBehaviour
         SpriteRenderer spriteRenderer = display.GetComponentInChildren<SpriteRenderer>();
         Sprite newSprite = sprites[counter];
 
-
-        Debug.Log("Name of sprite is: " + newSprite);
-        Debug.Log("Changing display: " + display.name);
+        //Debug.Log("Name of sprite is: " + newSprite);
+        //Debug.Log("Changing display: " + display.name);
         spriteRenderer.sprite = newSprite;  
     }
+    */
 
     IEnumerator WaitASec(Collider collision)
     {

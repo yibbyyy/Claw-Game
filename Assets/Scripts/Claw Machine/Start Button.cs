@@ -13,7 +13,7 @@ public class StartButton : MonoBehaviour
     bool paused = false;
     void Start()
     {
-            
+   
     }
 
     // Update is called once per frame
@@ -24,10 +24,11 @@ public class StartButton : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100))
         {
+            //Debug.Log($"button hovered + clickable = {clickable}");
             if (clickable && hit.collider == gameObject.GetComponent<Collider>() && Input.GetMouseButtonDown(0))
             {
                 // May start coroutine multiple times before clickable is set to false
-                Debug.Log("If statement of clicked");
+                //Debug.Log("If statement of clicked");
                 clickable = false;
                 click?.Invoke();
                 StartCoroutine(DiageticClick());

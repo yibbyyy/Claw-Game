@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 {
     public static event Action Setup;
     public static event Action FirstRound;
+    public static event Action Refill;
     public GameObject GameOverUI;
 
     public State state = State.idle;
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour
         inRound,
         endStep,
         roundEnd,
+        refilling,
         gameOver
     }
 

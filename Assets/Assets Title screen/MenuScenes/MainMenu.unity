@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 304676428}
   - component: {fileID: 304676427}
   m_Layer: 0
-  m_Name: GameMaganer
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   track1: {fileID: 8300000, guid: 2d52d613168915e4abfa0f6addf1bd43, type: 3}
   track2: {fileID: 8300000, guid: bee28d228ef0d1845b7bcc39a6f5a08c, type: 3}
-  deltaVolume: 0.05
+  deltaVolume: 0.025
 --- !u!1 &1290681635
 GameObject:
   m_ObjectHideFlags: 0

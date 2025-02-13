@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets Title screen/MenuScenes/TutorialScene2.unity
     guid: 6d02cba1ee78992458c0b81ea291e124
+  - enabled: 1
+    path: Assets/Scenes/JasperSceneBU.unity
+    guid: d3cce5a713b80644987d3e89c1389317
   m_configObjects: {}

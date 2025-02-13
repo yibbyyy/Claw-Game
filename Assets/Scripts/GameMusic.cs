@@ -39,7 +39,9 @@ public class GameMusic : MonoBehaviour
         Debug.Log($"GameMusic PlayOut(volume {volume}) called");
         while (volume > 0) 
         {
+            Debug.Log($"GameMusic volume = {volume}");
             volume -= deltaVolume;
+            source.volume = volume;
             yield return new WaitForSeconds(Time.deltaTime);
         }
         if (volume <= 0) 
@@ -53,16 +55,19 @@ public class GameMusic : MonoBehaviour
 
     private IEnumerator PlayIn(float volume)
     {
+        source.Play();
         Debug.Log($"GameMusic PlayIn(volume {volume}) called");
         while (volume < startVolume) 
         {
+            Debug.Log($"GameMusic volume = {volume}");
             volume += deltaVolume;
+            source.volume = volume;
             yield return new WaitForSeconds(Time.deltaTime);
         }
         if (volume >= startVolume)
         {
-            
             volume = startVolume;
+            source.volume = volume;
             yield return null;
         }
         

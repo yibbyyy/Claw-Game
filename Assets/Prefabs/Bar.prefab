@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2853
+  m_VersionIndex: 2856
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2092
+  m_VersionIndex: 2095
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2171,6 +2171,23 @@ MonoBehaviour:
   dropOffDelay: 2
   dropOffTime: 3
   currentState: 0
+  magnetMid: {fileID: 0}
+  magnetLeft: {fileID: 0}
+  magnetRight: {fileID: 0}
+  radius: 0
+  maxDistance: 0
+  ignoredLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  magnetizing: 0
+  forceMode: 0
+  baseAttractionStrength: 2000
+  attractionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &8557069179998463393
 MonoBehaviour:
   m_ObjectHideFlags: 0

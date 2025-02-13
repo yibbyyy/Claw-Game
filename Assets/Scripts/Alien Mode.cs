@@ -5,10 +5,10 @@ using UnityEngine;
 public class AlienMode : MonoBehaviour
 {
     public float alienAGoGo = 0;
-    private float alienMax = 100; 
+    private float alienMax = 100;
     public float alienGrowin;
     public float alienShrinkage;
-    
+
     public AlienModeEffects alienEffect;
     public DropBox dropBox;
     public float ufoBonus;
@@ -50,6 +50,10 @@ public class AlienMode : MonoBehaviour
     private void Start()
     {
         GameController.Setup += SetupAlien;
+
+        //starts alien mode playback
+        alienSource.volume = 0;
+        StartButton.click += StartPlayback;
     }
     void Update()
     {
@@ -80,7 +84,7 @@ public class AlienMode : MonoBehaviour
             dropBox.alienValue = 0;
         }
 
-        
+
         if (alienAGoGo >= alienMax)
         {
             Debug.Log("alien A GO TO 100!!!");
@@ -117,28 +121,37 @@ public class AlienMode : MonoBehaviour
             Time.timeScale = 1f;
             alienEffect.ExitAlienMode();
             state = State.empty;
+            ChangeTrack();
         }
 
     }
 
-    void SetupAlien() 
+    void SetupAlien()
     {
         ResetGoo();
         GameController.Setup -= SetupAlien;
     }
 
+    void StartPlayback()
+    {
+        alienSource.Play();
+        StartButton.click -= StartPlayback;
+    }
+
+
     //function to switch between alien track and normal track
     void ChangeTrack()
     {
+        Debug.Log("ChangeTrack() called");
         AudioSource sourceA = null;
         AudioSource sourceB = null;
-        if (alienVolume > mainVolume)
+        if (alienSource.volume > mainSource.volume)
         {
-            sourceA = alienSource; sourceB = mainSource;
+            sourceA = alienSource; sourceB = alienSource;
         }
         else
         {
-            sourceA = mainSource; sourceB = mainSource;
+            sourceA = mainSource; sourceB = alienSource;
         }
 
         storedVolume = sourceA.volume;
@@ -162,4 +175,5 @@ public class AlienMode : MonoBehaviour
             yield return null;
         }
     }
+
 }

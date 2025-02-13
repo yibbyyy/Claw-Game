@@ -37,19 +37,19 @@ public class NewSpawnManager : MonoBehaviour
     private string gCoin = "GreyCoin";
     private int gCoinWeight = 1;
     private string aBomb = "A Bomb";
-    private int aBombWeight = 1;
+    private int aBombWeight = 15;
     private string Bomb = "Bomb";
-    private int bombWeight = 2;
+    private int bombWeight = 15;
     private string gBar = "New Gold Bar";
-    private int gBarWeight = 1;
+    private int gBarWeight = 20;
     private string chest = "Metal Box";
-    private int chestWeight = 1;
+    private int chestWeight = 5;
     private string key = "Key";
-    private int keyWeight = 1;
+    private int keyWeight = 5;
     private string clock = "Clock";
-    private int clockWeight = 1;
+    private int clockWeight = 20;
     private string ufo = "UFO";
-    private int ufoWeight= 1;
+    private int ufoWeight = 20;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();
     private IList<string> allSpawnables = new List<string>();
@@ -57,6 +57,9 @@ public class NewSpawnManager : MonoBehaviour
     private IList<string> coinSpawnables = new List<string>();
 
     private IList<Transform> spawnTransforms = new List<Transform>();
+
+    List<string> spawnTable = new List<string>();
+
 
     public int refillCounts;
     public float waitBetweenRefills;
@@ -67,10 +70,18 @@ public class NewSpawnManager : MonoBehaviour
     public float waitBetweenLootRefills;
     private int lootRefill = 0;
 
+    public StartButton startButton;
+
     public Vector3 lootSpawnDirection;
+
+    //tracker variables
+    [SerializeField]
+    private int totalSpawns, gCoins, sCoins, gBars, ufos, clocks, aBombs, hBomb, chests, keys;
+
 
     public State currentState = State.empty;
 
+    
     public enum State
     {
         empty,
@@ -125,7 +136,19 @@ public class NewSpawnManager : MonoBehaviour
 
     private void Start()
     {
-        
+        foreach (KeyValuePair<string, float> kvp in spawnables) 
+        {
+            if (kvp.Key != gCoin && kvp.Key != yCoin)
+            {
+                float spawnWeight = kvp.Value;
+                for (int j = 0; j < spawnWeight; j++)
+                {
+                    spawnTable.Add(kvp.Key);
+                }
+            }
+            Debug.Log($"spawnTablecount = {spawnTable.Count}");
+        }
+            
     }
 
 
@@ -146,6 +169,16 @@ public class NewSpawnManager : MonoBehaviour
         }
 
     }
+
+    void FillSpawnTable()
+    {
+        foreach (string tag in lootSpawnables)
+        {
+
+        }
+    }
+
+
 
 
     public void FirstFill()
@@ -174,7 +207,7 @@ public class NewSpawnManager : MonoBehaviour
     {
         foreach (Transform t in spawnTransforms)
         {
-            string spawnable = lootSpawnables[Random.Range(0, lootSpawnables.Count)];
+            string spawnable = spawnTable[Random.Range(0, spawnTable.Count)];
             if (spawnable == aBomb || spawnable == Bomb)
             {
                 pooling.SpawnFromPool(spawnable, t.position, Quaternion.identity);
@@ -202,9 +235,9 @@ public class NewSpawnManager : MonoBehaviour
 
         if (refill >= refillCounts)
         {
+            startButton.clickable = true;
             refill = 0;
             currentState = State.lowerWalls;
-            raiseDropBoxWalls();
         }
     }
 
