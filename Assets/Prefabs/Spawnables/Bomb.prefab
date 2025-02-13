@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 500
-  timeValue: 5
+  timeValue: 0
   alienValue: 0
 --- !u!114 &2055731610301654778
 MonoBehaviour:
