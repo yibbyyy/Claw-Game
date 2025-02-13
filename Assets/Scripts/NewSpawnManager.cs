@@ -37,19 +37,19 @@ public class NewSpawnManager : MonoBehaviour
     private string gCoin = "GreyCoin";
     private int gCoinWeight = 1;
     private string aBomb = "A Bomb";
-    private int aBombWeight = 15;
+    public int aBombWeight = 15;
     private string Bomb = "Bomb";
-    private int bombWeight = 15;
+    public int bombWeight = 15;
     private string gBar = "New Gold Bar";
-    private int gBarWeight = 20;
+    public int gBarWeight = 20;
     private string chest = "Metal Box";
-    private int chestWeight = 5;
+    public int chestWeight = 5;
     private string key = "Key";
-    private int keyWeight = 5;
+    public int keyWeight = 5;
     private string clock = "Clock";
-    private int clockWeight = 20;
+    public int clockWeight = 20;
     private string ufo = "UFO";
-    private int ufoWeight = 20;
+    public int ufoWeight = 20;
 
     private Dictionary<string, float> spawnables = new Dictionary<string, float>();
     private IList<string> allSpawnables = new List<string>();
