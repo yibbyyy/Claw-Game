@@ -13,7 +13,7 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
     
     public TMP_Text bombTimerUI;
-
+    public GameTimer gameTimer;
 
     public bool exploded = false;
     public float bombTimerDuration = 5;
@@ -74,6 +74,7 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
     public IEnumerator Timer(float duration)
     {
+        gameTimer.timerStopped = true;
         float timeremaining = duration;
         
         while (timeremaining > 0)
@@ -113,6 +114,7 @@ public class GenericBomb : MonoBehaviour, IDisposable
 
     public virtual void Dispose()
     {
+        gameTimer.timerStopped = false;
         BombCanvas.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }

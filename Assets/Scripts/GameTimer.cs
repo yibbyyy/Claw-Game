@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour
     public int timerLengthInSec;
     private int setTime;
     private int expectedLength;
-
+    public bool timerStopped = false;
     IList<Transform> places = new List<Transform>();
 
     public Sprite[] sprites = new Sprite[10];
@@ -126,6 +126,8 @@ public class GameTimer : MonoBehaviour
             while (elapsedTime < 1)
             {
                 // edit had to change to unscaled deltatime when alien mode is on so its not affected by speed up
+                while (timerStopped)
+                    yield return null;
                 elapsedTime += Time.unscaledDeltaTime;
                 //Debug.Log(elapsedTime);
                 yield return null;
