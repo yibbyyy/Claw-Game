@@ -194,6 +194,8 @@ MonoBehaviour:
   ufoBonus: 0
   gameTimer: {fileID: 0}
   alienGoo: {fileID: 173753686598770942}
+  alienSource: {fileID: 0}
+  deltaVolume: 0.05
   state: 1
 --- !u!1 &4742877320425378028
 GameObject:
